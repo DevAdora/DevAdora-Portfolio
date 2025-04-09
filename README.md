@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Devadora's Personal Portfolio
 
-## Getting Started
+Welcome to my personal portfolio! This repository showcases my projects, skills, and achievements. Here, you'll find a collection of work that demonstrates my experience as a student aspiring to be a software developer with a focus on JavaScript.
 
-First, run the development server:
+## 📋 Table of Contents
+- [About Me](#about-me)
+- [Skills](#skills)
+- [Projects](#projects)
+- [Contact](#contact)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎯 About Me
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Hello! I'm Devadora, a passionate student and freelancer aiming to become a software developer, with a focus on JavaScript. I enjoy working on projects that involve web development and mobile apps, and I'm currently diving into **Dart** and **Flutter** to expand my skill set. When I'm not coding, you can find me either lost in video games 🎮 or binge-watching Netflix series! 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🌍 **Location:** Philippines
+- 🎓 **Education:** Bachelor of Science in Information Technology, 2025
+- 💼 **Current Role:** Student and Freelancer
+- 🌱 **Currently learning:** Dart and Flutter
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Skills
 
-## Learn More
+Here are some technologies and tools I'm proficient in:
 
-To learn more about Next.js, take a look at the following resources:
+- **Languages:** JavaScript, Python, HTML/CSS
+- **Frameworks & Libraries:** React, Tailwind CSS
+- **Databases:** MySQL, MongoDB
+- **Version Control:** Git, GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💻 Projects
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Here are some highlights from my portfolio:
 
-## Deploy on Vercel
+### [ARC-TECH]
+- **Description:** ARC-TECH is a website designed for architects. It showcases and highlights some of the most stunning architectures and their detailed information.
+- **Features:** Explore and discover beautiful architectural designs and their features.
+- **Live Demo:** TBA
+- **Repo:** [ARC-TECH Repo](https://github.com/DevAdora/ARC-TECH.git)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### [HRMS]
+- **Description:** An online platform for campus employees to handle administrative tasks.
+- **Features:** Employees can apply for leaves, check their status, update personal information, and access a dashboard with key details.
+- **Live Demo:** TBA
+- **Repo:** [HRMS Repo](https://github.com/Oniely/HRMS.git)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📫 Contact
+
+Feel free to reach out to me via:
+
+- **Email:** raireyesjr@gmail.com
+- **GitHub:** [DevAdora GitHub](https://github.com/DevAdora)
+- **Portfolio:** [DevAdora's Portfolio](https://devadora.github.io/Me/)
+
+---
+
+### License
+
+This project is licensed under the [Your License] - see the LICENSE file for details.
+
+---
+
+### Acknowledgments
+
+Big thanks to all the amazing resources, blogs, tutorials, and people that have inspired me along the way!
+

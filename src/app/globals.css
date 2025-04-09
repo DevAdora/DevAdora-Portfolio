@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brown-color: #725843;
+  --light-brown-color: #9f7f65;
+  --dark-gray-color: #60564d;
+  --white-brown-color: #ccb4a0;
+  --dark-brown-color: #3a2a1d;
+
+  --kendal-charcoal-color: #686662;
+  --white-dove-color: #f0ede4;
+  --wrought-iron-color: #323333;
+  --light-dark-color: #78726a;
+  --dark-black-color: #1a1a17;
 }
 
 @theme inline {
@@ -14,13 +25,90 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --brown-color: #725843;
+    --light-brown-color: #9f7f65;
+    --dark-gray-color: #60564d;
+    --white-brown-color: #ccb4a0;
+    --dark-brown-color: #3a2a1d;
+
+    --kendal-charcoal-color: #686662;
+    --white-dove-color: #f0ede4;
+    --wrought-iron-color: #323333;
+    --light-dark-color: #78726a;
+    --dark-black-color: #1a1a17;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+.services {
+  background-color: var(--dark-black-color);
+  color: var(--white-dove-color);
+}
+.box {
+  background-color: var(--dark-black-color);
+}
+html {
+  scroll-behavior: smooth;
+}
+.dark-btn {
+  background-color: var(--dark-black-color);
+  color: var(--white-dove-color);   
+}
+.preloader {
+  background: var(--dark-black-color);
+  color: var(--white-dove-color);
+}
+.projects {
+  background: var(--dark-black-color);
+  color: var(--white-dove-color);
+}
+.about {
+  background: var(--dark-black-color);
+  color: var(--white-dove-color);
+}
+.gallery {
+  background: var(--dark-black-color);
+  color: var(--white-dove-color);
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  border: 8px solid #686662;
+  border-top: 8px solid #f0ede4;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* Animation delay classes for menu items */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Custom Animation for Service Boxes */
+.box-transition {
+  transition: transform 0.5s ease;
+}
+
+/* Font family for cursive elements */
+.font-dancing-script {
+  font-family: "Dancing Script";
 }
