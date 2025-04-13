@@ -63,7 +63,7 @@ export default function Services() {
       </motion.div>
       
       <motion.div 
-        className="box border-t border-white-dove sticky top-[17.5%] w-full h-screen flex flex-col bg-dark-black z-[2]"
+        className="box border-t border-white-dove sticky top-[22.5%] w-full h-screen flex flex-col bg-dark-black z-[2]"
         style={{ y: box2Y }}
       >
         <div className="mt-4 p-8">
@@ -99,7 +99,7 @@ export default function Services() {
       </motion.div>
       
       <motion.div 
-        className=" box border-t border-white-dove sticky top-[17.5%] w-full h-screen flex flex-col bg-dark-black z-[3]"
+        className=" box border-t border-white-dove sticky top-[27.5%] w-full h-screen flex flex-col bg-dark-black z-[3]"
         style={{ y: box3Y }}
       >
         <div className="mt-4 p-8">

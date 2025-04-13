@@ -19,6 +19,7 @@ module.exports = {
           'white-dove': '#f0ede4',
           'wrought-iron': '#323333',
           'dark-black': '#1a1a17',
+          'light-dark': '#78726a',
         },
         fontFamily: {
           'karla': ['Karla', 'sans-serif'],

@@ -8,10 +8,7 @@ const nextConfig = {
       },
     ],
   }, 
-  output: 'export', // enables static export
-  basePath: '/DevAdora',  // this matches the repo name
-  assetPrefix: '/DevAdora',
-  trailingSlash: true,
+
 };
 
 module.exports = nextConfig;

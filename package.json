@@ -29,6 +29,5 @@
     "eslint-config-next": "15.2.5",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-  "homepage": "https://devadora.github.io/DevAdora"
+  }
 }

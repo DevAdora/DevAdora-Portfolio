@@ -42,6 +42,18 @@
 body {
   font-family: var(--font-sans);
 }
+.grainy-overlay {
+  background-image: url("/images/noisy.png"); /* ✅ Correct path */
+  background-repeat: repeat;
+  opacity: 1; /* Adjust grain visibility */
+  pointer-events: none;
+  z-index: 50;
+  mix-blend-mode: overlay; /* 👈 Adds a more realistic texture effect */
+}
+
+.header {
+  color: var(--light-dark-color);
+}
 .services {
   background-color: var(--dark-black-color);
   color: var(--white-dove-color);
@@ -54,7 +66,7 @@ html {
 }
 .dark-btn {
   background-color: var(--dark-black-color);
-  color: var(--white-dove-color);   
+  color: var(--white-dove-color);
 }
 .preloader {
   background: var(--dark-black-color);
