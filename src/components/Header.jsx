@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <div className="header ageflex justify-between items-start px-4 py-4">
+        <div className="header flex justify-between items-start px-4 py-4">
           <div className="text-[18px] font-bold text-light-dark">
             <h1>DevAdora ©</h1>
           </div>

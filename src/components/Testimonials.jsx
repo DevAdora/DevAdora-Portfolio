@@ -29,7 +29,7 @@ const Testimonials = () => {
             satisfaction and meeting expectations are my top priorities,
             ensuring the best experience possible.
           </span>
-          <p className="pt-2">(TESTIMONIALS)</p>
+          <p className="pt-1">(TESTIMONIALS)</p>
         </div>
       </div>
 

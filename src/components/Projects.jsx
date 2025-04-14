@@ -32,11 +32,12 @@ export default function Projects() {
                 transition={{ duration: 0.3 }}
               >
                 <Image 
-                  src="/images/hr-image.png" 
+                  src="/images/freshinsights-logo.png" 
                   width={1000} 
                   height={600} 
                   className="w-full h-full object-cover rounded-lg"
                   alt="Project 1" 
+                  objectFit='contain'
                 />
               </motion.div>
             </div>
@@ -78,9 +79,9 @@ export default function Projects() {
             </div>
             
             <div className="flex flex-col gap-6">
-              <h3 className="text-[1.2rem]">Portfolio Website</h3>
+              <h3 className="text-[1.2rem]">Management & Education System</h3>
               <div className="text-[1.5rem] flex justify-between items-center py-4">
-                <h2>Next.js React Application</h2>
+                <h2>HRMS Website</h2>
                 <div className="flex gap-4">
                   <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">2025</span>
                   <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Design</span> 
@@ -104,7 +105,7 @@ export default function Projects() {
                 transition={{ duration: 0.3 }}
               >
                 <Image 
-                  src="/images/hr-image.png" 
+                  src="/images/arc-tech-logo.png" 
                   width={1000} 
                   height={600} 
                   className="w-full h-full object-cover rounded-lg"
@@ -114,13 +115,13 @@ export default function Projects() {
             </div>
             
             <div className="flex flex-col gap-6">
-              <h3 className="text-[1.2rem]">Blog Application</h3>
+              <h3 className="text-[1.2rem]">Architecture & Engineering</h3>
               <div className="text-[1.5rem] flex justify-between items-center py-4">
-                <h2>Node.js & MongoDB</h2>
+                <h2>Arc-tech Website</h2>
                 <div className="flex gap-4">
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">2025</span>
                   <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Design</span>
                   <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Development</span>
+                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">2025</span>
                 </div>
               </div>
             </div>

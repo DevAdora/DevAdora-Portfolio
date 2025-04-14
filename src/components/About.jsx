@@ -25,8 +25,8 @@ const About = () => {
             </h1>
           </div>
           <div className="flex justify-end items-end text-white-dove p-8 w-full">
-            <div className="w-full md:w-[75%] text-right">
-              <p className="mb-4">(ABOUT ME)</p>
+            <div className="flex w-full md:w-[100%] text-right">
+              <p className="p-1 w-[100%]">(ABOUT ME)</p>
               <span className="text-2xl">
                 Mostly of my side projects, I do the designing. UI/UX designing
                 is not my forte, but you could trust to give you the best colors

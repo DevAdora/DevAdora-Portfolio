@@ -35,28 +35,28 @@ export default function ProjectsGallery() {
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 1"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 2"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 3"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 4"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
@@ -71,28 +71,28 @@ export default function ProjectsGallery() {
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 5"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 6"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 7"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
             <Image
               src="/images/wvsu-web.png"
               alt="Gallery Image 8"
-              width={300}
+              width={500}
               height={200}
               className="w-full h-full transition-transform duration-300 object-cover"
             />
