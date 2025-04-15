@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <main className="flex items-center justify-center text-center" id="home">
+    <main className="flex flex-col items-center justify-center text-center" id="home">
       <div className="w-full">
         <motion.div 
           className="h-full text-dark-black"
@@ -15,8 +15,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex w-full text-center justify-center">
-            <h1 className="text-[13rem] font-bold flex-wrap">DEVADORA</h1>
-            <span className="text-[7rem]">©</span>
+          <h1 className="font-bold flex-wrap text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[13rem]">DEVADORA</h1>
+          <span className="flex-wrap text-[1rem] sm:text-3rem] md:text-[4rem] lg:text-[5rem] xl:text-[7rem]">©</span>
           </div>
         </motion.div>
         
@@ -38,22 +38,22 @@ export default function Hero() {
             </div>
           </div>
           
-          <div className="flex justify-center items-center h-full w-1/3">
-            <div>
-              <Image 
-                src="/images/devadora-image.png" 
-                width={300} 
-                height={450} 
-                alt="DevAdora Portrait" 
-              />
-            </div>
-          </div>
+                <div className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px]">
+        <Image 
+          src="/images/devadora-image.png" 
+          width={400} 
+          height={500} 
+          alt="DevAdora Portrait" 
+          className="w-full h-auto"
+        />
+      </div>
+
           
           <div className="flex justify-center items-center h-full w-1/3">
             <div>
               <Link 
                 href="#contact" 
-                className="dark-btn bg-dark-black text-center text-white-dove text-[2rem] no-underline p-4 rounded-[45px]"
+                className="hero-btn bg-dark-black text-center text-white-dove text-[2rem] no-underline p-4 rounded-[45px]"
               >
                 CONTACT
               </Link>

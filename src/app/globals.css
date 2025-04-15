@@ -41,11 +41,11 @@ body {
   font-family: var(--font-sans);
 }
 .grainy-overlay {
-  background-image: url("/images/noisy.png");
+  background-image: url('/images/noisy.png');
   background-repeat: repeat;
   opacity: 1; 
   pointer-events: none;
-  z-index: 50;
+  z-index: 1000;
   mix-blend-mode: overlay; 
 }
 .header {
@@ -60,6 +60,10 @@ body {
 }
 html {
   scroll-behavior: smooth;
+}
+.hero-btn {
+  background-color: var(--dark-black-color);
+  color: var(--white-dove-color);
 }
 .dark-btn {
   background-color: var(--dark-black-color);
@@ -134,4 +138,10 @@ html {
 
 .font-dancing-script {
   font-family: "Dancing Script";
+}
+
+
+@media screen and (max-width: 1080px) {
+  
+  
 }

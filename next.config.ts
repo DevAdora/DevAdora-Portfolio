@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-  output: 'export',
-  basePath: '/DevAdora-Portfolio', // replace with repo name
+  basePath: isProd ? '/DevAdora-Portfolio' : '',
+  assetPrefix: isProd ? '/DevAdora-Portfolio/' : '',
   images: {
+    unoptimized: true, 
     remotePatterns: [
       {
         protocol: 'https',

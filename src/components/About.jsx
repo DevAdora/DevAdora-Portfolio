@@ -20,7 +20,7 @@ const About = () => {
         {/* Right Text Section */}
         <div className="w-1/2 h-full flex flex-col justify-center">
           <div className="p-8">
-            <h1 className="text-[6rem] leading-none font-bold">
+          <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[4rem] lg:text-[5rem] xl:text-[7rem]">
               FREELANCE, DEVELOPER
             </h1>
           </div>
