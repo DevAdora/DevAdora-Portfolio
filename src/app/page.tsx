@@ -1,23 +1,22 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { gsap } from "gsap";
-import { motion, useAnimation, useInView } from "framer-motion";
+// import Head from "next/head";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { gsap } from "gsap";
+import { useAnimation, useInView } from "framer-motion";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Services from "../components/Services";
 import Projects from "../components/Projects";
-import ProjectsGallery from "../components/ProjectsGallery";
+// import ProjectsGallery from "../components/ProjectsGallery";
 import Testimonials from "../components/Testimonials";
 import About from "../components/About";
 import Preloader from "../components/Preloader";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [_isLoading, setIsLoading] = useState(true);
 
   // Refs for animations
   const box1Ref = useRef(null);
@@ -94,10 +93,6 @@ export default function Home() {
     box2Controls,
     box3Controls,
   ]);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
     <>
