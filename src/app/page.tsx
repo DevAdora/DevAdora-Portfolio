@@ -16,7 +16,7 @@ import About from "../components/About";
 import Preloader from "../components/Preloader";
 
 export default function Home() {
-  const [_isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Refs for animations
   const box1Ref = useRef(null);
@@ -96,14 +96,19 @@ export default function Home() {
 
   return (
     <>
-      <Preloader />
-      <Header />
-      <Hero />
-      <Services />
-      <Projects />
-      {/* <ProjectsGallery /> */}
-      <About />
-      <Testimonials />
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <>
+          <Header />
+          <Hero />
+          <Services />
+          <Projects />
+          {/* <ProjectsGallery /> */}
+          <About />
+          <Testimonials />
+        </>
+      )}
     </>
   );
 }
