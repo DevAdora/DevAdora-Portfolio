@@ -26,7 +26,7 @@ export default function ProjectsGallery() {
             <h1 className="text-[7rem]">WORK GALLERY</h1>
           </motion.div>
           <motion.div
-            className="flex items-center py-6 gap-5 w-1/3 -left-1/5 h-full object-contain relative"
+            className="flex items-center py-6 gap-5 w-1/3 -left-1/8 h-full object-contain relative"
             initial={{ x: 100 }}
             whileInView={{ x: 0 }}
             viewport={{ once: false, amount: 0.3 }}
@@ -62,7 +62,7 @@ export default function ProjectsGallery() {
             />
           </motion.div>
           <motion.div
-            className="flex items-center py-6 gap-5 w-1/3 -left-1/5 h-full object-contain relative"
+            className="flex items-center py-6 gap-5 w-1/3 -left-1/8 h-full object-contain relative"
             initial={{ x: 100 }}
             whileInView={{ x: 25 }}
             viewport={{ once: false, amount: 0.3 }}

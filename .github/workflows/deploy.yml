@@ -3,14 +3,17 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches:
-      - main # or master, depending on your branch
+      - main  # or 'master'
+
+permissions:
+  contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node
@@ -21,10 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build static site
-        run: |
-          npm run build
-          npm run export
+      - name: Build and Export
+        run: npm run deploy
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

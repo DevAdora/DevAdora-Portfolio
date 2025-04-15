@@ -128,6 +128,18 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <div className='flex justify-center items-center py-8'>
+  <div className='relative'>
+    <button className="projects-btn text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer relative">
+      More Works
+      <span className='absolute text-[10px] rounded-full leading-none'>
+        11
+      </span>
+    </button>
+  </div>
+</div>
+
     </section>
+
   )
 }

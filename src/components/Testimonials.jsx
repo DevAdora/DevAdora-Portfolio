@@ -64,18 +64,18 @@ const Testimonials = () => {
           <div className="flex justify-between items-center mt-8">
             <div className="text-dark-black text-lg">
               <span>{String(currentIndex + 1).padStart(2, '0')}</span>
-              <span className="mx-2">---------</span>
+              <span className="mx-2">/</span>
               <span>{String(totalPages).padStart(2, '0')}</span>
             </div>
             <div>
               <button
-                className="bg-dark-black text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer"
+                className="white-btn text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer"
                 onClick={() => changeTestimonial(-1)}
               >
                 Prev
               </button>
               <button
-                className="bg-dark-black text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer"
+                className="white-btn text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer"
                 onClick={() => changeTestimonial(1)}
               >
                 Next

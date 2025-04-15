@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/DevAdora-Portfolio', // replace with repo name
+
   images: {
     remotePatterns: [
       {

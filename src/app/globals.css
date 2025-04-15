@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@tailwind utilities;
-
 :root {
   --brown-color: #725843;
   --light-brown-color: #9f7f65;
@@ -43,14 +41,13 @@ body {
   font-family: var(--font-sans);
 }
 .grainy-overlay {
-  background-image: url("/images/noisy.png"); /* ✅ Correct path */
+  background-image: url("/images/noisy.png");
   background-repeat: repeat;
-  opacity: 1; /* Adjust grain visibility */
+  opacity: 1; 
   pointer-events: none;
   z-index: 50;
-  mix-blend-mode: overlay; /* 👈 Adds a more realistic texture effect */
+  mix-blend-mode: overlay; 
 }
-
 .header {
   color: var(--light-dark-color);
 }
@@ -67,6 +64,23 @@ html {
 .dark-btn {
   background-color: var(--dark-black-color);
   color: var(--white-dove-color);
+}
+.dark-btn:hover {
+  color: var(--dark-black-color);
+}
+.white-btn {
+  color: var(--dark-black-color);
+}
+.white-btn:hover {
+  background-color: var(--dark-black-color);
+  color: var(--white-dove-color);
+}
+.projects-btn {
+  color: var(--white-dove-color);
+}
+.projects-btn:hover{
+  background-color: var(--white-dove-color);
+  color: var(--dark-black-color);
 }
 .preloader {
   background: var(--dark-black-color);
@@ -102,7 +116,6 @@ html {
   animation: spin 2s linear infinite;
 }
 
-/* Animation delay classes for menu items */
 .delay-100 {
   animation-delay: 0.1s;
 }
@@ -115,12 +128,10 @@ html {
   animation-delay: 0.3s;
 }
 
-/* Custom Animation for Service Boxes */
 .box-transition {
   transition: transform 0.5s ease;
 }
 
-/* Font family for cursive elements */
 .font-dancing-script {
   font-family: "Dancing Script";
 }
