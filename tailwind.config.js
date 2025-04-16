@@ -23,8 +23,8 @@ module.exports = {
       },
       fontFamily: {
         karla: ["Karla", "sans-serif"],
-        "dancing-script": ['"Dancing Script"', "cursive"],
-        "ibm-plex-sans": ['"IBM Plex Sans"', "sans-serif"],
+        "dancing-script": ['"Dancing "', "cursive"],
+        "ibm-plex-sans": ['"IBM Plex Sans"', "sans-serif"],Script
       },
       animation: {
         "fade-up": "fade-up 1s ease-out",

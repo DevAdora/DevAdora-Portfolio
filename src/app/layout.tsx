@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {Karla, Rubik} from 'next/font/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +18,19 @@ export const metadata: Metadata = {
   description: "Personal Portfolio",
 };
 
+const karla = Karla({
+  subsets: ["latin"],
+  variable: "--font-karla",
+  weight: ["400", "700"],
+})
+
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--font-rubik",
+  weight: ["400", "700"],
+})
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${rubik.variable} ${karla.variable} antialiased`}
       >
         <div className="relative">
           {children}

@@ -18,22 +18,19 @@ import Preloader from "../components/Preloader";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Refs for animations
+
   const box1Ref = useRef(null);
   const box2Ref = useRef(null);
   const box3Ref = useRef(null);
 
-  // Check if elements are in view
   const box1InView = useInView(box1Ref, { once: false, amount: 0.3 });
   const box2InView = useInView(box2Ref, { once: false, amount: 0.3 });
   const box3InView = useInView(box3Ref, { once: false, amount: 0.3 });
 
-  // Animation controls
   const box1Controls = useAnimation();
   const box2Controls = useAnimation();
   const box3Controls = useAnimation();
 
-  // Preloader timeout
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -42,7 +39,6 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Animation effects based on scroll
   useEffect(() => {
     if (box1InView) {
       box1Controls.start({

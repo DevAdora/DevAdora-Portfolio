@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 :root {
   --brown-color: #725843;
   --light-brown-color: #9f7f65;
@@ -19,6 +18,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-karla: var(--font-karla);
+  --font-rubik: var(--font-rubik);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,7 +39,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-rubik);
 }
 .grainy-overlay {
   background-image: url('/images/noisy.png');
@@ -136,10 +137,12 @@ html {
   transition: transform 0.5s ease;
 }
 
-.font-dancing-script {
-  font-family: "Dancing Script";
+.karla-script {
+  font-family: var(--font-karla);
 }
-
+.rubik-script {
+  font-family: var(--font-rubik);
+}
 
 @media screen and (max-width: 1080px) {
   

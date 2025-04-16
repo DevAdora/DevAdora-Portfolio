@@ -20,14 +20,14 @@ const About = () => {
         {/* Right Text Section */}
         <div className="w-1/2 h-full flex flex-col justify-center">
           <div className="p-8">
-          <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[4rem] lg:text-[5rem] xl:text-[7rem]">
+          <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[3rem] lg:text-[5rem] xl:text-[7rem]">
               FREELANCE, DEVELOPER
             </h1>
           </div>
           <div className="flex justify-end items-end text-white-dove p-8 w-full">
-            <div className="flex w-full md:w-[100%] text-right">
+            <div className="flex w-full md:w-[100%] text-right text:">
               <p className="p-1 w-[100%]">(ABOUT ME)</p>
-              <span className="text-2xl">
+              <span className="text-[1.2rem] sm:text-[1.2rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.5rem]">
                 Mostly of my side projects, I do the designing. UI/UX designing
                 is not my forte, but you could trust to give you the best colors
                 that are pleasing to the naked eye.
