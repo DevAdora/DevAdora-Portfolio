@@ -16,8 +16,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-karla: var(--font-karla);
   --font-rubik: var(--font-rubik);
 }
@@ -34,7 +32,7 @@
     --white-dove-color: #f0ede4;
     --wrought-iron-color: #323333;
     --light-dark-color: #78726a;
-    --dark-black-color: #1a1a17;
+    --dark-black-color: #0a0a09;
   }
 }
 
@@ -42,12 +40,12 @@ body {
   font-family: var(--font-rubik);
 }
 .grainy-overlay {
-  background-image: url('/images/noisy.png');
+  background-image: url("/images/noisy.png");
   background-repeat: repeat;
-  opacity: 1; 
+  opacity: 1;
   pointer-events: none;
   z-index: 1000;
-  mix-blend-mode: overlay; 
+  mix-blend-mode: overlay;
 }
 .header {
   color: var(--light-dark-color);
@@ -83,7 +81,7 @@ html {
 .projects-btn {
   color: var(--white-dove-color);
 }
-.projects-btn:hover{
+.projects-btn:hover {
   background-color: var(--white-dove-color);
   color: var(--dark-black-color);
 }
@@ -145,6 +143,4 @@ html {
 }
 
 @media screen and (max-width: 1080px) {
-  
-  
 }

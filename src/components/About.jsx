@@ -2,35 +2,43 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <div className="about bg-dark-black text-white-dove h-screen">
-      <div className="flex justify-center items-center h-full px-8">
+    <div className="about bg-dark-black text-white-dove min-h-screen">
+      <div className="flex flex-col md:flex-row justify-center items-center h-full px-4 md:px-8 py-8">
+        {/* Mobile: Title on top */}
+        <div className="block md:hidden w-full text-center mb-4">
+          <h1 className="text-left text-[6rem] leading-24">
+            FREELANCE, DEVELOPER
+          </h1>
+        </div>
+
         {/* Left Image Section */}
-        <div className="w-1/2 h-full flex justify-center items-center">
-          <div className="w-[400px] h-[600px] flex justify-center items-center">
+        <div className="w-full md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
+          <div className="w-full sm:w-[100%] md:w-[100%] h-auto">
             <Image
-              src="/images/DevAdora.png"
+              src="/images/devadora-image.png"
               alt="About DevAdora"
               width={400}
               height={600}
-              className="object-contain"
+              className="object-contain w-full h-auto rounded-2xl"
             />
           </div>
         </div>
 
         {/* Right Text Section */}
-        <div className="w-1/2 h-full flex flex-col justify-center">
-          <div className="p-8">
-          <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[3rem] lg:text-[5rem] xl:text-[7rem]">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+          {/* Desktop: Title on right */}
+          <div className="hidden md:block p-4 md:p-8">
+            <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem]">
               FREELANCE, DEVELOPER
             </h1>
           </div>
-          <div className="flex justify-end items-end text-white-dove p-8 w-full">
-            <div className="flex w-full md:w-[100%] text-right text:">
-              <p className="p-1 w-[100%]">(ABOUT ME)</p>
-              <span className="text-[1.2rem] sm:text-[1.2rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.5rem]">
-                Mostly of my side projects, I do the designing. UI/UX designing
-                is not my forte, but you could trust to give you the best colors
-                that are pleasing to the naked eye.
+
+          {/* Description */}
+          <div className="p-4 md:p-8 w-full">
+            <div className="sm:w-[60%] md:w-[60%] text-left text-white-dove">
+              <p className="text-left mb-4">(ABOUT ME)</p>
+              <span className="text-lg sm:text-xl md:text-2xl leading-relaxed sm:w-[50%] md:w-[50%]">
+                Mostly of my side projects, I do the designing. UI/UX designing is not my forte, but you could trust to give you the best colors that are pleasing to the naked eye.
               </span>
             </div>
           </div>

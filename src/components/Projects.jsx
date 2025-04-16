@@ -1,145 +1,110 @@
-// components/Projects.jsx
-'use client'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Projects() {
+  const projects = [
+    {
+      number: "01.",
+      image: "/images/freshinsights-logo.png",
+      title: "Grocery & E-commerce",
+      name: "Flask Python Application",
+      tags: ["2025", "Design", "Development"],
+    },
+    {
+      number: "02.",
+      image: "/images/hr-image.png",
+      title: "Management & Education System",
+      name: "HRMS Website",
+      tags: ["2025", "Design", "Development"],
+    },
+    {
+      number: "03.",
+      image: "/images/arc-tech-logo.png",
+      title: "Architecture & Engineering",
+      name: "Arc-tech Website",
+      tags: ["Design", "Development", "2025"],
+    },
+  ];
+
   return (
-    <section className="projects h-full py-8 px-[10%] bg-dark-black text-white-dove">
+    <section className="projects h-full py-8 px-[5%] bg-dark-black text-white-dove">
       <div className="text-center py-8">
-        <h1 className="text-[7rem]">SELECTED WORKS</h1>
+        <h1 className="text-[4rem] sm:text-[5rem] md:text-[7rem] sm:leading-24 sm:text-left">
+          SELECTED WORKS
+        </h1>
       </div>
-      
+
       <div className="text-white-dove p-8 flex justify-end items-end w-full">
         <p>(Projects)</p>
-        <span className="text-right text-xl w-[30%]">
+        <span className="text-right text-xl w-full sm:w-[70%] md:w-[30%]">
           "I am here to help you transform your tech aspirations into a
           remarkable reality."
         </span>
       </div>
 
-      <div className="flex flex-col relative gap-40">
-        {/* Project 1 */}
-        <div className="flex items-start relative h-screen">
-          <div className="sticky top-[20%] w-[45%] z-10 text-5xl text-white-dove">
-            <h1 className="w-full text-[12rem]">01.</h1>
-          </div>
-          
-          <div className="w-[55%] overflow-y-auto max-h-[90vh] scrollbar-thin scrollbar-thumb-kendal-charcoal scrollbar-track-dark-black">
-            <div className="w-full h-[60vh] mb-8 overflow-hidden">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image 
-                  src="/images/freshinsights-logo.png" 
-                  width={1000} 
-                  height={600} 
-                  className="w-full h-full object-cover rounded-lg"
-                  alt="Project 1" 
-                  objectFit='contain'
-                />
-              </motion.div>
+      <div className="flex flex-col gap-40">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="flex flex-col md:flex-row md:items-start relative md:h-screen"
+          >
+            {/* Project Number */}
+            <div className="hidden md:block sticky top-[20%] w-[40%] z-10 text-5xl text-white-dove">
+              <h1 className="w-full text-[12rem]">{project.number}</h1>
             </div>
-            
-            <div className="flex flex-col gap-6">
-              <h3 className="text-[1.2rem]">Grocery & E-commerce</h3>
-              <div className="text-[1.5rem] flex justify-between items-center py-4 text-wrap">
-                <h2>Flask Python Application</h2>
-                <div className="flex gap-4 ">
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">2025</span>
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Design</span>
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Development</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Project 2 */}
-        <div className="flex items-start relative h-screen">
-          <div className="sticky top-[20%] w-[45%] z-10 text-5xl text-white-dove">
-            <h1 className="w-full text-[12rem]">02.</h1>
-          </div>
-          
-          <div className="w-[55%] overflow-y-auto max-h-[90vh] scrollbar-thin scrollbar-thumb-kendal-charcoal scrollbar-track-dark-black">
-            <div className="w-full h-[60vh] mb-8 overflow-hidden">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image 
-                  src="/images/hr-image.png" 
-                  width={1000} 
-                  height={600} 
-                  className="w-full h-full object-cover rounded-lg"
-                  alt="Project 2" 
-                />
-              </motion.div>
-            </div>
-            
-            <div className="flex flex-col gap-6">
-              <h3 className="text-[1.2rem]">Management & Education System</h3>
-              <div className="text-[1.5rem] flex justify-between items-center py-4">
-                <h2>HRMS Website</h2>
-                <div className="flex gap-4">
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">2025</span>
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Design</span> 
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Development</span>
+            {/* Image + Details */}
+            <div className="w-full md:w-[60%]">
+              {/* Image Fullscreen on small screens */}
+              <div className="w-full h-[60vh] sm:h-[60vh] mb-4 overflow-hidden">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={project.image}
+                    width={1000}
+                    height={600}
+                    className="w-full h-full object-cover rounded-lg"
+                    alt={`Project ${index + 1}`}
+                  />
+                </motion.div>
+              </div>
+
+              {/* Details */}
+              <div className="flex flex-col gap-6 px-2 sm:px-0">
+                <h3 className="text-[1.2rem]">{project.title}</h3>
+                <div className="text-[1.5rem] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                  <h2>{project.name}</h2>
+                  <div className="flex flex-wrap gap-2 sm:gap-4">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Project 3 */}
-        <div className="flex items-start relative h-screen">
-          <div className="sticky top-[20%] w-[45%] z-10 text-5xl text-white-dove">
-            <h1 className="w-full text-[12rem]">03.</h1>
-          </div>
-          
-          <div className="w-[55%] overflow-y-auto max-h-[90vh] scrollbar-thin scrollbar-thumb-kendal-charcoal scrollbar-track-dark-black">
-            <div className="w-full h-[60vh] mb-8 overflow-hidden">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image 
-                  src="/images/arc-tech-logo.png" 
-                  width={1000} 
-                  height={600} 
-                  className="w-full h-full object-cover rounded-lg"
-                  alt="Project 3" 
-                />
-              </motion.div>
-            </div>
-            
-            <div className="flex flex-col gap-6">
-              <h3 className="text-[1.2rem]">Architecture & Engineering</h3>
-              <div className="text-[1.5rem] flex justify-between items-center py-4">
-                <h2>Arc-tech Website</h2>
-                <div className="flex gap-4">
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Design</span>
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">Development</span>
-                  <span className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base text-white-dove">2025</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        ))}
+      </div>
+
+      {/* Button */}
+      <div className="flex justify-center items-center py-8">
+        <div className="relative">
+          <button className="projects-btn text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer relative">
+            More Works
+            <span className="absolute text-[10px] rounded-full leading-none">
+              11
+            </span>
+          </button>
         </div>
       </div>
-      <div className='flex justify-center items-center py-8'>
-  <div className='relative'>
-    <button className="projects-btn text-white-dove px-4 py-2 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-dark-black transition-colors cursor-pointer relative">
-      More Works
-      <span className='absolute text-[10px] rounded-full leading-none'>
-        11
-      </span>
-    </button>
-  </div>
-</div>
-
     </section>
-
-  )
+  );
 }
