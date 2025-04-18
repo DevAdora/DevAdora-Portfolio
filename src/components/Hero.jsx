@@ -28,7 +28,7 @@ export default function Hero() {
           {/* Quote Left */}
           <div className="flex items-right justify-end gap-[10px] w-1/3">
             <div className="w-4/5 items-center justify-center tracking-[1.4px] leading-[1.4]">
-              <h3 className="text-gray-600 text-right text-[1rem] xl:text-[1.2rem]">
+              <h3 className="text-dark-black text-right text-[1rem] xl:text-[1.2rem]">
                 An aspiring freelance software developer & web designer from the
                 Philippines. I help brands and startups build premium,
                 results-driven websites.{" "}

@@ -11,6 +11,7 @@
   --wrought-iron-color: #323333;
   --light-dark-color: #78726a;
   --dark-black-color: #1a1a17;
+  --text-light-color: #c9c9c1;
 }
 
 @theme inline {
@@ -109,7 +110,12 @@ html {
     transform: rotate(360deg);
   }
 }
-
+.about-header span {
+  color: var(--text-light-color);
+}
+.about-desc  {
+  color: var(--light-dark-color);
+}
 .loader {
   border: 8px solid #686662;
   border-top: 8px solid #f0ede4;

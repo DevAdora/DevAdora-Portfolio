@@ -18,18 +18,18 @@ const Testimonials = () => {
   const { image, text, name, role, skill } = testimonialsData[currentIndex];
 
   return (
-    <div className="bg-white-dove w-full overflow-hidden">
-      <div className="text-dark-black border-b border-dark-black m-8">
+    <div className="bg-white-dove w-full overflow-hidden mb-4">
+      <div className="text-dark-black border-b border-dark-black  m-8">
         <div className="py-5 text-[7rem]">
           <h1 className="pb-5 sm:leading-24">WORDS FROM OTHERS.</h1>
         </div>
-        <div className="flex flex-col md:flex-row text-dark-black p-8 sm:p-0 w-full">
+        <div className="flex flex-col md:flex-row text-dark-black p-8 sm:p-0 w-full mb-8">
           <span className="text-left text-xl md:w-1/2 ">
             Here’s what my clients say about our collaboration. Their
             satisfaction and meeting expectations are my top priorities,
             ensuring the best experience possible.
           </span>
-          <p className="pt-1">(TESTIMONIALS)</p>
+          <p className="pt-1 ml-10">(TESTIMONIALS)</p>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -27,18 +27,29 @@ const About = () => {
         {/* Right Text Section */}
         <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           {/* Desktop: Title on right */}
-          <div className="hidden md:block p-4 md:p-8">
-            <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[4rem]">
+          <div className="hidden md:block w-90%] p-4 md:p-8  flex-wrap overflow-hidden">
+            <h1 className="font-bold flex-wrap text-[1rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[6rem] ">
               FREELANCE, DEVELOPER
             </h1>
           </div>
 
           {/* Description */}
+          <div className="about-header p-4 md:p-8 w-full">
+            <div className="sm:w-[80%] md:w-[70%] text-left text-light-dark">
+              <span className="text-light-dark text-lg sm:text-2xl md:text-2xl leading-relaxed sm:w-[50%] md:w-[50%]">
+                Mostly of my side projects, I do the designing. UI/UX designing
+                is not my forte, but you could trust to give you the best colors
+                that are pleasing to the naked eye.
+              </span>
+            </div>
+          </div>
           <div className="p-4 md:p-8 w-full">
-            <div className="sm:w-[60%] md:w-[60%] text-left text-white-dove">
+            <div className="about-desc sm:w-[60%] md:w-[60%] text-left text-white-dove">
               <p className="text-left mb-4">(ABOUT ME)</p>
               <span className="text-lg sm:text-xl md:text-2xl leading-relaxed sm:w-[50%] md:w-[50%]">
-                Mostly of my side projects, I do the designing. UI/UX designing is not my forte, but you could trust to give you the best colors that are pleasing to the naked eye.
+                Mostly of my side projects, I do the designing. UI/UX designing
+                is not my forte, but you could trust to give you the best colors
+                that are pleasing to the naked eye.
               </span>
             </div>
           </div>

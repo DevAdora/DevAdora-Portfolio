@@ -1,0 +1,35 @@
+{
+  "$schema": "https://cdn.statically.io/gh/nguyenngoclongdev/cdn/main/schema/v10/terminal-keeper.json",
+  "theme": "chaos",
+  "active": "default",
+  "activateOnStartup": true,
+  "keepExistingTerminals": false,
+  "sessions": {
+    "default": [
+      {
+        "name": "hello",
+        "autoExecuteCommands": true,
+        "icon": "person",
+        "color": "terminal.ansiGreen",
+        "commands": [
+          "echo hello boss"
+        ]
+      },
+      [
+        {
+          "name": "docker:github",
+          "commands": [
+            ""
+          ]
+        },
+        {
+          "name": "docker:nodemon/install",
+          "commands": [
+            ""
+          ]
+        }
+      ]
+    ]
+
+  }
+}
