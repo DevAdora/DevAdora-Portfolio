@@ -7,12 +7,12 @@
   "sessions": {
     "default": [
       {
-        "name": "hello",
+        "name": "DevAdora",
         "autoExecuteCommands": true,
         "icon": "person",
         "color": "terminal.ansiGreen",
         "commands": [
-          "echo hello boss"
+          "echo Welcome Back DevAdora"
         ]
       },
       [

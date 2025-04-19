@@ -148,5 +148,7 @@ html {
   font-family: var(--font-rubik);
 }
 
-@media screen and (max-width: 1080px) {
+.contact {
+  background-color: var(--dark-black-color);
+  color: var(--text-light-color);
 }

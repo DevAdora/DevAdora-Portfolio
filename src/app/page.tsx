@@ -15,6 +15,7 @@ import Testimonials from "../components/Testimonials";
 import About from "../components/About";
 import Preloader from "../components/Preloader";
 import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -104,6 +105,7 @@ export default function Home() {
           {/* <ProjectsGallery /> */}
           <About />
           <Testimonials />
+          <Contact />
           <Footer />
         </>
       )}

@@ -73,7 +73,7 @@ export default function Hero() {
           </h1>
         </motion.div>
 
-        <p className="text-[1rem] mt-6 max-w-md text-gray-600">
+        <p className="text-[1rem] mt-6 max-w-md">
           An aspiring freelance software developer & web designer from the
           Philippines. I help brands and startups build premium, results-driven
           websites.

@@ -35,21 +35,24 @@ const About = () => {
 
           {/* Description */}
           <div className="about-header p-4 md:p-8 w-full">
-            <div className="sm:w-[80%] md:w-[70%] text-left text-light-dark">
-              <span className="text-light-dark text-lg sm:text-2xl md:text-2xl leading-relaxed sm:w-[50%] md:w-[50%]">
-                Mostly of my side projects, I do the designing. UI/UX designing
-                is not my forte, but you could trust to give you the best colors
-                that are pleasing to the naked eye.
+            <div className="sm:w-[100%] md:w-[100%] text-left text-light-dark">
+              <span className="text-light-dark text-[1.2rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.6rem]leading-relaxed sm:w-[50%] md:w-[50%]">
+                Ar-ar Reyes, the mind behind DevAdora, is a multifaceted
+                freelancer, developer, and designer devoted to transforming bold
+                ideas into impactful digital realities. With a seamless
+                end-to-end process and a sharp eye for detail, Ar-ar bridges
+                imagination and innovation—crafting solutions that don’t just
+                function, but resonate.
               </span>
             </div>
           </div>
           <div className="p-4 md:p-8 w-full">
-            <div className="about-desc sm:w-[60%] md:w-[60%] text-left text-white-dove">
+            <div className="about-desc sm:w-[70%] md:w-[70%] text-left text-white-dove">
               <p className="text-left mb-4">(ABOUT ME)</p>
-              <span className="text-lg sm:text-xl md:text-2xl leading-relaxed sm:w-[50%] md:w-[50%]">
-                Mostly of my side projects, I do the designing. UI/UX designing
-                is not my forte, but you could trust to give you the best colors
-                that are pleasing to the naked eye.
+              <span className="text-[1rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] leading-relaxed sm:w-[50%] md:w-[50%]">
+                Each project is more than a deliverable; it’s a statement,
+                leaving a meaningful imprint on the tech world and your vision
+                alike.
               </span>
             </div>
           </div>
