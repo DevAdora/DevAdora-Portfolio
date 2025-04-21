@@ -39,7 +39,6 @@ const About = () => {
             />
           </div>
         </div>
-
         {/* Text Section - 65% */}
         <div className="w-full md:w-[65%] flex flex-col justify-center items-center md:items-start text-center md:text-left">
           {/* Desktop Title (on right side) */}
