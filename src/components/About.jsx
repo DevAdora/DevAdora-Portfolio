@@ -49,7 +49,6 @@ const About = () => {
               </h1>
             </div>
           )}
-
           {/* Description */}
           <div className="about-header p-0 sm:p-0 md:p-8 w-full">
             <div className="text-left text-light-dark">
