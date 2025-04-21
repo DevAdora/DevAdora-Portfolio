@@ -59,7 +59,6 @@ const About = () => {
               </span>
             </div>
           </div>
-
           <div className="py-4 sm:mt-5 sm:p-0 md:p-8 w-full">
             <div className="about-desc text-left text-white-dove">
               <p className="mb-4">(ABOUT ME)</p>
