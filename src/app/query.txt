@@ -1,11 +1,11 @@
 text-[size] (default / mobile)
 
-sm:text-[size] (≥640px)
+sm:text-[size] (≥640px) 768 = 640
 
-md:text-[size] (≥768px)
+md:text-[size] (≥768px) 1023 = 768
 
-lg:text-[size] (≥1024px)
+lg:text-[size] (≥1024px) 1279 = 1024
 
-xl:text-[size] (≥1280px)
+xl:text-[size] (≥1280px) 1535 = 1280
 
-2xl:text-[size] (≥1536px)
+2xl:text-[size] (≥1536px) 

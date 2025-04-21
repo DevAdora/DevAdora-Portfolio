@@ -30,14 +30,14 @@ export default function Projects() {
   return (
     <section className="projects h-full py-8 px-[5%] bg-dark-black text-white-dove">
       <div className="text-center py-8">
-        <h1 className="text-[4rem] sm:text-[5rem] md:text-[7rem] sm:leading-24 sm:text-left">
+        <h1 className="text-[4rem] sm:text-[7rem] md:text-[7rem] lg:text-[7rem] xl:text-[8rem] leading-15 sm:leading-24 md:leading-24 lg:leading-24 xl:leading-24 2xl:leading-24 text-left sm:text-left md:text-left lg:text-center">
           SELECTED WORKS
         </h1>
       </div>
 
-      <div className="text-white-dove p-8 flex justify-end items-end w-full">
+      <div className="text-white-dove py-8 flex justify-end items-end w-full md:flex-col-reverse">
         <p>(Projects)</p>
-        <span className="text-right text-xl w-full sm:w-[70%] md:w-[30%]">
+        <span className="text-right text-xl w-full sm:w-[70%] md:w-[70%]">
           "I am here to help you transform your tech aspirations into a
           remarkable reality."
         </span>
@@ -55,9 +55,9 @@ export default function Projects() {
             </div>
 
             {/* Image + Details */}
-            <div className="w-full md:w-[60%]">
+            <div className="w-full md:w-[60%] min-h-[60vh]">
               {/* Image Fullscreen on small screens */}
-              <div className="w-full h-[60vh] sm:h-[60vh] mb-4 overflow-hidden">
+              <div className="w-full h-auto sm:h-[60vh] md:h-[60vh] lg:h-[60vh] xl:h-[60vh] 2xl:h-[60vh] mb-4 overflow-hidden">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
