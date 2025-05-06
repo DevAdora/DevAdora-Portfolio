@@ -34,7 +34,7 @@ export default function Footer() {
           <h3 className="font-semibold mb-4  border-b border-gray-300 text-[1.2rem]">
             Menu
           </h3>
-          <ul className="text-[1.2rem]">
+          <ul className="space-y-2 text-[1.2rem]">
             {[
               "Home",
               "Services",
