@@ -1,8 +1,8 @@
 export default function Contact() {
   return (
     <div className="p-8">
-      <div className="contact p-8 w-full min-h-screen flex flex-col justify-between">
-        <div className=" flex flex-col items-center justify-center text-center">
+      <div className="contact p-8 w-full min-h-[30vh] sm:min-h-screen md:min-h-screen lg:min-h-screen xl:min-h-screen 2xl:min-h-screen flex flex-col justify-between">
+        <div className=" flex flex-col items-center justify-center text-center mt-10">
           <p className="text-sm mb-2">(Need an unfair advantage?)</p>
           <h1 className="text-5xl md:text-[8rem]  lg:text-[8rem] font-bold leading-tight">
             LET'S MAKE <br /> IT HAPPEN
@@ -17,8 +17,8 @@ export default function Contact() {
           <div className="flex items-center space-x-2 border border-[#323333] rounded-md px-3 py-2">
             <span className="text-xl">🌍</span>
             <div className="flex flex-col leading-tight">
-              <span>Working Globally</span>
-              <span>Available Apr ‘25</span>
+              <span>Available for Work</span>
+              <span></span>
             </div>
           </div>
 

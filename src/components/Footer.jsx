@@ -28,13 +28,13 @@ export default function Footer() {
 
   return (
     <footer className="text-black py-12 px-8 md:px-16 text-sm font-light relative">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-300 pb-8">
+      <div className="grid grid-cols-3 md:grid-cols-3 gap-12 border-b border-gray-300 pb-8">
         {/* Menu */}
         <div>
-          <h3 className="font-semibold mb-4  border-b border-gray-300 text-[1.2rem]">
+          <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             Menu
           </h3>
-          <ul className="space-y-2 text-[1.2rem]">
+          <ul className=" text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             {[
               "Home",
               "Services",
@@ -54,10 +54,10 @@ export default function Footer() {
 
         {/* Socials */}
         <div>
-          <h3 className="font-semibold mb-4  border-b border-gray-300 text-[1.2rem]">
+          <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             Socials
           </h3>
-          <ul className="space-y-2 text-[1.2rem]">
+          <ul className="space-y-2 text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             {["Linkedin", "YouTube", "Instagram", "Bento", "Github"].map(
               (item) => (
                 <li key={item}>
@@ -72,8 +72,10 @@ export default function Footer() {
 
         {/* Resources */}
         <div>
-          <h3 className="font-semibold mb-4  border-b border-gray-300 text-[1.2rem] ">Contacts</h3>
-          <ul className="space-y-2 text-[1.2rem]">
+          <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
+            Contacts
+          </h3>
+          <ul className="space-y-2  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             {["Gmail", "Viber", "Telegram", "Discord"].map((item) => (
               <li key={item}>
                 <a href="#" className="hover:underline">
@@ -85,7 +87,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-center mt-8 relative">
+      <div className="flex flex-row sm:flex-row md:flex-row justify-between items-center mt-8 relative">
         <div className="text-xl md:text-2xl xl:text-[3rem] font-bold w-[40%] flex-wrap">
           © 2025 DevAdora <br className="md:hidden" />
           <span className="font-semibold block md:inline">

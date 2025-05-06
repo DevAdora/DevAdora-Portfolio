@@ -62,7 +62,7 @@ export default function Hero() {
       </div>
 
       {/* === Mobile / Tablet View (<768px) === */}
-      <div className="flex md:hidden flex-col items-start justify-start text-left px-6 py-8 min-h-screen relative">
+      <div className="flex md:hidden flex-col items-start justify-start text-left px-6 py-8 min-h-[80vh] sm:min-h-screen md:min-h-screen lg:min-h-screen xl:min-h-screen 2xl:min-h-screen relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,19 +83,19 @@ export default function Hero() {
         <div className="absolute bottom-6 left-6">
           <Image
             src="/images/devadora-image.png"
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             alt="DevAdora"
             className="rounded-md"
           />
         </div>
 
         {/* Bottom-Right Info */}
-        <div className="absolute bottom-6 right-6 text-right text-xs">
+        <div className="absolute bottom-6 right-6 text-right text-xs w-1/2">
           <div className="mt-6">
             <Link
               href="#contact"
-              className="inline-block bg-black text-white px-6 py-3 rounded-full text-lg font-medium tracking-wide"
+              className="inline-block bg-black text-white px-6 py-3 rounded-full text-sm sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-medium tracking-wide"
             >
               BOOK A CALL ↗
             </Link>
