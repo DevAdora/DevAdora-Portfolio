@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
-import AboutPage from "@/About/page";
+
+
 const navItems = [
   { name: "Services,", path: "/Services" },
   { name: "About,", path: "/About" },
   { name: "Works,", path: "/Works" },
   { name: "Testimonials,", path: "/Testimonials" },
-  { name: "Contact,", path: "/Contact" },comm
+  { name: "Contact,", path: "/Contact" },
 ];
 
 export default function Header() {
