@@ -153,3 +153,8 @@ html {
   color: var(--text-light-color);
 }
 
+
+.techstack {
+  background-color: var(--light-dark-color);
+  color: var(--dark-black-color);
+}
