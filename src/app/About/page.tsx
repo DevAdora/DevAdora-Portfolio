@@ -134,7 +134,7 @@ export default function AboutPage() {
               <h2 className="text-xl font-semibold mb-4">LATEST PROJECT</h2>
 
               <div className="space-y-8">
-                <div className="rounded-lg overflow-hidden shadow">
+                <div className="rounded-lg overflow-hidden">
                   <Image
                     src="/images/freshinsights-logo.png"
                     alt="Project"

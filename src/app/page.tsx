@@ -1,16 +1,11 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-// import Head from "next/head";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { gsap } from "gsap";
 import { useAnimation, useInView } from "framer-motion";
 import Hero from "../components/Hero";
 import Header from "../components/Header";
 import Services from "../components/Services";
 import Projects from "../components/Projects";
-// import ProjectsGallery from "../components/ProjectsGallery";
 import Testimonials from "../components/Testimonials";
 import About from "../components/About";
 import Preloader from "../components/Preloader";
@@ -19,7 +14,7 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const box1Ref = useRef(null);
   const box2Ref = useRef(null);
@@ -39,6 +34,17 @@ export default function Home() {
     }, 2000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Track scroll position for header behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+      setIsScrolled(window.scrollY > heroHeight * 0.3);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -99,14 +105,16 @@ export default function Home() {
       ) : (
         <>
           <Header />
-          <Hero />
-          <Services />
-          <Projects />
-          {/* <ProjectsGallery /> */}
-          <About />
-          <Testimonials />
-          <Contact />
-          <Footer />
+          {/* Add top padding when header becomes fixed to prevent content jump */}
+          <div className={isScrolled ? 'pt-20' : ''}>
+            <Hero />
+            <Services />
+            <Projects />
+            <About />
+            <Testimonials />
+            <Contact />
+            <Footer />
+          </div>
         </>
       )}
     </>

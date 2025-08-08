@@ -21,7 +21,7 @@ export default function Hero() {
             <span className="flex-wrap text-[4rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[7rem]">
               ©
             </span>
-          </div>``
+          </div>
         </motion.div>
 
         <div className="flex justify-between items-center h-full w-full mb-[7.5%]">
