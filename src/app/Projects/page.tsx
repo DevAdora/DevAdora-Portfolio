@@ -129,21 +129,21 @@ export default function ProjectsPage() {
       <Header />
       <section className="h-full py-8 px-[5%] bg-dark-black text-white-dove">
         <div className="text-center py-8">
-          <h1 className="text-[4rem] sm:text-[7rem] md:text-[7rem] lg:text-[7rem] xl:text-[8rem] leading-15 sm:leading-24 md:leading-24 lg:leading-24 xl:leading-24 2xl:leading-24 text-left sm:text-left md:text-left lg:text-center">
+          <h1 className="text-[4rem] sm:text-[7rem] md:text-[7rem] lg:text-[7rem] xl:text-[8rem] leading-15 sm:leading-24 md:leading-24 lg:leading-24 xl:leading-24 2xl:leading-24 text-center sm:text-center md:text-center lg:text-center">
             PROJECTS
           </h1>
         </div>
 
-        <div className="flex flex-col gap-40 ">
+        <div className="flex-col md:gap-40 flex">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="flex-row flex md:flex-row md:items-start relative md:h-[100%]"
+              className="flex-col flex md:flex-col md:items-start relative md:h-[100%]"
             >
               {/* Image + Details */}
-              <div className="flex flex-row w-full md:w-[100%] gap-10 min-h-[40vh]">
+              <div className="flex flex-col lg:flex-row w-100% md:w-[100%] gap-10 min-h-[100vh] md:min-h-[40vh]">
                 {/* Image Fullscreen on small screens */}
-                <div className="w-[50%] h-auto sm:h-[40vh] md:h-[40vh] lg:h-[40vh] xl:h-[40vh] 2xl:h-[40vh] overflow-hidden">
+                <div className="w-[100%] lg:w-[50%] h-auto sm:h-[40vh] md:h-[40vh] lg:h-[40vh] xl:h-[40vh] 2xl:h-[40vh] overflow-hidden">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
@@ -152,14 +152,14 @@ export default function ProjectsPage() {
                       src={project.image}
                       width={1000}
                       height={600}
-                      className="w-[100%] h-[40vh] object-cover rounded-lg"
+                      className="w-full h-[40vh] object-cover rounded-lg"
                       alt={`Project ${index + 1}`}
                     />
                   </motion.div>
                 </div>
 
                 {/* Details */}
-                <div className="flex flex-col gap-6 px-2 sm:px-0 w-[50%] justify-between">
+                <div className="flex flex-col gap-2 lg:gap-6 px-2 sm:px-0 w-[100%] lg:w-[50%] justify-between ">
                   <h3 className="text-[1.2rem]">{project.title}</h3>
                   <div className="text-[1.5rem] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                     <h2>{project.name}</h2>
