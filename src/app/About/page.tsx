@@ -280,7 +280,7 @@ export default function AboutPage() {
               <div className="space-y-8">
                 <div className="rounded-lg overflow-hidden">
                   <Image
-                    src="/images/PF background.png"
+                    src="/images/PF Background.png"
                     alt="Project"
                     width={1000}
                     height={500}
