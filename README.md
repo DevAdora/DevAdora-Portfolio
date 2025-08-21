@@ -4,8 +4,8 @@ Welcome to my personal portfolio! This repository showcases my projects, skills,
 
 ## 📋 Table of Contents
 - [About Me](#about-me)
-- [Skills](#skills)
-- [Projects](#projects)
+- [Services](#services)
+- [Works](#works)
 - [Contact](#contact)
 
 ## 🎯 About Me
@@ -14,8 +14,8 @@ Hello! I'm Devadora, a passionate student and freelancer aiming to become a soft
 
 - 🌍 **Location:** Philippines
 - 🎓 **Education:** Bachelor of Science in Information Technology, 2025
-- 💼 **Current Role:** Student and Freelancer
-- 🌱 **Currently learning:** Dart and Flutter
+- 💼 **Current Role:** Freelancer
+- 🌱 **Currently learning:** React(NextJS)
 
 ## 🛠️ Skills
 
