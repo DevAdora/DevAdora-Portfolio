@@ -58,9 +58,17 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      image: "/images/PF Background.png",
+      title: "Apparel/Clothing E-commerce", 
+      name: "Passion meets Fashion",
+      tags: ["2025", "Design", "Development", "Web Application"],
+      desc: "A modern e-commerce web application for apparel and clothing, featuring a user-friendly interface and seamless shopping experience.",
+      tech: "React, NextJS, Supabase, ShadCN UI, Tailwind CSS",
+    },
+    {
       image: "/images/transcare-image.png",
       title: "Healthcare Services ",
-      name: "Web Application",
+      name: "Transcare EMS",
       tags: ["2025", "Design", "Development", "Web Application"],
       desc: "A comprehensive web application for health care services, providing a platform for patients and providers to connect.",
       tech: "React, NextJS, Supabase, ShadCN UI, Tailwind CSS",
@@ -68,15 +76,15 @@ export default function ProjectsPage() {
     {
       image: "/images/freshinsights-logo.png",
       title: "Grocery & E-commerce",
-      name: "Flask Python Application",
-      tags: ["2025", "Design", "Development", "Flask Python"],
+      name: "Fresh Insights",
+      tags: ["2025", "Design", "Development", "Flask Python Application"],
       desc: "An e-commerce platform built with Flask and Python, offering a seamless shopping experience for groceries.",
       tech: "Flask, Python, TXT File, Bootstrap",
     },
     {
       image: "/images/ugyon.png",
       title: "Voucher Reward & Point System",
-      name: "Ugyon App",
+      name: "Ugyon Mobile Application",
       tags: ["Flutter", "Mobile Application", "Development", "24-25"],
       desc: "A mobile application designed to manage voucher rewards and point systems, enhancing customer engagement and loyalty.",
       tech: "Flutter, Dart, Firebase",
@@ -100,7 +108,7 @@ export default function ProjectsPage() {
     {
       image: "/images/arc-tech-logo.png",
       title: "Architecture & Engineering",
-      name: "Arc-tech Website",
+      name: "ARC-TECH",
       tags: ["Design", "Development", "2024", "Website"],
       desc: "A professional website for an architecture and engineering firm, showcasing their projects and services.",
       tech: "HTML, CSS, JavaScript, Tailwind CSS",
@@ -108,7 +116,7 @@ export default function ProjectsPage() {
     {
       image: "/images/hr-image.png",
       title: "Management & Education System",
-      name: "HRMS Website",
+      name: "Southland College HRMS",
       tags: ["2023", "Design", "Development", "Website"],
       desc: "A Human Resource Management System (HRMS) website designed to streamline HR processes and enhance employee management.",
       tech: "PHP, CSS, JavaScript, Tailwind CSS, MySQL",
