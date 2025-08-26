@@ -17,7 +17,6 @@ import {
   FaWordpress,
   FaJsSquare,
   FaFileAlt,
-  
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -58,8 +57,16 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      image: "/images/arc-tech.png",
+      title: "Architectural Showcase & E-commerce",
+      name: "ARC-TECH",
+      tags: ["2025", "Design", "Development", "Web Application"],
+      desc: "An architectural showcase and e-commerce web application, featuring a modern design and seamless user experience for browsing and purchasing architectural products.",
+      tech: "React, Vite, GSAP/Frame Motion, Tailwind CSS",
+    },
+    {
       image: "/images/PF Background.png",
-      title: "Apparel/Clothing E-commerce", 
+      title: "Apparel/Clothing E-commerce",
       name: "Passion meets Fashion",
       tags: ["2025", "Design", "Development", "Web Application"],
       desc: "A modern e-commerce web application for apparel and clothing, featuring a user-friendly interface and seamless shopping experience.",
@@ -105,14 +112,7 @@ export default function ProjectsPage() {
       desc: "A WordPress website for a travel agency, offering services and information for tourists, designed to enhance user experience and engagement.",
       tech: "WordPress, Elementor",
     },
-    {
-      image: "/images/arc-tech-logo.png",
-      title: "Architecture & Engineering",
-      name: "ARC-TECH",
-      tags: ["Design", "Development", "2024", "Website"],
-      desc: "A professional website for an architecture and engineering firm, showcasing their projects and services.",
-      tech: "HTML, CSS, JavaScript, Tailwind CSS",
-    },
+
     {
       image: "/images/hr-image.png",
       title: "Management & Education System",
