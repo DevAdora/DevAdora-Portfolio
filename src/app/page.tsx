@@ -106,13 +106,25 @@ export default function Home() {
         <>
           <Header />
           {/* Add top padding when header becomes fixed to prevent content jump */}
-          <div className={isScrolled ? 'pt-20' : ''}>
-            <Hero />
-            <Services />
-            <Projects />
-            <About />
-            <Testimonials />
-            <Contact />
+          <div className={isScrolled ? "pt-20" : ""}>
+            <section id="home">
+              <Hero />
+            </section>
+            <section id="services">
+              <Services />
+            </section>
+            <section id="projects">
+              <Projects />
+            </section>
+            <section id="about">
+              <About />
+            </section>
+            <section id="testimonials">
+              <Testimonials />
+            </section>
+            <section id="contact">
+              <Contact />
+            </section>
             <Footer />
           </div>
         </>

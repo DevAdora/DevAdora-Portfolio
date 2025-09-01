@@ -52,9 +52,9 @@ export default function Hero() {
             <div>
               <Link
                 href="#contact"
-                className="hero-btn bg-dark-black text-white-dove text-[1.2rem] lg:text-[1.5rem] xl:text-[2rem] no-underline p-4 rounded-[45px]"
+                className="hero-btn bg-dark-black text-white-dove text-[1.2rem] lg:text-[1.5rem] xl:text-[1.6rem] no-underline p-8 rounded-[45px]"
               >
-                BOOK A CALL ↗
+                BOOK A CALL
               </Link>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Hero() {
               href="#contact"
               className="inline-block bg-black text-white px-6 py-3 rounded-full text-sm sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-medium tracking-wide"
             >
-              BOOK A CALL ↗
+              BOOK A CALL 
             </Link>
           </div>
         </div>

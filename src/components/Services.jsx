@@ -10,7 +10,6 @@ export default function Services() {
     offset: ["start start", "end end"],
   });
 
-  // Transform values for the box positions based on scroll
   const box2Y = useTransform(scrollYProgress, [0, 0.33], ["100%", "0%"]);
   const box3Y = useTransform(scrollYProgress, [0.33, 0.66], ["100%", "0%"]);
 
@@ -71,7 +70,7 @@ export default function Services() {
       </motion.div>
 
       <motion.div
-        className="box border-t border-white-dove sticky top-[22.5%] w-full h-screen flex flex-col bg-dark-black z-[2]"
+        className="box border-t border-white-dove sticky top-[15%] sm:top[15%] md:top-[17.5%] w-full h-screen flex flex-col bg-dark-black z-[2]"
         style={{ y: box2Y }}
       >
         <div className="mt-4 p-8 md:p-8">

@@ -21,12 +21,10 @@ export default function Header() {
     };
     
     const handleScroll = () => {
-      // Check if we've scrolled past the hero section (adjust threshold as needed)
-      const heroHeight = window.innerHeight; // Assuming hero is full viewport height
-      setIsScrolled(window.scrollY > heroHeight * 0.3); // Show burger after 30% of hero height
+      const heroHeight = window.innerHeight;
+      setIsScrolled(window.scrollY > heroHeight * 0.3);
     };
 
-    // Initial check
     checkMobile();
     
     window.addEventListener("scroll", handleScroll);
@@ -56,7 +54,6 @@ export default function Header() {
               <h1>DevAdora ©</h1>
             </div> */}
 
-            {/* Desktop Menu - Always visible on desktop */}
             {!isScrolled ? (
               <ul className="flex gap-[5px]">
                 {navItems.map((item, i) => (
@@ -82,11 +79,9 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Divider - only show when not scrolled */}
         {!isScrolled && <div className="header-line w-full bg-light-dark"></div>}
       </header>
 
-      {/* Floating Burger Button - Shows when scrolled or on mobile */}
       {(isScrolled || isMobile) && (
         <button
           onClick={toggleMobileMenu}

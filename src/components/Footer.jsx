@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");
@@ -44,7 +45,10 @@ export default function Footer() {
               "Contact",
             ].map((item) => (
               <li key={item}>
-                <a href={`#${item.toLowerCase()}`} className="hover:underline">
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                >
                   {item}
                 </a>
               </li>
@@ -57,16 +61,47 @@ export default function Footer() {
           <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             Socials
           </h3>
-          <ul className="space-y-2 text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            {["Linkedin", "YouTube", "Instagram", "Bento", "Github"].map(
-              (item) => (
-                <li key={item}>
-                  <a href="#" className="hover:underline">
-                    {item}
-                  </a>
-                </li>
-              )
-            )}
+          <ul className="space-y-2  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/rai-reyes-jr-6bb906272/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/soullessr4i/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://bento.me/devadora"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Bento
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/DevAdora"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                GitHub
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -76,13 +111,30 @@ export default function Footer() {
             Contacts
           </h3>
           <ul className="space-y-2  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            {["Gmail", "Viber", "Telegram", "Discord"].map((item) => (
-              <li key={item}>
-                <a href="#" className="hover:underline">
-                  {item}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a
+                href="mailto:raireyesjr@gmail.com?subject=Hello&body=I want to contact you"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Gmail
+              </a>
+            </li>
+            <li>
+              <a
+                href="viber://chat?number=%2B639171234567"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Viber
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://t.me/yourusername"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Telegram
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -102,14 +154,13 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Scroll to Top */}
-        {/* <button
+        <button
           onClick={scrollToTop}
-          className="absolute bottom-0 right-0 bg-gray-300 rounded-full p-3 hover:bg-gray-400 transition"
+          className="absolute bottom-0 right-0 bg-black/50 rounded-full p-3 text-[#f0ede4] hover:bg-black transition cursor-pointer"
           aria-label="Scroll to top"
         >
           <FaArrowUp />
-        </button> */}
+        </button>
       </div>
     </footer>
   );

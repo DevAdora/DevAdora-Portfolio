@@ -112,6 +112,7 @@ export default function Projects() {
 
                 {/* Details */}
                 <div className="flex flex-col gap-6 px-2 sm:px-0">
+                  
                   <h3 className="text-[1.2rem]">{project.title}</h3>
                   <div className="text-[1.5rem] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 md:flex-col md:items-start md:justify-start">
                     <h2>{project.name}</h2>
