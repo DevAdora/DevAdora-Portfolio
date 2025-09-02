@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");
@@ -30,7 +31,6 @@ export default function Footer() {
   return (
     <footer className="text-black py-12 px-8 md:px-16 text-sm font-light relative">
       <div className="grid grid-cols-3 md:grid-cols-3 gap-12 border-b border-gray-300 pb-8">
-        {/* Menu */}
         <div>
           <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             Menu
@@ -45,18 +45,17 @@ export default function Footer() {
               "Contact",
             ].map((item) => (
               <li key={item}>
-                <a
-                  href={`#${item.toLowerCase()}`}
+                <Link
+                  href={`/#${item.toLowerCase()}`}
                   className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Socials */}
         <div>
           <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             Socials
@@ -105,7 +104,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Resources */}
         <div>
           <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
             Contacts
@@ -156,7 +154,7 @@ export default function Footer() {
 
         <button
           onClick={scrollToTop}
-          className="absolute bottom-0 right-0 bg-black/50 rounded-full p-3 text-[#f0ede4] hover:bg-black transition cursor-pointer"
+          className="absolute bottom-0 right-0 bg-black/50 rounded-full p-2 md:p-3 text-[#f0ede4] hover:bg-black transition cursor-pointer"
           aria-label="Scroll to top"
         >
           <FaArrowUp />

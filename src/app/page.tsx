@@ -105,7 +105,6 @@ export default function Home() {
       ) : (
         <>
           <Header />
-          {/* Add top padding when header becomes fixed to prevent content jump */}
           <div className={isScrolled ? "pt-20" : ""}>
             <section id="home">
               <Hero />

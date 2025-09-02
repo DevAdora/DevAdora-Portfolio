@@ -148,9 +148,7 @@ export default function ProjectsPage() {
               key={index}
               className="flex-col flex md:flex-col md:items-start relative md:h-[100%]"
             >
-              {/* Image + Details */}
               <div className="flex flex-col lg:flex-row w-100% md:w-[100%] gap-10 min-h-[100vh] md:min-h-[40vh]">
-                {/* Image Fullscreen on small screens */}
                 <div className="w-[100%] lg:w-[50%] h-auto sm:h-[40vh] md:h-[40vh] lg:h-[40vh] xl:h-[40vh] 2xl:h-[40vh] overflow-hidden">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
@@ -166,7 +164,6 @@ export default function ProjectsPage() {
                   </motion.div>
                 </div>
 
-                {/* Details */}
                 <div className="flex flex-col gap-2 lg:gap-6 px-2 sm:px-0 w-[100%] lg:w-[50%] justify-between ">
                   <h3 className="text-[1.2rem]">{project.title}</h3>
                   <div className="text-[1.5rem] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
@@ -175,7 +172,7 @@ export default function ProjectsPage() {
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="text-[1rem] py-2 px-4 rounded-3xl border border-white-dove text-base projects"
+                          className="text-[0.7rem] md:text-[1rem] py-1 px-2 md:py-2 md:px-4 rounded-3xl border border-white-dove text-base projects"
                         >
                           {tag}
                         </span>
@@ -183,16 +180,15 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="text-[1.2rem] text-white-dove">
-                    <span className="text-[1.2rem]">{project.desc}</span>
+                    <span className="text-[1rem] md:text-[1.2rem]">{project.desc}</span>
                   </div>
-                  {/* === Tech Stack === */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.split(",").map((tech, i) => {
                       const trimmed = tech.trim();
                       return (
                         <span
                           key={i}
-                          className="flex items-center gap-2 py-2 px-4  border border-white-dove rounded-3xl text-md"
+                          className="flex items-center gap-2 text-[0.8rem] md:text-[1rem] py-1 px-2 md:py-2 md:px-4 border border-white-dove rounded-3xl "
                         >
                           {techIcons[trimmed] || null}
                           {trimmed}
