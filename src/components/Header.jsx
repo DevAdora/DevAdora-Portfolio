@@ -48,12 +48,8 @@ export default function Header() {
     <>
       <header className={`${isScrolled ? 'fixed top-0 left-0 w-full z-50': 'relative'}`}>
         <nav>
-          {/* === Desktop Nav (≥768px) === */}
           <div className="header hidden md:flex justify-end items-start p-7">
-            {/* <div className="text-[1.2rem] font-bold text-gray-950">
-              <h1>DevAdora ©</h1>
-            </div> */}
-
+          
             {!isScrolled ? (
               <ul className="flex gap-[5px]">
                 {navItems.map((item, i) => (
@@ -70,12 +66,8 @@ export default function Header() {
             ) : null}
           </div>
 
-          {/* === Mobile Nav (<768px) === */}
           <div className="header flex md:hidden justify-between items-start px-4 py-4">
-            {/* Left side: Branding */}
-            {/* <div className="text-[18px] font-bold text-gray-950">
-              <h1>DevAdora ©</h1>
-            </div> */}
+         
           </div>
         </nav>
 
