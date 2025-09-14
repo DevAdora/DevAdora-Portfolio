@@ -75,14 +75,14 @@ export default function Testimonials() {
               variants={variants}
               animate={position}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute w-[400px] md:w-[600px] h-[450px] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-between p-6"
+              className="absolute w-[350px] md:w-[600px] h-[450px] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-between p-6"
             >
               <img
                 src={testimonials.image}
                 alt={testimonials.name}
-                className="w-20 h-20 rounded-full object-cover mb-4"
+                className="w-15 h-15 md:w-20 md:h-20 rounded-full object-cover mb-4"
               />
-              <p className="text-black text-center flex-1 text-black">
+              <p className="text-black text-center flex-1 text-black text-[0.8rem] md:text-[1rem] ">
                 {testimonials.feedback}
               </p>
               <div className="mt-4 text-center">
