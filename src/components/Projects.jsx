@@ -95,7 +95,7 @@ export default function Projects() {
                 className="flex flex-col relative min-h-[60vh]"
               >
                 {/* Image */}
-                <div className="w-full h-auto sm:h-[60vh] md:h-[30vh] mb-4  overflow-hidden">
+                <div className="w-full h-auto lg:h-[80vh] sm:h-[60vh] md:h-[30vh] mb-4  overflow-hidden">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}

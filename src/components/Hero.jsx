@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="flex items-left justify-end gap-[10px] w-1/3">
             <div className="w-4/5 items-center justify-center tracking-[1.4px] leading-[1.4]">
               <h3 className="text-dark-black text-left text-[1rem] xl:text-[1.2rem]">
-                An aspiring freelance software developer & web designer from the
+                A software developer & freelancer from the
                 Philippines. I help brands and startups build premium,
                 results-driven websites.{" "}
               </h3>
