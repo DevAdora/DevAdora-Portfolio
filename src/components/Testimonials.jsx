@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import testimonials from "@/data/testimonials";
 
 export default function Testimonials() {
@@ -23,35 +23,54 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6">
-      <div className="py-5 text-[4rem] sm:text-[7rem] md:text-[7rem] lg:text-[7rem] xl:text-[8rem]">
-        <h1 className="pb-5 leading-15 sm:leading-24 md:leading-24 lg:leading-24 xl:leading-24 2xl:leading-24">
-          WORDS FROM OTHERS.
-        </h1>
+    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 bg-[#f9fafb]">
+      <div className="flex flex-col items-center justify-center py-10">
+        <div className="relative flex flex-col items-center justify-center text-center">
+          <h1 className="font-serif italic text-[2.5rem] sm:text-[2.5rem] md:text-[5rem] lg:text-[6rem] leading-12 md:leading-20 lg:leading-20">
+            “Here are <span className="font-semibold">some</span>
+            <InlineImage
+              src="/images/Goranow Designs.svg"
+              alt="Goranow Designs"
+              className="h-[100%] w-[100%]"
+            />
+            &nbsp;statements from clients, or{" "}
+            <span className="font-semibold">other</span>
+            <InlineImage src="/images/Siren.png" alt="Siren" />
+            &nbsp;individuals that describe their good experiences with{" "}
+            <span className="font-semibold">me</span>
+            <InlineImage src="/images/hr-image.png" alt="HR" />”
+          </h1>
+        </div>
+
+        <p className="mt-4 text-gray-500 text-center italic text-sm sm:text-base">
+          Insights and reflections from those who’ve experienced our work.
+        </p>
       </div>
+
       <div className="flex gap-4 mb-8">
         <button
           onClick={prev}
-          className="p-3 rounded-full border-black border text-black hover:bg-black hover:text-white cursor-pointer"
+          className="p-3 rounded-full border-gray-400 border text-gray-700 hover:bg-gray-800 hover:text-white cursor-pointer transition"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={next}
-          className="p-3 rounded-full border-black border text-black hover:bg-black hover:text-white  cursor-pointer"
+          className="p-3 rounded-full border-gray-400 border text-gray-700 hover:bg-gray-800 hover:text-white cursor-pointer transition"
         >
           <ChevronRight size={24} />
         </button>
       </div>
 
+      {/* Testimonials Carousel */}
       <div className="relative flex w-full h-[500px] justify-center items-center">
-        {testimonials.map((testimonials, i) => {
+        {testimonials.map((testimonial, i) => {
           const position = getPosition(i);
 
           const variants = {
             center: {
               x: 0,
-              scale: 1.1,
+              scale: 1.05,
               zIndex: 20,
               opacity: 1,
             },
@@ -59,41 +78,39 @@ export default function Testimonials() {
               x: "-90%",
               scale: 0.9,
               zIndex: 10,
-              opacity: 0.6,
+              opacity: 0.5,
             },
             right: {
               x: "90%",
               scale: 0.9,
               zIndex: 10,
-              opacity: 0.6,
+              opacity: 0.5,
             },
           };
 
           return (
             <motion.div
-              key={testimonials.id}
+              key={testimonial.id}
               variants={variants}
               animate={position}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute w-[350px] md:w-[600px] h-[450px] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col items-center justify-between p-6"
+              className="absolute w-[350px] md:w-[600px] h-[450px] bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center justify-between p-8"
             >
               <img
-                src={testimonials.image}
-                alt={testimonials.name}
-                className="w-15 h-15 md:w-20 md:h-20 rounded-full object-cover mb-4"
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-20 h-20 rounded-full object-cover mb-4 border border-gray-200 shadow-sm"
               />
-              <p className="text-black text-center flex-1 text-black text-[0.8rem] md:text-[1rem] ">
-                {testimonials.feedback}
+              <p className="text-gray-700 text-center italic flex-1 text-[0.9rem] md:text-[1.1rem] leading-relaxed">
+                “{testimonial.feedback}”
               </p>
               <div className="mt-4 text-center">
-                <h3 className="font-bold text-xl text-black">
-                  {testimonials.name}
+                <h3 className="font-semibold text-lg text-gray-800">
+                  {testimonial.name}
                 </h3>
-                <p className="text-gray-500 text-black">
-                  {testimonials.role}
-                </p>
-                <p className="italic text-gray-500 text-black text-[0.8rem]">
-                  {testimonials.skill}
+                <p className="text-gray-500 text-sm">{testimonial.role}</p>
+                <p className="italic text-gray-400 text-[0.8rem]">
+                  {testimonial.skill}
                 </p>
               </div>
             </motion.div>
@@ -101,5 +118,35 @@ export default function Testimonials() {
         })}
       </div>
     </section>
+  );
+}
+
+function InlineImage({ src, alt }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <span
+      className="inline-flex items-baseline align-middle mx-2 relative"
+      style={{
+        height: "1em",
+        width: "2em", 
+        verticalAlign: "text-bottom",
+        cursor: hovered ? `url(${src}) 16 16, auto` : "auto",
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          height: "100%",
+          width: "100%",
+          objectFit: "cover",
+          opacity: hovered ? 1 : 0.85, 
+          transition: "opacity 0.2s ease-in-out",
+        }}
+      />
+    </span>
   );
 }
