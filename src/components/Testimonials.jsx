@@ -23,7 +23,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 bg-[#f9fafb]">
+    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 ">
       <div className="flex flex-col items-center justify-center py-10">
         <div className="relative flex flex-col items-center justify-center text-center">
           <h1 className="font-serif italic text-[2.5rem] sm:text-[2.5rem] md:text-[5rem] lg:text-[6rem] leading-12 md:leading-20 lg:leading-20">
@@ -126,7 +126,7 @@ function InlineImage({ src, alt }) {
 
   return (
     <span
-      className="inline-flex items-baseline align-middle mx-2 relative"
+      className="inline-flex items-baseline align-middle mx-2 relative xl:h[80%] xl:w-[80%]"
       style={{
         height: "1em",
         width: "2em", 
