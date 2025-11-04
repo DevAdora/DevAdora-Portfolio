@@ -76,40 +76,58 @@ export default function Header() {
           <div className="header-line w-full bg-light-dark"></div>
         )}
       </header>
-
-      {(isScrolled || isMobile) && (
-        <button
-          onClick={toggleMobileMenu}
-          className={`fixed top-4 right-10 z-50 w-20 h-20 rounded-full flex flex-col justify-center items-center space-y-1 transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer ${
-            isMobileMenuOpen ? "space-y-0" : "space-y-1"
+      {/* Top-right container */}
+      <div className="fixed top-4 right-10 flex items-center space-x-4 z-50">
+        {/* Show BOOK A CALL + burger only when scrolled or mobile */}
+        <div
+          className={`flex items-center space-x-4 transition-all duration-300 ${
+            isScrolled || isMobile
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-2 pointer-events-none"
           }`}
-          style={{ backgroundColor: "#323333" }}
-          aria-label="Toggle menu"
         >
-          <span
-            className={`w-10 h-0.5 transition-all duration-500 ease-in-out ${
-              isMobileMenuOpen
-                ? "rotate-45 translate-y-0.5"
-                : "rotate-0 translate-y-0"
+          {/* BOOK A CALL beside burger */}
+          <Link
+            href="#contact"
+            className="bg-[#323333] text-white px-8 py-4 rounded-full text-sm sm:text-base md:text-base font-medium tracking-wide hover:opacity-90 transition"
+          >
+            BOOK A CALL
+          </Link>
+
+          {/* Burger Menu Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className={`w-16 h-16 rounded-full flex flex-col justify-center items-center space-y-1 transition-all duration-300 hover:scale-105 shadow-lg cursor-pointer ${
+              isMobileMenuOpen ? "space-y-0" : "space-y-1"
             }`}
-            style={{ backgroundColor: "#f0ede4" }}
-          ></span>
-          <span
-            className={`w-10 h-0.5 transition-all duration-500 ease-in-out ${
-              isMobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-            }`}
-            style={{ backgroundColor: "#f0ede4" }}
-          ></span>
-          <span
-            className={`w-10 h-0.5 transition-all duration-500 ease-in-out ${
-              isMobileMenuOpen
-                ? "-rotate-45 -translate-y-0.5"
-                : "rotate-0 translate-y-0"
-            }`}
-            style={{ backgroundColor: "#f0ede4" }}
-          ></span>
-        </button>
-      )}
+            style={{ backgroundColor: "#323333" }}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`w-8 h-0.5 transition-all duration-500 ease-in-out ${
+                isMobileMenuOpen
+                  ? "rotate-45 translate-y-0.5"
+                  : "rotate-0 translate-y-0"
+              }`}
+              style={{ backgroundColor: "#f0ede4" }}
+            ></span>
+            <span
+              className={`w-8 h-0.5 transition-all duration-500 ease-in-out ${
+                isMobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+              }`}
+              style={{ backgroundColor: "#f0ede4" }}
+            ></span>
+            <span
+              className={`w-8 h-0.5 transition-all duration-500 ease-in-out ${
+                isMobileMenuOpen
+                  ? "-rotate-45 -translate-y-0.5"
+                  : "rotate-0 translate-y-0"
+              }`}
+              style={{ backgroundColor: "#f0ede4" }}
+            ></span>
+          </button>
+        </div>
+      </div>
 
       {/* Side Menu Panel */}
       <>

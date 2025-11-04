@@ -1,107 +1,148 @@
 "use client";
-import { motion } from "framer-motion";
+
+import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Hero() {
+export default function NewArrivals() {
   return (
-    <main id="home" className="w-full">
-      {/* === Desktop View (md and up) === */}
-      <div className="hidden md:flex flex-col items-center justify-center text-center">
-        <motion.div
-          className="h-full text-dark-black"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="flex w-full text-center justify-center">
-            <h1 className="font-bold flex-wrap text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[13rem]">
-              DEVADORA
-            </h1>
-            <span className="flex-wrap text-[4rem] sm:text-[4rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[7rem]">
-              ©
-            </span>
-          </div>
-        </motion.div>
-
-        <div className="flex justify-between items-center h-full w-full mb-[7.5%]">
-          {/* Quote Left */}
-          <div className="flex items-left justify-end gap-[10px] w-1/3">
-            <div className="w-4/5 items-center justify-center tracking-[1.4px] leading-[1.4]">
-              <h3 className="text-dark-black text-left text-[1rem] xl:text-[1.2rem]">
-                A software developer & freelancer from the
-                Philippines. I help brands and startups build premium,
-                results-driven websites.{" "}
-              </h3>
-            </div>
-          </div>
-
-          {/* Center Image */}
-          <div className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[325px] ml-8">
-            <Image
+    <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+      {/* === DESKTOP VIEW (≥1024px) === */}
+      <div className="hidden lg:flex relative w-full h-full items-center justify-center">
+        {/* === Filled Text === */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+          {" "}
+          <h1 className="font-semibold uppercase text-[#0a0a09] leading-none text-center text-[8rem] md:text[10rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[18rem]">
+            {" "}
+            DEV <br /> ADORA{" "}
+          </h1>{" "}
+        </div>{" "}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-40">
+          {" "}
+          <h1
+            className="font-semibold uppercase text-transparent leading-none text-center text-[8rem] md:text[10rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[18rem]"
+            style={{ WebkitTextStroke: "2px #0a0a09" }}
+          >
+            {" "}
+            DEV <br /> ADORA{" "}
+          </h1>{" "}
+        </div>
+        {/* === Left Image === */}
+        <div className="absolute top-[20%] left-[10%] rotate-[-10deg] z-30">
+          <div className="relative">
+            <img
               src="/images/devadora-image.png"
-              width={400}
-              height={500}
-              alt="DevAdora Portrait"
-              className="w-full h-auto"
+              alt="Model Left"
+              className="object-cover rounded-lg w-[180px] lg:w-[220px] xl:w-[280px] 2xl:w-[350px]"
+            />
+            {/* Heart icon */}
+            <div className="absolute top-2 left-2 bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg">
+              <span className="text-red-500 text-lg">♥</span>
+            </div>
+            {/* Gradient overlay outline */}
+            <div
+              className="absolute inset-0 rounded-lg"
+              style={{
+                mixBlendMode: "multiply",
+                background:
+                  "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 70%)",
+              }}
             />
           </div>
-
-          {/* Contact Button Right */}
-          <div className="flex justify-center items-center h-full w-1/3">
-            <div>
-              <Link
-                href="#contact"
-                className="hero-btn bg-dark-black text-white-dove text-[1.2rem] lg:text-[1.5rem] xl:text-[1.6rem] no-underline p-8 rounded-[45px]"
-              >
-                BOOK A CALL
-              </Link>
+        </div>
+        {/* === Right Image === */}
+        <div className="absolute top-[30%] right-[10%] rotate-[8deg] z-30">
+          <div className="relative">
+            <img
+              src="/images/devadora-image.png"
+              alt="Model Right"
+              className="object-cover rounded-lg w-[180px] lg:w-[220px] xl:w-[280px] 2xl:w-[350px]"
+            />
+            {/* Tag icon */}
+            <div className="absolute -top-3 right-2 bg-[#FF5733] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-white rotate-[10deg]">
+              ♥
             </div>
+            {/* Gradient overlay outline */}
+            <div
+              className="absolute inset-0 rounded-lg"
+              style={{
+                mixBlendMode: "multiply",
+                background:
+                  "linear-gradient(-45deg, transparent 30%, rgba(255,255,255,0.2) 70%)",
+              }}
+            />
           </div>
+        </div>
+        {/* === Buttons === */}
+        <div className="absolute top-[25%] right-[15%] z-40">
+          <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold px-6 py-3 rounded-full shadow-xl hover:scale-105 transition-all border border-white">
+            🔥 SOFTWARE DEVELOPER
+          </button>
+        </div>
+        <div className="absolute top-[60%] left-[15%] z-40">
+          <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold px-6 py-3 rounded-full shadow-xl hover:scale-105 transition-all border border-white">
+            🔥 FREELANCER
+          </button>
+        </div>
+        {/* === Description === */}
+        <div className="absolute bottom-[8%] left-[10%] z-40 max-w-md">
+          <p className="text-white text-sm lg:text-base leading-relaxed bg-black/40 p-4 rounded-lg backdrop-blur-sm border border-white/20">
+            A software developer & freelancer from the Philippines. I help
+            brands and startups build premium, results-driven websites.
+          </p>
         </div>
       </div>
 
-      {/* === Mobile / Tablet View (<768px) === */}
-      <div className="flex md:hidden flex-col items-start justify-start text-left px-6 py-8 min-h-[80vh] sm:min-h-screen md:min-h-screen lg:min-h-screen xl:min-h-screen 2xl:min-h-screen relative">
+      {/* === MOBILE & TABLET (<1024px) === */}
+      <div className="flex lg:hidden flex-col items-start justify-start text-left px-6 py-10 min-h-screen relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="font-bold text-[3.5rem] leading-none sm:text-[6rem] tracking-tight flex-wrap">
+          <h1 className="font-bold text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] leading-none tracking-tight">
             DEVADORA<span className="ml-2">©</span>
           </h1>
         </motion.div>
 
-        <p className="text-[1rem] mt-6 max-w-md">
+        <p className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] mt-6 max-w-md">
           An aspiring freelance software developer & web designer from the
           Philippines. I help brands and startups build premium, results-driven
           websites.
         </p>
 
-        {/* Bottom-Left Image */}
-        <div className="absolute bottom-6 left-6">
-          <Image
-            src="/images/devadora-image.png"
-            width={200}
-            height={200}
-            alt="DevAdora"
-            className="rounded-md"
-          />
+        {/* === Mobile/Tablet Buttons === */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold px-5 py-3 rounded-full shadow-lg hover:scale-105 transition">
+            🔥 SOFTWARE DEVELOPER
+          </button>
+          <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold px-5 py-3 rounded-full shadow-lg hover:scale-105 transition">
+            🔥 FREELANCER
+          </button>
         </div>
 
-        {/* Bottom-Right Info */}
-        <div className="absolute bottom-6 right-6 text-right text-xs w-1/2">
-          <div className="mt-6">
-            <Link
-              href="#contact"
-              className="inline-block bg-black text-white px-6 py-3 rounded-full text-sm sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-medium tracking-wide"
-            >
-              BOOK A CALL 
-            </Link>
+        {/* === Mobile Image with outline === */}
+        <div className="absolute bottom-8 left-6 sm:right-6 sm:left-auto">
+          <div className="relative">
+            <Image
+              src="/images/devadora-image.png"
+              width={200}
+              height={200}
+              alt="DevAdora"
+              className="rounded-md shadow-lg"
+            />
+            <div
+              className="absolute inset-0 rounded-md"
+              style={{
+                mixBlendMode: "multiply",
+                background:
+                  "linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 70%)",
+              }}
+            />
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }
