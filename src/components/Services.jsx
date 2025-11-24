@@ -69,7 +69,7 @@ export default function Services() {
       </motion.div>
 
       <motion.div
-        className="box border-t border-white-dove sticky top-[15%] md:top-[15%] lg:top-[22.5%] xl:top[20%] w-full h-screen flex flex-col bg-dark-black z-[2]"
+        className="box border-t border-white-dove sticky top-[15%] sm:top-[17.5%] md:top-[17.5%] lg:top-[20%] xl:top[20%] w-full h-screen flex flex-col bg-dark-black z-[2]"
         style={{ y: box2Y }}
       >
         <div className="mt-4 p-8 md:p-8">

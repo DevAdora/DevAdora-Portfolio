@@ -101,7 +101,7 @@ export default function Testimonials() {
                 alt={testimonial.name}
                 className="w-20 h-20 rounded-full object-cover mb-4 border border-gray-200 shadow-sm"
               />
-              <p className="text-gray-700 text-center italic flex-1 text-[0.9rem] md:text-[1.1rem] leading-relaxed">
+              <p className="text-gray-700 text-center italic flex-1 text-[0.8rem] md:text-[1.1rem] leading-relaxed">
                 “{testimonial.feedback}”
               </p>
               <div className="mt-4 text-center">
@@ -126,7 +126,7 @@ function InlineImage({ src, alt }) {
 
   return (
     <span
-      className="inline-flex items-baseline align-middle mx-2 relative xl:h[80%] xl:w-[80%]"
+      className="inline-flex items-center justify-center align-middle mx-2 relative xl:h[60%] xl:w-[60%]"
       style={{
         height: "1em",
         width: "2em", 
@@ -140,9 +140,10 @@ function InlineImage({ src, alt }) {
         src={src}
         alt={alt}
         style={{
-          height: "100%",
-          width: "100%",
+          height: "80%",
+          width: "80%",
           objectFit: "cover",
+          objectPosition: "center",
           opacity: hovered ? 1 : 0.85, 
           transition: "opacity 0.2s ease-in-out",
         }}
