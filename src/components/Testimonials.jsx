@@ -50,13 +50,13 @@ export default function Testimonials() {
       <div className="flex gap-4 mb-8">
         <button
           onClick={prev}
-          className="p-3 rounded-full border-gray-400 border text-gray-700 hover:bg-gray-800 hover:text-white cursor-pointer transition"
+          className="p-3 rounded-full border-gray-400 border text-gray-700 hover:bg-[#0a0a09] ease-in hover:text-white cursor-pointer transition"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={next}
-          className="p-3 rounded-full border-gray-400 border text-gray-700 hover:bg-gray-800 hover:text-white cursor-pointer transition"
+          className="p-3 rounded-full border-gray-400 border text-gray-700 hover:bg-[#0a0a09] ease-in hover:text-white cursor-pointer transition"
         >
           <ChevronRight size={24} />
         </button>
@@ -129,7 +129,7 @@ function InlineImage({ src, alt }) {
       className="inline-flex items-center justify-center align-middle mx-2 relative xl:h[60%] xl:w-[60%]"
       style={{
         height: "1em",
-        width: "2em", 
+        width: "2em",
         verticalAlign: "text-bottom",
         cursor: hovered ? `url(${src}) 16 16, auto` : "auto",
       }}
@@ -144,7 +144,7 @@ function InlineImage({ src, alt }) {
           width: "80%",
           objectFit: "cover",
           objectPosition: "center",
-          opacity: hovered ? 1 : 0.85, 
+          opacity: hovered ? 1 : 0.85,
           transition: "opacity 0.2s ease-in-out",
         }}
       />

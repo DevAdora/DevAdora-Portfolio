@@ -40,14 +40,14 @@
 body {
   font-family: var(--font-rubik);
 }
-.grainy-overlay {
+/* .grainy-overlay {
   background-image: url("/images/noisy.png");
   background-repeat: repeat;
   opacity: 1;
   pointer-events: none;
   z-index: 1000;
   mix-blend-mode: overlay;
-}
+} */
 .header {
   color: var(--light-dark-color);
 }
