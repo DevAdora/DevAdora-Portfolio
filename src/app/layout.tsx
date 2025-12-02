@@ -38,7 +38,7 @@ export default function RootLayout({
 
         {/* Analytics Tracking Script */}
         <Script 
-          src="https://web-analytics-tan.vercel.app/track.js" 
+          src="https://web-analytics-tan.vercel.app/api/track.js" 
           data-site-id="portfolio"
           strategy="afterInteractive"
         />
