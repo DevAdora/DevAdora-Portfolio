@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Karla, Rubik } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "DevAdora",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${rubik.variable} ${karla.variable} antialiased`}>
         <div className="relative">
           {children}
+          <SpeedInsights />
           <div className="grainy-overlay pointer-events-none absolute inset-0 z-50" />
         </div>
       </body>
