@@ -39,11 +39,11 @@ export default function RootLayout({
         </div>
 
         {/* Analytics Tracking Script */}
-        <script
+        <Script
           src="https://web-analytics-tan.vercel.app/api/track.js"
           data-site-id="portfolio"
           async
-        ></script>
+        ></Script>
       </body>
     </html>
   );
