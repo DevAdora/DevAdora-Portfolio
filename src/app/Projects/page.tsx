@@ -57,7 +57,15 @@ export default function ProjectsPage() {
 
   const projects = [
     {
-      image: "/images/arc-tech.png",
+      image: "/images/analytique.png",
+      title: "Data and Analytics ",
+      name: "Analytique",
+      tags: ["2025", "Design", "Development", "Web Application"],
+      desc: "An open source platform for free, that could scrape live data for analytics of your deployed web application online",
+      tech: "NextJS, Supabase, Tailwind CSS",
+    },
+    {
+      image: "/images/arc-tech (2).png",
       title: "Architectural Showcase & E-commerce",
       name: "ARC-TECH",
       tags: ["2025", "Design", "Development", "Web Application"],
@@ -180,7 +188,9 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="text-[1.2rem] text-white-dove">
-                    <span className="text-[1rem] md:text-[1.2rem]">{project.desc}</span>
+                    <span className="text-[1rem] md:text-[1.2rem]">
+                      {project.desc}
+                    </span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.split(",").map((tech, i) => {

@@ -8,30 +8,29 @@ export default function Projects() {
   const projects = [
     {
       number: "01.",
-      image: "/images/arc-tech.png",
+      image: "/images/analytique.png",
+      title: "Data and Analytics ",
+      name: "Analytique",
+      tags: ["2025", "Design", "Development", "Web Application"],
+    },
+    {
+      number: "02.",
+      image: "/images/arc-tech (2).png",
       title: "Architectural Showcase & E-commerce",
       name: "ARC-TECH",
       tags: ["2025", "Design", "Development", "Web Application"],
     },
     {
-      number: "02.",
+      number: "03.",
       image: "/images/PF Background.png",
       title: "Apparel/Clothing E-commerce",
       name: "Passion meets Fashion",
-      tags: ["2025", "Design", "Development", "Web Application"],
-    },
-    {
-      number: "03.",
-      image: "/images/transcare-image.png",
-      title: "Healthcare Services ",
-      name: "Transcare EMS",
       tags: ["2025", "Design", "Development", "Web Application"],
     },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // store refs for each project
   const projectRefs = projects.map(() =>
     useInView({
       threshold: 0.5,
@@ -39,7 +38,6 @@ export default function Projects() {
     })
   );
 
-  // update activeIndex when scroll changes
   useEffect(() => {
     projectRefs.forEach(({ inView }, index) => {
       if (inView) {
@@ -50,14 +48,12 @@ export default function Projects() {
 
   return (
     <section className="projects h-full py-8 px-[5%] bg-dark-black text-white-dove relative">
-      {/* Section Title */}
       <div className="text-center py-8">
         <h1 className="text-[4rem] sm:text-[7rem] xl:text-[8rem] leading-none text-left lg:text-center">
           SELECTED WORKS
         </h1>
       </div>
 
-      {/* Subheading */}
       <div className="text-white-dove py-8 flex justify-end items-end w-full md:flex-col-reverse">
         <p>(Projects)</p>
         <span className="text-right text-xl w-full sm:w-[70%] md:w-[70%]">
@@ -66,10 +62,7 @@ export default function Projects() {
         </span>
       </div>
 
-      {/* Main Layout: Number (left) + Projects (right) */}
-      {/* Main Layout: Grid with 2 Columns */}
       <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 relative z-10">
-        {/* Sticky Number Column */}
         <div className="hidden md:block">
           <div className="sticky top-40">
             <motion.span
@@ -84,7 +77,6 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Projects Column */}
         <div className="flex flex-col gap-40">
           {projects.map((project, index) => {
             const { ref } = projectRefs[index];
@@ -94,8 +86,7 @@ export default function Projects() {
                 ref={ref}
                 className="flex flex-col relative min-h-[60vh]"
               >
-                {/* Image */}
-                <div className="w-full h-auto lg:h-[80vh] sm:h-[60vh] md:h-[30vh] mb-4  overflow-hidden">
+                <div className="w-full h-auto lg:h-full sm:h-[60vh] md:h-[30vh] mb-4  overflow-hidden">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
@@ -112,7 +103,6 @@ export default function Projects() {
 
                 {/* Details */}
                 <div className="flex flex-col gap-6 px-2 sm:px-0">
-                  
                   <h3 className="text-[1.2rem]">{project.title}</h3>
                   <div className="text-[1.5rem] flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 md:flex-col md:items-start md:justify-start">
                     <h2>{project.name}</h2>
