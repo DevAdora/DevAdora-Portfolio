@@ -8,23 +8,23 @@ export default function Projects() {
   const projects = [
     {
       number: "01.",
+      image: "/images/sml.png",
+      title: "Book/Articles/Platform",
+      name: "Scriptum, Mens, Lumen",
+      tags: ["2025", "Design", "Development", "Web Application"],
+    },
+    {
+      number: "02.",
       image: "/images/analytique.png",
       title: "Data and Analytics ",
       name: "Analytique",
       tags: ["2025", "Design", "Development", "Web Application"],
     },
     {
-      number: "02.",
+      number: "03.",
       image: "/images/arc-tech (2).png",
       title: "Architectural Showcase & E-commerce",
       name: "ARC-TECH",
-      tags: ["2025", "Design", "Development", "Web Application"],
-    },
-    {
-      number: "03.",
-      image: "/images/PF Background.png",
-      title: "Apparel/Clothing E-commerce",
-      name: "Passion meets Fashion",
       tags: ["2025", "Design", "Development", "Web Application"],
     },
   ];

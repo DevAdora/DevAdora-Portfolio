@@ -57,6 +57,14 @@ export default function ProjectsPage() {
 
   const projects = [
     {
+      image: "/images/sml.png",
+      title: "Social Media Platform",
+      name: "Scriptum, Mens, Lumen",
+      tags: ["2025", "Design", "Development", "Web Application"],
+      desc: "About is a website social media platform designed especially for bookworms. Inspired by Medium, SML lets users share book reviews, reading lists, and literary insights—whether short, medium, or long",
+      tech: "NextJS, Supabase, Tailwind CSS",
+    },
+    {
       image: "/images/analytique.png",
       title: "Data and Analytics ",
       name: "Analytique",
