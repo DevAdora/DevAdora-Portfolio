@@ -90,7 +90,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <div className="flex justify-end items-center">
             <nav className=" hidden md:block">
-              <ul className="space-x-6 text-[1.4rem] text-black">
+              <ul className="space-x-6 text-[1.4rem] text-black text-right">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
@@ -186,7 +186,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         ></div>
 
         <div
-          className={`fixed top-0 right-0 h-full bg-[#323333] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto ${
+          className={`fixed top-0 right-0 h-full bg-[#0a0a09] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto ${
             isMobile ? "w-full" : "w-full md:w-[40%]"
           } ${
             isContactFormOpen
@@ -195,7 +195,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
           }`}
         >
           <div className="flex flex-col h-full">
-            <div className="sticky top-0 bg-[#323333] border-b border-white px-6 md:px-10 py-6 z-10">
+            <div className="sticky top-0 bg-[#0a0a09] border-b border-white px-6 md:px-10 py-6 z-10">
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-3xl md:text-4xl tracking-[-1px] text-white">
@@ -250,7 +250,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -276,7 +276,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -301,7 +301,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -327,7 +327,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -363,7 +363,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     href="mailto:hello@arctech.com"
                     className="text-base  text-white/80 hover:text-white transition-colors"
                   >
-                    hello@arctech.com
+                    raireyesjr@gmail.com
                   </a>
                 </div>
 
@@ -373,23 +373,14 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     href="tel:+15550000000"
                     className="text-base  text-white/80 hover:text-white transition-colors"
                   >
-                    +1 (555) 000-0000
+                    +63 76 258 3010
                   </a>
                 </div>
 
                 <div>
-                  <h3 className="text-sm text-white mb-2">OFFICE</h3>
-                  <p className="text-base  text-white/80">
-                    123 Architecture Street
-                    <br />
-                    Design District, NY 10001
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-sm text-white mb-3">FOLLOW US</h3>
+                  <h3 className="text-sm text-white mb-3">FOLLOW ME</h3>
                   <div className="flex gap-4">
-                    {["Instagram", "LinkedIn", "Twitter"].map((social) => (
+                    {["Instagram", "LinkedIn", "GitHub"].map((social) => (
                       <a
                         key={social}
                         href="#"
