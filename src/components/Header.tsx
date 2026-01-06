@@ -1,4 +1,6 @@
-import Link from "next/link"; // ← Changed from react-router-dom
+"use client";
+
+import Link from "next/link";
 import ScrambleText from "./HeaderLinks";
 import { useEffect, useState } from "react";
 
@@ -7,10 +9,10 @@ type HeaderProps = {
 };
 
 const navItems = [
-  { name: "Services, ", path: "/" },
-  { name: "About, ", path: "/About" },
-  { name: "Works, ", path: "/Projects" },
-  { name: "Testimonials, ", path: "/" },
+  { name: "Services", path: "/" },
+  { name: "About ", path: "/About" },
+  { name: "Works ", path: "/Projects" },
+  { name: "Testimonials ", path: "/" },
 ];
 
 export default function Header({ variant = "light" }: HeaderProps) {
@@ -86,15 +88,15 @@ export default function Header({ variant = "light" }: HeaderProps) {
     <>
       {!isScrolled && (
         <header
-          className={`absolute top-0 left-0 w-full z-55 px-8 py-4  ${textColorClass}`}
+          className={`absolute top-0 left-0 w-full z-[45] px-8 py-4 ${textColorClass}`}
         >
-          <div className="flex justify-end items-center">
-            <nav className=" hidden md:block">
-              <ul className="space-x-6 text-[1.4rem] text-black text-right">
+          <div className="flex justify-end items-end">
+            <nav className="hidden md:block">
+              <ul className="text-[1.4rem] text-[#f0ede4] text-end">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
-                      <ScrambleText label={item.name} variant={"dark"} />
+                      <ScrambleText label={item.name} variant={"default"} />
                     </Link>
                   </li>
                 ))}
@@ -104,7 +106,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         </header>
       )}
 
-      <div className="fixed top-6 right-3 flex items-center space-x-4 z-50">
+      <div className="fixed top-6 right-3 flex items-center space-x-4 z-[50]">
         <div
           className={`flex items-center space-x-4 transition-all duration-300 justify-center ${
             isScrolled || isMobile
@@ -114,14 +116,14 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <button
             onClick={openContactForm}
-            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition "
+            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition"
           >
             Get in Touch →
           </button>
 
           <button
             onClick={toggleMobileMenu}
-            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition "
+            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition"
           >
             MENU
           </button>
@@ -130,21 +132,21 @@ export default function Header({ variant = "light" }: HeaderProps) {
 
       <>
         <div
-          className={`fixed inset-0 bg-black/50 z-40 transition-all duration-500 ease-in-out ${
+          className={`fixed inset-0 bg-black/50 z-[55] transition-all duration-500 ease-in-out ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={closeMobileMenu}
         ></div>
 
         <div
-          className={`fixed top-0 right-0 w-full h-full bg-[#0a0a09] z-70 transform transition-all duration-700 ease-in-out ${
+          className={`fixed top-0 right-0 w-full h-full bg-[#0a0a09] z-[60] transform transition-all duration-700 ease-in-out ${
             isMobileMenuOpen
               ? "translate-y-0 opacity-100"
               : "-translate-y-full opacity-0"
           }`}
         >
           <div className="flex flex-col p-8 space-y-8 h-full">
-            <div className="flex justify-center items-center ">
+            <div className="flex justify-center items-center">
               <button
                 onClick={closeMobileMenu}
                 className="w-20 h-20 flex items-center justify-center relative rounded-full transition-all duration-300 text-white text-[1.6rem]"
@@ -179,7 +181,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
 
       <>
         <div
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[65] transition-all duration-500 ease-out ${
             isContactFormOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={closeContactForm}
@@ -201,7 +203,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                   <h2 className="text-3xl md:text-4xl tracking-[-1px] text-white">
                     Get in Touch
                   </h2>
-                  <p className="text-sm text-black/60 mt-1  text-white">
+                  <p className="text-sm text-black/60 mt-1 text-white">
                     Let's start a conversation
                   </p>
                 </div>
@@ -360,8 +362,8 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 <div>
                   <h3 className="text-sm text-white mb-2">EMAIL</h3>
                   <a
-                    href="mailto:hello@arctech.com"
-                    className="text-base  text-white/80 hover:text-white transition-colors"
+                    href="mailto:raireyesjr@gmail.com"
+                    className="text-base text-white/80 hover:text-white transition-colors"
                   >
                     raireyesjr@gmail.com
                   </a>
@@ -370,8 +372,8 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 <div>
                   <h3 className="text-sm text-white mb-2">PHONE</h3>
                   <a
-                    href="tel:+15550000000"
-                    className="text-base  text-white/80 hover:text-white transition-colors"
+                    href="tel:+6376258301"
+                    className="text-base text-white/80 hover:text-white transition-colors"
                   >
                     +63 76 258 3010
                   </a>
@@ -384,7 +386,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                       <a
                         key={social}
                         href="#"
-                        className="text-sm  text-white/80 hover:text-white transition-colors"
+                        className="text-sm text-white/80 hover:text-white transition-colors"
                       >
                         {social}
                       </a>

@@ -49,7 +49,7 @@ export default function ScrambleText({
   }, []);
 
   const variantClasses = {
-    default: "hover:text-white after:bg-white after:bottom-[-10px]", // original hover
+    default: "hover:text-white after:bg-white", // original hover
     light: "hover:text-white after:bg-white ", // white text hover
     dark: "hover:text-black after:bg-black", // black text + underline on hover
   }[variant];

@@ -14,7 +14,6 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const box1Ref = useRef(null);
   const box2Ref = useRef(null);
@@ -34,17 +33,6 @@ export default function Home() {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
-
-  // Track scroll position for header behavior
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-      setIsScrolled(window.scrollY > heroHeight * 0.3);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -105,27 +93,25 @@ export default function Home() {
       ) : (
         <>
           <Header />
-          <div className={isScrolled ? "pt-20" : ""}>
-            <section id="home">
-              <Hero />
-            </section>
-            <section id="services">
-              <Services />
-            </section>
-            <section id="projects">
-              <Projects />
-            </section>
-            <section id="about">
-              <About />
-            </section>
-            <section id="testimonials">
-              <Testimonials />
-            </section>
-            <section id="contact">
-              <Contact />
-            </section>
-            <Footer />
-          </div>
+          <section id="home">
+            <Hero />
+          </section>
+          <section id="services">
+            <Services />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="testimonials">
+            <Testimonials />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
+          <Footer />
         </>
       )}
     </>
