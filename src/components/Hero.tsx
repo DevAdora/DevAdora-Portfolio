@@ -63,19 +63,21 @@ export default function Hero() {
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
-  const leftTransform = scrollProgress * -100; 
-  const rightTransform = scrollProgress * 100; 
+  const leftTransform = scrollProgress * -100;
+  const rightTransform = scrollProgress * 100;
   const opacity = 1 - scrollProgress;
 
   return (
     <section
       id="hero-section"
-      className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10 bg-[#0a0a09]"
+      className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-6 sm:py-8 md:py-10 lg:py-12 bg-[#0a0a09]"
     >
       <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+        {/* ROW 1: Image 1 - Software Developer */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+          {/* Image 1 */}
           <div
-            className="w-full flex justify-center md:justify-end"
+            className="w-full flex justify-center md:justify-end order-1"
             style={{
               transform: `translateX(${leftTransform}%)`,
               opacity: opacity,
@@ -91,40 +93,26 @@ export default function Hero() {
             />
           </div>
 
+          {/* Software Developer Title */}
           <div
-            className="w-full flex items-center"
+            className="w-full flex items-center order-2 px-4 md:px-0"
             style={{
               transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <h1 className="font-bold text-[1.5rem] leading-tight sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] tracking-[-1px] md:tracking-[-2px] text-[#f0ede4]">
+            <h1 className="font-bold text-[2rem] leading-tight sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] tracking-[-1px] md:tracking-[-2px] text-[#f0ede4]">
               Software Developer
             </h1>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
+        {/* ROW 2: Image 2 - DevAdora Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
+          {/* Image 2 - Order 1 on mobile, Order 2 on desktop */}
           <div
-            className="w-full flex flex-col justify-center text-right"
-            style={{
-              transform: `translateX(${leftTransform}%)`,
-              opacity: opacity,
-              transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
-            }}
-          >
-            <h2 className="font-bold text-[1.5rem] leading-tight sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4rem] mb-2 sm:mb-3 text-[#f0ede4]">
-              Rai here!
-            </h2>
-            <p className="text-[0.75rem] sm:text-[0.9rem] md:text-[1.1rem] lg:text-[1.2rem] xl:text-[1.4rem]  leading-relaxed text-[#f0ede4]">
-              The one who bridges imagination and innovation—crafting solutions
-              that don't just function, but resonate.
-            </p>
-          </div>
-
-          <div
-            className="w-full flex justify-center md:justify-start"
+            className="w-full flex justify-center md:justify-start order-1 md:order-2"
             style={{
               transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
@@ -139,51 +127,45 @@ export default function Hero() {
               className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
             />
           </div>
-        </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center">
+          {/* DevAdora Content with Contact Button - Order 2 on mobile, Order 1 on desktop */}
           <div
-            className="w-full flex justify-center md:justify-end"
+            className="w-full flex flex-col justify-center text-left md:text-right order-2 md:order-1 px-4 md:px-0"
             style={{
               transform: `translateX(${leftTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <Image
-              src="/images/hero-bg-3.jpg"
-              width={700}
-              height={400}
-              alt="DevAdora"
-              className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
+            <h2 className="font-bold text-[2rem] leading-tight sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] mb-3 sm:mb-4 text-[#f0ede4]">
+              DevAdora
+            </h2>
+            <p className="text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] xl:text-[1.4rem] leading-relaxed text-[#f0ede4] mb-6">
+              The one who bridges imagination and innovation—crafting solutions
+              that don't just function, but resonate.
+            </p>
 
-          <div
-            className="w-full flex items-center"
-            style={{
-              transform: `translateX(${rightTransform}%)`,
-              opacity: opacity,
-              transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
-            }}
-          >
-            <span
-              onClick={openContactForm}
-              className="text-[0.9rem] sm:text-[1.1rem] md:text-[1.4rem] lg:text-[1.6rem] xl:text-[1.8rem] 2xl:text-[2rem] cursor-pointer font-medium
-                         transition-all duration-300 ease-in-out
-                         relative inline-block
-                         after:content-[''] after:absolute after:left-0 after:bottom-0
-                         after:h-[1px] md:after:h-[2px] after:w-full after:bg-[#f0ede4]
-                         after:transition-all after:duration-300
-                         hover:after:w-0 hover:font-semibold
-                         text-[#f0ede4]"
-            >
-              Get in touch ↘
-            </span>
+            {/* Contact Button */}
+            <div className="w-full flex items-center justify-start md:justify-end">
+              <span
+                onClick={openContactForm}
+                className="text-[1.2rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem] 2xl:text-[2.2rem] cursor-pointer font-medium
+                           transition-all duration-300 ease-in-out
+                           relative inline-block
+                           after:content-[''] after:absolute after:left-0 after:bottom-0
+                           after:h-[1px] md:after:h-[2px] after:w-full after:bg-[#f0ede4]
+                           after:transition-all after:duration-300
+                           hover:after:w-0 hover:font-semibold
+                           text-[#f0ede4]"
+              >
+                Get in touch ↘
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
+      {/* Contact Form Modal */}
       <>
         <div
           className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
@@ -193,7 +175,7 @@ export default function Hero() {
         ></div>
 
         <div
-          className={`fixed top-0 right-0 h-full bg-[#323333] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[40%] ${
+          className={`fixed top-0 right-0 h-full bg-[#323333] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
             isContactFormOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
