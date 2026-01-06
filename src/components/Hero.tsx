@@ -63,20 +63,17 @@ export default function Hero() {
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
-  // Calculate transform values based on scroll progress
-  const leftTransform = scrollProgress * -100; // Left column moves left
-  const rightTransform = scrollProgress * 100; // Right column moves right
+  const leftTransform = scrollProgress * -100; 
+  const rightTransform = scrollProgress * 100; 
   const opacity = 1 - scrollProgress;
 
   return (
     <section
       id="hero-section"
-      className="relative w-full h-auto overflow-hidden flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10"
+      className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10 bg-[#0a0a09]"
     >
       <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        {/* ROW 1: Image 1 - Software Developer */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-          {/* Image 1 */}
           <div
             className="w-full flex justify-center md:justify-end"
             style={{
@@ -90,11 +87,10 @@ export default function Hero() {
               width={700}
               height={400}
               alt="DevAdora"
-              className="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
+              className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
             />
           </div>
 
-          {/* Software Developer Title */}
           <div
             className="w-full flex items-center"
             style={{
@@ -103,15 +99,13 @@ export default function Hero() {
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <h1 className="font-bold text-[1.5rem] leading-tight sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] tracking-[-1px] md:tracking-[-2px]">
+            <h1 className="font-bold text-[1.5rem] leading-tight sm:text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] tracking-[-1px] md:tracking-[-2px] text-[#f0ede4]">
               Software Developer
             </h1>
           </div>
         </div>
 
-        {/* ROW 2: Name - Image 2 */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
-          {/* Name */}
           <div
             className="w-full flex flex-col justify-center text-right"
             style={{
@@ -120,16 +114,15 @@ export default function Hero() {
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <h2 className="font-bold text-[1.5rem] leading-tight sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4rem] mb-2 sm:mb-3">
+            <h2 className="font-bold text-[1.5rem] leading-tight sm:text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] xl:text-[4rem] mb-2 sm:mb-3 text-[#f0ede4]">
               Rai here!
             </h2>
-            <p className="text-[0.75rem] sm:text-[0.9rem] md:text-[1.1rem] lg:text-[1.2rem] xl:text-[1.4rem] text-[#686662] leading-relaxed">
+            <p className="text-[0.75rem] sm:text-[0.9rem] md:text-[1.1rem] lg:text-[1.2rem] xl:text-[1.4rem]  leading-relaxed text-[#f0ede4]">
               The one who bridges imagination and innovation—crafting solutions
               that don't just function, but resonate.
             </p>
           </div>
 
-          {/* Image 2 */}
           <div
             className="w-full flex justify-center md:justify-start"
             style={{
@@ -143,14 +136,12 @@ export default function Hero() {
               width={700}
               height={400}
               alt="DevAdora"
-              className="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
+              className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
             />
           </div>
         </div>
 
-        {/* ROW 3: Image 3 - Contact button */}
         <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center">
-          {/* Image 3 */}
           <div
             className="w-full flex justify-center md:justify-end"
             style={{
@@ -164,11 +155,10 @@ export default function Hero() {
               width={700}
               height={400}
               alt="DevAdora"
-              className="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
+              className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
             />
           </div>
 
-          {/* Contact Button */}
           <div
             className="w-full flex items-center"
             style={{
@@ -183,9 +173,10 @@ export default function Hero() {
                          transition-all duration-300 ease-in-out
                          relative inline-block
                          after:content-[''] after:absolute after:left-0 after:bottom-0
-                         after:h-[1px] md:after:h-[2px] after:w-full after:bg-black
+                         after:h-[1px] md:after:h-[2px] after:w-full after:bg-[#f0ede4]
                          after:transition-all after:duration-300
-                         hover:after:w-0 hover:font-semibold"
+                         hover:after:w-0 hover:font-semibold
+                         text-[#f0ede4]"
             >
               Get in touch ↘
             </span>
@@ -193,7 +184,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Contact Form Modal */}
       <>
         <div
           className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${

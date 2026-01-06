@@ -90,11 +90,11 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <div className="flex justify-end items-center">
             <nav className=" hidden md:block">
-              <ul className="space-x-6 text-[1.4rem] text-black text-right">
+              <ul className="space-x-6 text-[1.4rem] text-[#f0ede4] text-right">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
-                      <ScrambleText label={item.name} variant={"dark"} />
+                      <ScrambleText label={item.name} variant={"default"} />
                     </Link>
                   </li>
                 ))}
