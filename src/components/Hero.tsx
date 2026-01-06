@@ -64,14 +64,14 @@ export default function Hero() {
   };
 
   // Calculate transform values based on scroll progress
-  const imageTransform = scrollProgress * 100;
-  const textTransform = scrollProgress * -100;
+  const leftTransform = scrollProgress * -100; // Left column moves left
+  const rightTransform = scrollProgress * 100; // Right column moves right
   const opacity = 1 - scrollProgress;
 
   return (
     <section
       id="hero-section"
-      className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10"
+      className="relative w-full h-auto overflow-hidden flex items-center justify-center py-4 sm:py-6 md:py-8 lg:py-10"
     >
       <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* ROW 1: Image 1 - Software Developer */}
@@ -80,7 +80,7 @@ export default function Hero() {
           <div
             className="w-full flex justify-center md:justify-end"
             style={{
-              transform: `translateX(${imageTransform}%)`,
+              transform: `translateX(${leftTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
@@ -98,7 +98,7 @@ export default function Hero() {
           <div
             className="w-full flex items-center"
             style={{
-              transform: `translateX(${textTransform}%)`,
+              transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
@@ -115,7 +115,7 @@ export default function Hero() {
           <div
             className="w-full flex flex-col justify-center text-right"
             style={{
-              transform: `translateX(${textTransform}%)`,
+              transform: `translateX(${leftTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
@@ -133,7 +133,7 @@ export default function Hero() {
           <div
             className="w-full flex justify-center md:justify-start"
             style={{
-              transform: `translateX(${imageTransform}%)`,
+              transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
@@ -154,7 +154,7 @@ export default function Hero() {
           <div
             className="w-full flex justify-center md:justify-end"
             style={{
-              transform: `translateX(${imageTransform}%)`,
+              transform: `translateX(${leftTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
@@ -172,7 +172,7 @@ export default function Hero() {
           <div
             className="w-full flex items-center"
             style={{
-              transform: `translateX(${textTransform}%)`,
+              transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
