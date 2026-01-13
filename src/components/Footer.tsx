@@ -139,7 +139,7 @@ export default function Footer() {
 
       <div className="flex flex-row sm:flex-row md:flex-row justify-between items-center mt-8 relative">
         <div className="text-xl md:text-2xl xl:text-[3rem] font-bold w-[40%] flex-wrap">
-          © 2025 DevAdora <br className="md:hidden" />
+          © 2026 DevAdora <br className="md:hidden" />
           <span className="font-semibold block md:inline">
             All rights reserved.
           </span>

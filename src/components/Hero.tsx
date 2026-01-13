@@ -162,7 +162,7 @@ export default function Hero() {
           </div>
 
           <div
-            className="w-full flex flex-col justify-center space-y-8"
+            className="w-full flex flex-col justify-center space-y-8 karla-script"
             style={{
               transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
@@ -170,7 +170,7 @@ export default function Hero() {
             }}
           >
             <div className="space-y-6">
-              <h2 className="font-bold text-[2.5rem] leading-tight sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] text-[#f0ede4] tracking-tight">
+              <h2 className="font-bold text-[2.5rem] leading-tight sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] text-[#f0ede4] tracking-tight ">
                 DevAdora
               </h2>
 
