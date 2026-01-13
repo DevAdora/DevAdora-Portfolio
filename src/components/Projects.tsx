@@ -56,14 +56,14 @@ export default function Projects() {
       ref={containerRef}
       className="projects bg-dark-black text-white-dove relative overflow-hidden"
     >
-      <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden border-b-4 border-white-dove">
+      <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden border-b-4 border-white-dove ">
         <motion.div
           style={{ x }}
           className="flex whitespace-nowrap mb-4 sm:mb-8"
         >
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
-              <h1 className="text-[8rem] sm:text-[12rem] md:text-[16rem] lg:text-[20rem] xl:text-[25rem] font-black leading-none tracking-tighter px-8">
+              <h1 className="text-[16rem] sm:text-[20rem] md:text-[16rem] lg:text-[20rem] xl:text-[35rem] font-black leading-none tracking-tighter  karla-script">
                 WORKS
               </h1>
               <span className="text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] px-8">
@@ -76,7 +76,7 @@ export default function Projects() {
         <motion.div style={{ x: xReverse }} className="flex whitespace-nowrap">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center">
-              <h1 className="text-[8rem] sm:text-[12rem] md:text-[16rem] lg:text-[20rem] xl:text-[25rem] font-black leading-none tracking-tighter px-8">
+              <h1 className="text-[16rem] sm:text-[20rem] md:text-[16rem] lg:text-[20rem] xl:text-[35rem] font-black leading-none tracking-tighter karla-script">
                 PROJECTS
               </h1>
               <span className="text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] px-8">
@@ -87,8 +87,8 @@ export default function Projects() {
         </motion.div>
 
         <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-sm sm:text-base">
-          <span className="font-mono">(SELECTED PROJECTS)</span>
-          <span className="font-mono hidden sm:block">2022—Present</span>
+          <span className=">(SELECTED PROJECTS)</span>
+          <span className= hidden sm:block">2022—Present</span>
         </div>
       </div>
 
@@ -146,12 +146,12 @@ function ProjectRow({
       <div className="md:hidden py-6 space-y-3">
         <div className="flex justify-between items-start gap-4">
           <div className="space-y-1">
-            <div className="text-xs font-mono uppercase tracking-wider opacity-60">
+            <div className="text-xs uppercase tracking-wider opacity-60">
               {project.industry}
             </div>
             <h3 className="text-xl sm:text-2xl font-bold">{project.title}</h3>
           </div>
-          <div className="text-xs font-mono uppercase tracking-wider opacity-60 whitespace-nowrap">
+          <div className="text-xs uppercase tracking-wider opacity-60 whitespace-nowrap">
             {project.timeline}
           </div>
         </div>
@@ -159,7 +159,7 @@ function ProjectRow({
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="text-xs px-3 py-1 border border-white-dove/40 font-mono"
+              className="text-xs md:px-3 py-1"
             >
               {tag}
             </span>
@@ -180,7 +180,7 @@ function ProjectRow({
             y: isHovered ? -10 : 0,
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-sm lg:text-base font-mono uppercase tracking-wider"
+          className="text-sm lg:text-base uppercase tracking-wider"
         >
           {project.industry}
         </motion.div>
@@ -199,7 +199,7 @@ function ProjectRow({
             {project.tags.map((tag, i) => (
               <span
                 key={i}
-                className="text-xs px-3 py-1 border border-white-dove/40 font-mono"
+                className="text-xs px-3 py-1 border border-white-dove/40"
               >
                 {tag}
               </span>
@@ -213,7 +213,7 @@ function ProjectRow({
             y: isHovered ? -10 : 0,
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="text-sm lg:text-base font-mono uppercase tracking-wider"
+          className="text-sm lg:text-base uppercase tracking-wider"
         >
           {project.timeline}
         </motion.div>
@@ -241,7 +241,7 @@ function ProjectRow({
       </motion.div>
 
       <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full pr-4 hidden lg:block z-30">
-        <span className="text-6xl font-black opacity-10 group-hover:opacity-20 transition-opacity font-mono">
+        <span className="text-6xl font-black opacity-10 group-hover:opacity-20 transition-opacity">
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
