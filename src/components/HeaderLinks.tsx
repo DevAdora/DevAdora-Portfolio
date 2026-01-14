@@ -60,7 +60,7 @@ export default function ScrambleText({
       className={`
       font-onest cursor-pointer transition-colors relative inline-block
       after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px]
-      after:w-0 after:transition-all after:duration-300 hover:after:w-full pb-2
+      after:w-0 after:transition-all after:duration-300 hover:after:w-full pb-1 
       ${variantClasses}
     `}
     >

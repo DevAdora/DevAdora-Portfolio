@@ -90,9 +90,9 @@ export default function Header({ variant = "light" }: HeaderProps) {
         <header
           className={`absolute top-0 left-0 w-full z-[45] px-8 py-4 ${textColorClass}`}
         >
-          <div className="flex justify-end items-end">
+          <div className="flex flex-row justify-center items-center">
             <nav className="hidden md:block">
-              <ul className="text-[1.4rem] text-[#f0ede4] text-end">
+              <ul className="text-[1.4rem] text-[#f0ede4] text-end flex gap-10">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
@@ -116,14 +116,14 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <button
             onClick={openContactForm}
-            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition"
+            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition cursor-pointer"
           >
             Get in Touch →
           </button>
 
           <button
             onClick={toggleMobileMenu}
-            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition"
+            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition cursor-pointer"
           >
             MENU
           </button>
@@ -156,13 +156,13 @@ export default function Header({ variant = "light" }: HeaderProps) {
               </button>
             </div>
 
-            <nav className="flex flex-col space-y-6 flex-1 justify-center text-center">
+            <nav className="flex flex-col space-y-6 flex-1 justify-center text-center ">
               {navItems.map((item, i) => (
                 <Link
                   key={i}
                   href={item.path}
                   onClick={closeMobileMenu}
-                  className={`text-[3rem] uppercase md:text-[5rem] text-[#f0ede4] transition-all duration-500 pb-2 ease-out leading-[20px] md:leading-[40px] transform ${
+                  className={`text-[3rem] uppercase md:text-[4rem] text-[#f0ede4] transition-all duration-500 pb-2 ease-out leading-[20px] md:leading-[40px] transform ${
                     isMobileMenuOpen
                       ? "translate-x-0 opacity-100"
                       : "translate-x-8 opacity-0"
@@ -171,7 +171,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     transitionDelay: `${i * 100}ms`,
                   }}
                 >
-                  <ScrambleText label={item.name} />
+                  <ScrambleText label={item.name} variant={"default"} />
                 </Link>
               ))}
             </nav>

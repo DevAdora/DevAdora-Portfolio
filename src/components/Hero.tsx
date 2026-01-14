@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
@@ -56,8 +56,7 @@ export default function Hero() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     console.log("Form submitted:", formData);
     closeContactForm();
     setFormData({ name: "", email: "", phone: "", message: "" });
@@ -67,98 +66,146 @@ export default function Hero() {
   const rightTransform = scrollProgress * 100;
   const opacity = 1 - scrollProgress;
 
+  const cards = [
+    { id: 0, image: "/images/me-1.jpg", row: 0, col: 0 },
+    { id: 1, image: "/images/me-2.jpg", row: 0, col: 1 },
+    { id: 2, image: "/images/devadora-image.png", row: 1, col: 0 },
+    { id: 3, image: "/images/me-3.png", row: 1, col: 1 },
+  ];
+
   return (
     <section
       id="hero-section"
-      className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-6 sm:py-8 md:py-10 lg:py-12 bg-[#0a0a09]"
+      className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-12 md:py-20 bg-[#0a0a09]"
     >
-      <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        {/* ROW 1: Image 1 - Software Developer */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          {/* Image 1 */}
+      <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div
-            className="w-full flex justify-center md:justify-end order-1"
+            className="relative w-full flex items-center justify-center"
             style={{
               transform: `translateX(${leftTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <Image
-              src="/images/hero-bg-1.jpg"
-              width={700}
-              height={400}
-              alt="DevAdora"
-              className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
-            />
+            <div className="relative w-full max-w-[520px]">
+              <div className="relative h-[360px] sm:h-[420px] md:h-[460px]">
+                {cards.map((card, index) => {
+                  const isHovered = hoveredCard === card.id;
+
+                  const positions = [
+                    "top-0 left-0 -rotate-6",
+                    "top-5 left-30 sm:left-32 rotate-4",
+                    "top-40 left-6 sm:left-10 rotate-6",
+                    "top-52 left-24 sm:left-40 -rotate-6",
+                  ];
+
+                  const baseZ = [10, 20, 15, 25][index];
+                  const zIndex = isHovered ? 50 : baseZ;
+
+                  return (
+                    <div
+                      key={card.id}
+                      className={`absolute ${positions[index]} `}
+                      style={{ zIndex }}
+                    >
+                      <div
+                        className="p-2 sm:p-3"
+                        onMouseEnter={() => setHoveredCard(card.id)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                      >
+                        <div
+                          className="group relative cursor-pointer overflow-hidden rounded-xl
+                           w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px]
+                           shadow-[0_10px_30px_rgba(0,0,0,0.35)]
+                           transition-transform duration-300"
+                          style={{
+                            transform: isHovered
+                              ? "scale(1.06) translateY(-6px)"
+                              : "scale(1)",
+                          }}
+                        >
+                          <div
+                            className="absolute inset-0 rounded-xl pointer-events-none transition-all duration-300"
+                            style={{
+                              boxShadow: isHovered
+                                ? "0 0 0 1px rgba(240,237,228,0.55), 0 18px 45px rgba(0,0,0,0.55)"
+                                : "0 0 0 1px rgba(240,237,228,0.10)",
+                            }}
+                          />
+
+                          <div
+                            className="absolute inset-0 bg-gradient-to-br from-[#f0ede4]/25 via-transparent to-transparent
+                             opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"
+                          />
+
+                          <Image
+                            src={card.image}
+                            fill
+                            alt={`Card ${index + 1}`}
+                            className="object-cover transition-all duration-300"
+                            style={{
+                              filter: isHovered
+                                ? "grayscale(0%) brightness(1.08) contrast(1.05)"
+                                : "grayscale(35%) brightness(0.92)",
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="absolute -z-10 inset-0 blur-3xl opacity-30 bg-gradient-to-br from-[#f0ede4]/10 via-transparent to-transparent" />
+            </div>
           </div>
 
-          {/* Software Developer Title */}
           <div
-            className="w-full flex items-center order-2 px-4 md:px-0"
+            className="w-full flex flex-col justify-center space-y-8 karla-script"
             style={{
               transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <h1 className="font-bold text-[2rem] leading-tight sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[5.5rem] tracking-[-1px] md:tracking-[-2px] text-[#f0ede4]">
-              Software Developer
-            </h1>
-          </div>
-        </div>
+            <div className="space-y-6">
+              <h2 className="font-bold text-[2.5rem] leading-tight sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] text-[#f0ede4] tracking-tight ">
+                DevAdora
+              </h2>
 
-        {/* ROW 2: Image 2 - DevAdora Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-          {/* Image 2 - Order 1 on mobile, Order 2 on desktop */}
-          <div
-            className="w-full flex justify-center md:justify-start order-1 md:order-2"
-            style={{
-              transform: `translateX(${rightTransform}%)`,
-              opacity: opacity,
-              transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
-            }}
-          >
-            <Image
-              src="/images/hero-bg-2.jpg"
-              width={700}
-              height={400}
-              alt="DevAdora"
-              className="w-full h-auto object-contain grayscale-50 hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
+              <h1 className="font-bold text-[1.8rem] leading-tight sm:text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-[#f0ede4]/80 tracking-tight">
+                Software Developer
+              </h1>
 
-          {/* DevAdora Content with Contact Button - Order 2 on mobile, Order 1 on desktop */}
-          <div
-            className="w-full flex flex-col justify-center text-left md:text-right order-2 md:order-1 px-4 md:px-0"
-            style={{
-              transform: `translateX(${leftTransform}%)`,
-              opacity: opacity,
-              transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
-            }}
-          >
-            <h2 className="font-bold text-[2rem] leading-tight sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] mb-3 sm:mb-4 text-[#f0ede4]">
-              DevAdora
-            </h2>
-            <p className="text-[0.9rem] sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] xl:text-[1.4rem] leading-relaxed text-[#f0ede4] mb-6">
-              The one who bridges imagination and innovation—crafting solutions
-              that don't just function, but resonate.
-            </p>
+              <p className="text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] leading-relaxed text-[#f0ede4]/70 max-w-[600px]">
+                The one who bridges imagination and innovation—crafting
+                solutions that don't just function, but resonate.
+              </p>
+            </div>
 
             {/* Contact Button */}
-            <div className="w-full flex items-center justify-start md:justify-end">
+            <div className="flex items-center">
               <span
                 onClick={openContactForm}
-                className="text-[1.2rem] sm:text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem] 2xl:text-[2.2rem] cursor-pointer font-medium
-                           transition-all duration-300 ease-in-out
-                           relative inline-block
-                           after:content-[''] after:absolute after:left-0 after:bottom-0
-                           after:h-[1px] md:after:h-[2px] after:w-full after:bg-[#f0ede4]
-                           after:transition-all after:duration-300
-                           hover:after:w-0 hover:font-semibold
-                           text-[#f0ede4]"
+                className="group relative text-[1.4rem] sm:text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] cursor-pointer font-medium
+                           text-[#f0ede4] transition-all duration-300 ease-in-out
+                           hover:tracking-wide"
               >
-                Get in touch ↘
+                <span className="relative inline-block">
+                  Get in touch
+                  <span
+                    className="absolute left-0 bottom-0 w-full h-[2px] bg-[#f0ede4] 
+                                 transform origin-left transition-transform duration-300 
+                                 group-hover:scale-x-0"
+                  ></span>
+                </span>
+                <span
+                  className="inline-block ml-2 transform transition-transform duration-300 
+                               group-hover:translate-x-2 group-hover:translate-y-[-2px]"
+                >
+                  ↘
+                </span>
               </span>
             </div>
           </div>
@@ -215,7 +262,7 @@ export default function Hero() {
             </div>
 
             <div className="flex-1 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8">
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <div
                   className={`transform transition-all duration-500 ${
                     isContactFormOpen
@@ -236,7 +283,6 @@ export default function Hero() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    required
                     className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
                     placeholder="John Doe"
                   />
@@ -262,7 +308,6 @@ export default function Hero() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    required
                     className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
                     placeholder="john@example.com"
                   />
@@ -312,7 +357,6 @@ export default function Hero() {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    required
                     rows={6}
                     className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white resize-none"
                     placeholder="Tell us about your project..."
@@ -328,13 +372,13 @@ export default function Hero() {
                   style={{ transitionDelay: "500ms" }}
                 >
                   <button
-                    type="submit"
+                    onClick={handleSubmit}
                     className="w-full bg-white text-[#080807] py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:shadow-lg hover:bg-gray-100"
                   >
                     Send Message →
                   </button>
                 </div>
-              </form>
+              </div>
 
               <div
                 className={`mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 space-y-4 sm:space-y-6 transform transition-all duration-500 ${
