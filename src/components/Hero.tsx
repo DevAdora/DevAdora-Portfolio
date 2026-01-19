@@ -48,7 +48,7 @@ export default function Hero() {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -79,7 +79,7 @@ export default function Hero() {
       className="relative w-full h-auto min-h-screen overflow-hidden flex items-center justify-center py-12 md:py-20 bg-[#0a0a09]"
     >
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 md:gap-16 items-center">
           <div
             className="relative w-full flex items-center justify-center"
             style={{
@@ -88,73 +88,75 @@ export default function Hero() {
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <div className="relative w-full max-w-[520px]">
-              <div className="relative h-[360px] sm:h-[420px] md:h-[460px]">
-                {cards.map((card, index) => {
-                  const isHovered = hoveredCard === card.id;
+            <div className="relative w-full max-w-[520px] mx-auto">
+              <div className="relative h-[360px] sm:h-[420px] md:h-[460px] flex items-center justify-center">
+                <div className="relative w-full h-full max-w-[360px] sm:max-w-none mx-auto">
+                  {cards.map((card, index) => {
+                    const isHovered = hoveredCard === card.id;
 
-                  const positions = [
-                    "top-0 left-0 -rotate-6",
-                    "top-5 left-30 sm:left-32 rotate-4",
-                    "top-40 left-6 sm:left-10 rotate-6",
-                    "top-52 left-24 sm:left-40 -rotate-6",
-                  ];
+                    const positions = [
+                      "top-0 left-1/3 -translate-x-[110px] sm:translate-x-0 sm:left-10 -rotate-6",
+                      "top-5 left-1/3 -translate-x-[10px] sm:translate-x-0 sm:left-30 sm:left-42 rotate-4",
+                      "top-40 left-1/3 -translate-x-[90px] sm:translate-x-0 sm:left-6 sm:left-20 rotate-6",
+                      "top-52 left-1/3 -translate-x-[30px] sm:translate-x-0 sm:left-24 sm:left-50 -rotate-6",
+                    ];
 
-                  const baseZ = [10, 20, 15, 25][index];
-                  const zIndex = isHovered ? 50 : baseZ;
+                    const baseZ = [10, 20, 15, 25][index];
+                    const zIndex = isHovered ? 50 : baseZ;
 
-                  return (
-                    <div
-                      key={card.id}
-                      className={`absolute ${positions[index]} `}
-                      style={{ zIndex }}
-                    >
+                    return (
                       <div
-                        className="p-2 sm:p-3"
-                        onMouseEnter={() => setHoveredCard(card.id)}
-                        onMouseLeave={() => setHoveredCard(null)}
+                        key={card.id}
+                        className={`absolute ${positions[index]} `}
+                        style={{ zIndex }}
                       >
                         <div
-                          className="group relative cursor-pointer overflow-hidden rounded-xl
+                          className="p-2 sm:p-3 items-center"
+                          onMouseEnter={() => setHoveredCard(card.id)}
+                          onMouseLeave={() => setHoveredCard(null)}
+                        >
+                          <div
+                            className="group relative cursor-pointer overflow-hidden rounded-xl
                            w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px]
                            shadow-[0_10px_30px_rgba(0,0,0,0.35)]
                            transition-transform duration-300"
-                          style={{
-                            transform: isHovered
-                              ? "scale(1.06) translateY(-6px)"
-                              : "scale(1)",
-                          }}
-                        >
-                          <div
-                            className="absolute inset-0 rounded-xl pointer-events-none transition-all duration-300"
                             style={{
-                              boxShadow: isHovered
-                                ? "0 0 0 1px rgba(240,237,228,0.55), 0 18px 45px rgba(0,0,0,0.55)"
-                                : "0 0 0 1px rgba(240,237,228,0.10)",
+                              transform: isHovered
+                                ? "scale(1.06) translateY(-6px)"
+                                : "scale(1)",
                             }}
-                          />
+                          >
+                            <div
+                              className="absolute inset-0 rounded-xl pointer-events-none transition-all duration-300"
+                              style={{
+                                boxShadow: isHovered
+                                  ? "0 0 0 1px rgba(240,237,228,0.55), 0 18px 45px rgba(0,0,0,0.55)"
+                                  : "0 0 0 1px rgba(240,237,228,0.10)",
+                              }}
+                            />
 
-                          <div
-                            className="absolute inset-0 bg-gradient-to-br from-[#f0ede4]/25 via-transparent to-transparent
+                            <div
+                              className="absolute inset-0 bg-gradient-to-br from-[#f0ede4]/25 via-transparent to-transparent
                              opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"
-                          />
+                            />
 
-                          <Image
-                            src={card.image}
-                            fill
-                            alt={`Card ${index + 1}`}
-                            className="object-cover transition-all duration-300"
-                            style={{
-                              filter: isHovered
-                                ? "grayscale(0%) brightness(1.08) contrast(1.05)"
-                                : "grayscale(35%) brightness(0.92)",
-                            }}
-                          />
+                            <Image
+                              src={card.image}
+                              fill
+                              alt={`Card ${index + 1}`}
+                              className="object-cover transition-all duration-300"
+                              style={{
+                                filter: isHovered
+                                  ? "grayscale(0%) brightness(1.08) contrast(1.05)"
+                                  : "grayscale(35%) brightness(0.92)",
+                              }}
+                            />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
               <div className="absolute -z-10 inset-0 blur-3xl opacity-30 bg-gradient-to-br from-[#f0ede4]/10 via-transparent to-transparent" />
@@ -162,14 +164,14 @@ export default function Hero() {
           </div>
 
           <div
-            className="w-full flex flex-col justify-center space-y-8 karla-script"
+            className="w-full flex flex-col justify-center md:space-y-8 karla-script"
             style={{
               transform: `translateX(${rightTransform}%)`,
               opacity: opacity,
               transition: "transform 0.1s ease-out, opacity 0.1s ease-out",
             }}
           >
-            <div className="space-y-6">
+            <div className="md:space-y-6">
               <h2 className="font-bold text-[2.5rem] leading-tight sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] text-[#f0ede4] tracking-tight ">
                 DevAdora
               </h2>
@@ -184,7 +186,6 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Contact Button */}
             <div className="flex items-center">
               <span
                 onClick={openContactForm}
@@ -212,24 +213,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Contact Form Modal */}
       <>
         <div
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
+          className={`fixed inset-0 bg-[#0a0a09] backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
             isContactFormOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={closeContactForm}
         ></div>
 
         <div
-          className={`fixed top-0 right-0 h-full bg-[#323333] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
+          className={`fixed top-0 right-0 h-full bg-[#0a0a09]  z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
             isContactFormOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
           }`}
         >
           <div className="flex flex-col h-full">
-            <div className="sticky top-0 bg-[#323333] border-b border-white px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 z-10">
+            <div className="sticky top-0 bg-[#0a0a09] border-b border-white px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 z-10">
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-[-1px] text-white">
@@ -283,7 +283,7 @@ export default function Hero() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -308,7 +308,7 @@ export default function Hero() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -333,7 +333,7 @@ export default function Hero() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -358,7 +358,7 @@ export default function Hero() {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={6}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#323333] text-white resize-none"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -391,35 +391,35 @@ export default function Hero() {
                 <div>
                   <h3 className="text-xs sm:text-sm text-white mb-2">EMAIL</h3>
                   <a
-                    href="mailto:hello@arctech.com"
+                    href="mailto:raireyesjr@gmail.com"
                     className="text-sm sm:text-base text-white/80 hover:text-white transition-colors break-all"
                   >
-                    hello@arctech.com
+                    raireyesjr@gmail.com
                   </a>
                 </div>
 
                 <div>
                   <h3 className="text-xs sm:text-sm text-white mb-2">PHONE</h3>
                   <a
-                    href="tel:+15550000000"
+                    href="tel:+63 9 762 583 010"
                     className="text-sm sm:text-base text-white/80 hover:text-white transition-colors"
                   >
-                    +1 (555) 000-0000
+                    +63 9 762 583 010
                   </a>
                 </div>
 
                 <div>
-                  <h3 className="text-xs sm:text-sm text-white mb-2">OFFICE</h3>
+                  <h3 className="text-xs sm:text-sm text-white mb-2">BASED</h3>
                   <p className="text-sm sm:text-base text-white/80">
-                    123 Architecture Street
+                    Negros Occidental
                     <br />
-                    Design District, NY 10001
+                    Kabankalan City, 6111
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xs sm:text-sm text-white mb-3">
-                    FOLLOW US
+                  <h3 className="text-xs sm:text-sm text-white mb-2">
+                    SOCIALS
                   </h3>
                   <div className="flex flex-wrap gap-3 sm:gap-4">
                     {["Instagram", "LinkedIn", "Twitter"].map((social) => (

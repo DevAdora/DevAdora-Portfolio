@@ -9,14 +9,13 @@ const About = () => {
       setIsMobileView(window.innerWidth <= 1000);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="about bg-dark-black text-white-dove min-h-screen p-8">
-      {/* Title Section */}
       <div
         className={`w-full ${isMobileView ? "text-left mb-8" : "hidden"} px-2`}
       >
@@ -25,9 +24,7 @@ const About = () => {
         </h1>
       </div>
 
-      {/* Main Content Section */}
       <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center h-full px-0">
-        {/* Image Section - 35% */}
         <div className="w-full md:w-[35%] flex justify-center items-center mb-8 md:mb-0 ">
           <div className="w-full h-auto">
             <Image
@@ -39,9 +36,7 @@ const About = () => {
             />
           </div>
         </div>
-        {/* Text Section - 65% */}
         <div className="w-full md:w-[65%] flex flex-col justify-center items-center md:items-start text-center md:text-left">
-          {/* Desktop Title (on right side) */}
           {!isMobileView && (
             <div className="w-full p-4 md:p-8">
               <h1 className="font-bold text-[3.5rem] sm:text-[6rem] md:text-[6rem] lg:text-[6rem] xl:text-[6rem] leading-none">

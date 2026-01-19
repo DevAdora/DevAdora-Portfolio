@@ -29,7 +29,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="text-black py-12 px-8 md:px-16 text-sm font-light relative">
+    <footer className="bg-[#0a0a09] text-[#f0ede4] py-12 px-8 md:px-16 text-sm font-light relative">
       <div className="grid grid-cols-3 md:grid-cols-3 gap-12 border-b border-gray-300 pb-8">
         <div>
           <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
@@ -47,7 +47,7 @@ export default function Footer() {
               <li key={item}>
                 <Link
                   href={`/#${item.toLowerCase()}`}
-                  className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item}
                 </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/rai-reyes-jr-6bb906272/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 LinkedIn
               </a>
@@ -76,7 +76,7 @@ export default function Footer() {
                 href="https://www.instagram.com/soullessr4i/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Instagram
               </a>
@@ -86,7 +86,7 @@ export default function Footer() {
                 href="https://bento.me/devadora"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Bento
               </a>
@@ -96,7 +96,7 @@ export default function Footer() {
                 href="https://github.com/DevAdora"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 GitHub
               </a>
@@ -112,7 +112,7 @@ export default function Footer() {
             <li>
               <a
                 href="mailto:raireyesjr@gmail.com?subject=Hello&body=I want to contact you"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Gmail
               </a>
@@ -120,7 +120,7 @@ export default function Footer() {
             <li>
               <a
                 href="viber://chat?number=%2B639171234567"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Viber
               </a>
@@ -128,7 +128,7 @@ export default function Footer() {
             <li>
               <a
                 href="https://t.me/yourusername"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Telegram
               </a>
@@ -154,7 +154,7 @@ export default function Footer() {
 
         <button
           onClick={scrollToTop}
-          className="absolute bottom-0 right-0 bg-black/50 rounded-full p-2 md:p-3 text-[#f0ede4] hover:bg-black transition cursor-pointer"
+          className="absolute bottom-0 right-0 bg-[#f0ede4] rounded-full p-2 md:p-3 text-[#0a0a09] hover:bg-black transition cursor-pointer"
           aria-label="Scroll to top"
         >
           <FaArrowUp />

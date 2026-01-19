@@ -67,7 +67,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -116,7 +116,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <button
             onClick={openContactForm}
-            className="uppercase bg-[#323333] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition cursor-pointer"
+            className="uppercase bg-[#f0ede4] text-[#0a0a09] border-[#0a0a09] border px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition cursor-pointer"
           >
             Get in Touch →
           </button>
@@ -181,39 +181,37 @@ export default function Header({ variant = "light" }: HeaderProps) {
 
       <>
         <div
-          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[65] transition-all duration-500 ease-out ${
+          className={`fixed inset-0 bg-[#0a0a09] backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
             isContactFormOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={closeContactForm}
         ></div>
 
         <div
-          className={`fixed top-0 right-0 h-full bg-[#0a0a09] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto ${
-            isMobile ? "w-full" : "w-full md:w-[40%]"
-          } ${
+          className={`fixed top-0 right-0 h-full bg-[#0a0a09]  z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
             isContactFormOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
           }`}
         >
           <div className="flex flex-col h-full">
-            <div className="sticky top-0 bg-[#0a0a09] border-b border-white px-6 md:px-10 py-6 z-10">
+            <div className="sticky top-0 bg-[#0a0a09] border-b border-white px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 z-10">
               <div className="flex justify-between items-center">
                 <div>
-                  <h2 className="text-3xl md:text-4xl tracking-[-1px] text-white">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-[-1px] text-white">
                     Get in Touch
                   </h2>
-                  <p className="text-sm text-black/60 mt-1 text-white">
+                  <p className="text-xs sm:text-sm text-white mt-1">
                     Let's start a conversation
                   </p>
                 </div>
                 <button
                   onClick={closeContactForm}
-                  className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-black/5 transition-colors group"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors group"
                   aria-label="Close contact form"
                 >
                   <svg
-                    className="w-6 h-6 text-white hover:w-8 hover:h-8 cursor-pointer transition-colors"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -229,8 +227,8 @@ export default function Header({ variant = "light" }: HeaderProps) {
               </div>
             </div>
 
-            <div className="flex-1 px-6 md:px-10 py-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="flex-1 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8">
+              <div className="space-y-4 sm:space-y-6">
                 <div
                   className={`transform transition-all duration-500 ${
                     isContactFormOpen
@@ -241,7 +239,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 >
                   <label
                     htmlFor="name"
-                    className="block text-sm text-white mb-2"
+                    className="block text-xs sm:text-sm text-white mb-2"
                   >
                     Full Name *
                   </label>
@@ -251,8 +249,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
                     placeholder="John Doe"
                   />
                 </div>
@@ -267,7 +264,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 >
                   <label
                     htmlFor="email"
-                    className="block text-sm text-white mb-2"
+                    className="block text-xs sm:text-sm text-white mb-2"
                   >
                     Email Address *
                   </label>
@@ -277,8 +274,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -293,7 +289,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 >
                   <label
                     htmlFor="phone"
-                    className="block text-sm text-white mb-2"
+                    className="block text-xs sm:text-sm text-white mb-2"
                   >
                     Phone Number
                   </label>
@@ -303,7 +299,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -318,7 +314,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 >
                   <label
                     htmlFor="message"
-                    className="block text-sm text-white mb-2"
+                    className="block text-xs sm:text-sm text-white mb-2"
                   >
                     Message *
                   </label>
@@ -327,9 +323,8 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    required
                     rows={6}
-                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -343,16 +338,16 @@ export default function Header({ variant = "light" }: HeaderProps) {
                   style={{ transitionDelay: "500ms" }}
                 >
                   <button
-                    type="submit"
-                    className="w-full bg-white text-[#080807] py-4 rounded-lg text-base transition-all duration-300 hover:shadow-lg"
+                    onClick={handleSubmit}
+                    className="w-full bg-white text-[#080807] py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:shadow-lg hover:bg-gray-100"
                   >
                     Send Message →
                   </button>
                 </div>
-              </form>
+              </div>
 
               <div
-                className={`mt-12 pt-8 border-t border-white/10 space-y-6 transform transition-all duration-500 ${
+                className={`mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 space-y-4 sm:space-y-6 transform transition-all duration-500 ${
                   isContactFormOpen
                     ? "translate-x-0 opacity-100"
                     : "translate-x-8 opacity-0"
@@ -360,33 +355,44 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 style={{ transitionDelay: "600ms" }}
               >
                 <div>
-                  <h3 className="text-sm text-white mb-2">EMAIL</h3>
+                  <h3 className="text-xs sm:text-sm text-white mb-2">EMAIL</h3>
                   <a
                     href="mailto:raireyesjr@gmail.com"
-                    className="text-base text-white/80 hover:text-white transition-colors"
+                    className="text-sm sm:text-base text-white/80 hover:text-white transition-colors break-all"
                   >
                     raireyesjr@gmail.com
                   </a>
                 </div>
 
                 <div>
-                  <h3 className="text-sm text-white mb-2">PHONE</h3>
+                  <h3 className="text-xs sm:text-sm text-white mb-2">PHONE</h3>
                   <a
-                    href="tel:+6376258301"
-                    className="text-base text-white/80 hover:text-white transition-colors"
+                    href="tel:+63 9 762 583 010"
+                    className="text-sm sm:text-base text-white/80 hover:text-white transition-colors"
                   >
-                    +63 76 258 3010
+                    +63 9 762 583 010
                   </a>
                 </div>
 
                 <div>
-                  <h3 className="text-sm text-white mb-3">FOLLOW ME</h3>
-                  <div className="flex gap-4">
-                    {["Instagram", "LinkedIn", "GitHub"].map((social) => (
+                  <h3 className="text-xs sm:text-sm text-white mb-2">BASED</h3>
+                  <p className="text-sm sm:text-base text-white/80">
+                    Negros Occidental
+                    <br />
+                    Kabankalan City, 6111
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xs sm:text-sm text-white mb-2">
+                    SOCIALS
+                  </h3>
+                  <div className="flex flex-wrap gap-3 sm:gap-4">
+                    {["Instagram", "LinkedIn", "Twitter"].map((social) => (
                       <a
                         key={social}
                         href="#"
-                        className="text-sm text-white/80 hover:text-white transition-colors"
+                        className="text-xs sm:text-sm text-white/80 hover:text-white transition-colors"
                       >
                         {social}
                       </a>
