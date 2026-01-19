@@ -23,7 +23,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 ">
+    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 bg-[#0a0a09] text-[#f0ede4]">
       <div className="flex flex-col items-center justify-center py-10">
         <div className="relative flex flex-col items-center justify-center text-center">
           <h1 className="font-serif italic text-[2.5rem] sm:text-[2.5rem] md:text-[5rem] lg:text-[6rem] leading-12 md:leading-20 lg:leading-20">
@@ -42,7 +42,7 @@ export default function Testimonials() {
           </h1>
         </div>
 
-        <p className="mt-4 text-gray-500 text-center italic text-sm sm:text-base">
+        <p className="mt-4 text-white-500 text-center italic text-sm sm:text-base">
           Insights and reflections from those who’ve experienced our work.
         </p>
       </div>
@@ -62,7 +62,6 @@ export default function Testimonials() {
         </button>
       </div>
 
-      {/* Testimonials Carousel */}
       <div className="relative flex w-full h-[500px] justify-center items-center">
         {testimonials.map((testimonial, i) => {
           const position = getPosition(i);
@@ -94,7 +93,7 @@ export default function Testimonials() {
               variants={variants}
               animate={position}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute w-[350px] md:w-[600px] h-[450px] bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center justify-between p-8"
+              className="absolute w-[350px] md:w-[600px] h-[450px] bg-[#f0ede4] text-[#0a0a09] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center justify-between p-8 "
             >
               <img
                 src={testimonial.image}

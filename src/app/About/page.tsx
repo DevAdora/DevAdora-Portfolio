@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Preloader from "@/components/Preloader";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
+import { time } from "console";
 
 export default function AboutPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,6 +41,54 @@ export default function AboutPage() {
       school: "Southland College",
       years: "2009 - 2015",
       description: "Went to Southland College for Elementary",
+    },
+  ];
+
+  const experience = [
+    {
+      position: "Freelance",
+      company: "Cognito",
+      timeframe: "Jun 2024 - Present",
+    },
+    {
+      position: "Freelance Web Application Developer",
+      company: "Cognito",
+      timeframe: "May 2025 - Aug 2025",
+    },
+    {
+      position: "Freelance Mobile Application Developer",
+      company: "Cognito",
+      timeframe: "Nov 2024 - Jan 2025",
+    },
+    {
+      position: "Freelance WordPress Developer",
+      company: "Cognito",
+      timeframe: "Nov 2024 - Jan 2025",
+    },
+    {
+      position: "Full-stack Developer Intern",
+      company: "Spring Valley Tech Corp",
+      timeframe: "Apr 2025 - Jun 2025",
+    },
+    {
+      position: "Frontend Developer Intern",
+      company: "Spring Valley Tech Corp",
+      timeframe: "Apr 2025 - Apr 2025",
+    },
+    {
+      position: "Cloud Engineer Intern",
+      company: "Spring Valley Tech Corp",
+      timeframe: "Mar 2025 - Apr 2025",
+    },
+    {
+      position: "Software Developer Intern",
+      company: "Spring Valley Tech Corp",
+      timeframe: "Feb 2025 - Mar 2025",
+    },
+    {
+      position: "Software Developer",
+      company: "Kabankalan Community Antenna Television System (K-CAT), Inc.",
+      timeframe: "Oct 2025 - Present",
     },
   ];
 
@@ -128,16 +177,15 @@ export default function AboutPage() {
     <>
       <Header />
 
-      <section className="min-h-screen px-[5%] py-12  text-black">
+      <section className="min-h-screen px-[5%] py-12 bg-[#0a0a09] text-[#f0ede4]">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* === Sticky Left Section === */}
           <div className="md:w-1/3 md:sticky top-20 self-start">
             <Image
               src="/images/devadora-image.png"
               width={300}
               height={300}
               alt="DevAdora"
-              className="rounded-full mx-auto md:mx-0"
+              className="rounded-[50%] mx-auto md:mx-0"
             />
             <div className="text-[1.2rem] sm:text-[1.5rem] md:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem] leading-7 sm:leading-10 md:leading-10 lg:leading-10 xl:leading-10 text-center md:text-left mt-4">
               <h1>DevAdora (Rai M. Reyes Jr.)</h1>
@@ -148,23 +196,20 @@ export default function AboutPage() {
                 {"</>"} based in Philippines 📍.
               </h1>
             </div>
-            {/* === Social Icons === */}
-
-            {/* === Resume / CV Buttons === */}
             <div className="mt-8 flex flex-col justify-center items-center md:justify-start md:items-start">
               <p className="text-md font-semibold mb-2">RESUME & CV</p>
               <div className="flex gap-4">
                 <a
                   href="/Rai M. Reyes Jr - Resume.pdf"
                   target="_blank"
-                  className="bg-black text-white px-4 py-2 rounded-md hover:opacity-80"
+                  className="bg-[#f0ede4] text-black px-4 py-2 rounded-md hover:opacity-80"
                 >
                   View
                 </a>
                 <a
                   href="/resume.pdf"
                   download
-                  className="border px-4 py-2 rounded-md hover:bg-gray-100"
+                  className="border px-4 py-2 rounded-md hover:bg-gray-100 hover:text-black"
                 >
                   Download
                 </a>
@@ -172,7 +217,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* === Right Content Section === */}
           <div className="md:w-2/3">
             <div className="p-0 sm:p-0 md:p-8 w-full">
               <div className="text-left ">
@@ -203,12 +247,12 @@ export default function AboutPage() {
                 <div className="relative border-l-2 border-gray-400">
                   {education.map((item, index) => (
                     <div key={index} className="mb-10 ml-6">
-                      <div className="absolute -left-3.5 w-6 h-6 bg-black rounded-full border-2 "></div>
+                      <div className="absolute -left-3.5 w-6 h-6 bg-[#f0ede4] rounded-full border-2 "></div>
                       <h3 className="text-lg font-semibold">{item.level}</h3>
-                      <p className="text-sm text-gray-600">{item.school}</p>
-                      <p className="text-sm text-gray-500">{item.years}</p>
+                      <p className="text-sm text-white-600">{item.school}</p>
+                      <p className="text-sm text-white-500">{item.years}</p>
                       {item.description && (
-                        <p className="text-sm text-gray-700 mt-1">
+                        <p className="text-sm text-white-700 mt-1">
                           {item.description}
                         </p>
                       )}
@@ -223,10 +267,10 @@ export default function AboutPage() {
                 {achievements.map((item, index) => (
                   <div key={index} className="">
                     <h3 className="text-lg font-semibold">{item.title}</h3>
-                    <p className="text-sm text-gray-600">{item.year}</p>
-                    <p className="text-sm text-gray-500">{item.place}</p>
+                    <p className="text-sm text-white-600">{item.year}</p>
+                    <p className="text-sm text-white-500">{item.place}</p>
                     {item.description && (
-                      <p className="text-sm text-gray-700 mt-1">
+                      <p className="text-sm text-white-700 mt-1">
                         {item.description}
                       </p>
                     )}
@@ -234,78 +278,16 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-            <div className="py-4 sm:mt-5 sm:p-0 md:p-8 w-full">
-              <div className="mt-6 flex flex-col gap-4">
-                <p className="text-md font-semibold">SOCIALS</p>
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="https://github.com/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[120px] h-[50px] border rounded-xl flex items-center justify-center hover:bg-gray-100 transition"
-                  >
-                    <FaGithub size={24} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[120px] h-[50px] border rounded-xl flex items-center justify-center hover:bg-gray-100 transition"
-                  >
-                    <FaLinkedin size={24} color="#0077B5" />
-                  </a>
-                  <a
-                    href="https://instagram.com/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[120px] h-[50px] border rounded-xl flex items-center justify-center hover:bg-gray-100 transition"
-                  >
-                    <FaInstagram size={24} color="#E1306C" />
-                  </a>
-                  <a
-                    href="https://medium.com/@yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-[120px] h-[50px] border rounded-xl flex items-center justify-center hover:bg-gray-100 transition"
-                  >
-                    <SiMedium size={24} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* === Latest Project Section === */}
-            <div className="py-4 sm:mt-5 sm:p-0 md:p-8 w-full">
-              <h2 className="text-xl font-semibold mb-4">LATEST PROJECT</h2>
-
-              <div className="space-y-8">
-                <div className="rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/PF Background.png"
-                    alt="Project"
-                    width={1000}
-                    height={500}
-                    className="w-full object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold">
-                      Apparel E-commerce Website
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-600">
-                      Website Application
-                    </p>
-                    <div className="mt-2 flex gap-2 flex-wrap">
-                      <span className="border px-3 py-1 rounded-full text-sm">
-                        2025
-                      </span>
-                      <span className="border px-3 py-1 rounded-full text-sm">
-                        Design
-                      </span>
-                      <span className="border px-3 py-1 rounded-full text-sm">
-                        Development
-                      </span>
-                    </div>
+            <div className="p-0 sm:p-0 md:p-8 w-full ">
+              <h2 className="text-xl font-semibold mb-6">WORK EXPERIENCES</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {experience.map((item, index) => (
+                  <div key={index} className="">
+                    <h3 className="text-lg font-semibold">{item.position}</h3>
+                    <p className="text-sm text-white-600">{item.company}</p>
+                    <p className="text-sm text-white-500">{item.timeframe}</p>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
