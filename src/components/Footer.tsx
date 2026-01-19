@@ -47,7 +47,7 @@ export default function Footer() {
               <li key={item}>
                 <Link
                   href={`/#${item.toLowerCase()}`}
-                  className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                  className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item}
                 </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/rai-reyes-jr-6bb906272/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 LinkedIn
               </a>
@@ -76,7 +76,7 @@ export default function Footer() {
                 href="https://www.instagram.com/soullessr4i/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Instagram
               </a>
@@ -86,7 +86,7 @@ export default function Footer() {
                 href="https://bento.me/devadora"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Bento
               </a>
@@ -96,7 +96,7 @@ export default function Footer() {
                 href="https://github.com/DevAdora"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 GitHub
               </a>
@@ -112,7 +112,7 @@ export default function Footer() {
             <li>
               <a
                 href="mailto:raireyesjr@gmail.com?subject=Hello&body=I want to contact you"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Gmail
               </a>
@@ -120,7 +120,7 @@ export default function Footer() {
             <li>
               <a
                 href="viber://chat?number=%2B639171234567"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Viber
               </a>
@@ -128,7 +128,7 @@ export default function Footer() {
             <li>
               <a
                 href="https://t.me/yourusername"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
               >
                 Telegram
               </a>
