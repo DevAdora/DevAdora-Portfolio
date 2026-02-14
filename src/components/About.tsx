@@ -28,7 +28,7 @@ const About = () => {
         <div className="w-full md:w-[35%] flex justify-center items-center mb-8 md:mb-0 ">
           <div className="w-full h-auto">
             <Image
-              src="/images/devadora-image.png"
+              src="/images/about-me-img.jpg"
               alt="About DevAdora"
               width={400}
               height={600}
