@@ -6,7 +6,7 @@ Copy
 
 > **Software Developer · Design & Innovation · Kabankalan City, Philippines**
 
-A modern, full-stack personal portfolio built with **Next.js**, featuring a fully integrated **AI chatbot assistant** powered by the Anthropic Claude API — so visitors can ask questions about my work, skills, and experience in real time.
+A modern, full-stack personal portfolio built with **Next.js**, featuring a fully integrated **AI chatbot assistant** — so visitors can ask questions about my work, skills, and experience in real time.
 
 ---
 
