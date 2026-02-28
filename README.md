@@ -12,7 +12,7 @@ A modern, full-stack personal portfolio built with **Next.js**, featuring a full
 
 ## 🌐 Live Demo
 
-[devadora.vercel.app](https://devadora.vercel.app) *(replace with your live URL)*
+[devadora.vercel.app](https://devadora.vercel.app)
 
 ---
 
@@ -37,20 +37,6 @@ The portfolio includes a built-in AI assistant that knows about:
 - Projects I've built and the problems they solve
 - My background, education, and work approach
 - How to get in touch or hire me
-
-The chatbot is powered by **Claude (Anthropic)** via the `/api/chat` route and uses a custom system prompt seeded with my portfolio context so responses are always relevant and accurate.
-
-### How it works
-
-```
-User message
-    ↓
-Next.js API Route (/api/chat)
-    ↓
-Anthropic Claude API (claude-sonnet-4-6)
-    ↓
-Streamed response back to the UI
-```
 
 ---
 
