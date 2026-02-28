@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div className="p-8 bg-[#0a0a09] text-[#f0ede4]">
+    <div className="p-8 bg-[#000000] text-[#f0ede4]">
       <div className="bg-[#f0ede4] text-[#0a0a09] p-8 w-full min-h-[30vh] sm:min-h-screen md:min-h-screen lg:min-h-screen xl:min-h-screen 2xl:min-h-screen flex flex-col justify-between">
         <div className=" flex flex-col items-center justify-center text-center mt-10">
           <p className="text-sm mb-2">(Need an unfair advantage?)</p>

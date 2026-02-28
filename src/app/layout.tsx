@@ -3,6 +3,7 @@ import "./globals.css";
 import { Karla, Rubik } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
+import PortfolioChatbot from "../components/PortfolioChatbot";
 
 export const metadata: Metadata = {
   title: "DevAdora",
@@ -35,10 +36,11 @@ export default function RootLayout({
         <div className="relative">
           {children}
           <SpeedInsights />
+          <PortfolioChatbot /> 
+
           <div className="grainy-overlay pointer-events-none absolute inset-0 z-50" />
         </div>
 
-        {/* Analytics Tracking Script */}
         <Script
           src="https://web-analytics-tan.vercel.app/api/track.js"
           data-site-id="portfolio"
