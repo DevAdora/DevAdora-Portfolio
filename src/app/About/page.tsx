@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { SiMedium } from "react-icons/si";
 import Header from "@/components/Header";
 import Preloader from "@/components/Preloader";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
-import { time } from "console";
 
 export default function AboutPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,8 +43,8 @@ export default function AboutPage() {
 
   const experience = [
     {
-      position: "Freelance",
-      company: "Cognito",
+      position: "Freelance Full-Stack Developer",
+      company: "Cognito | Nechama",
       timeframe: "Jun 2024 - Present",
     },
     {
@@ -177,15 +174,18 @@ export default function AboutPage() {
     <>
       <Header />
 
-      <section className="min-h-screen px-[5%] py-12 bg-[#0a0a09] text-[#f0ede4]">
+      <section className="min-h-screen px-[5%] py-12 bg-[#000000] text-[#f0ede4]">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="md:w-1/3 md:sticky top-20 self-start">
             <Image
-              src="/images/devadora-image.png"
+              src="/images/me-1.jpg"
               width={300}
               height={300}
               alt="DevAdora"
-              className="rounded-[50%] mx-auto md:mx-0"
+              className="rounded-[10%] mx-auto md:mx-0"
+              style={{
+              filter: "grayscale(60%) brightness(1) contrast(1.1)",
+            }}
             />
             <div className="text-[1.2rem] sm:text-[1.5rem] md:text-[1.6rem] lg:text-[1.8rem] xl:text-[2rem] leading-7 sm:leading-10 md:leading-10 lg:leading-10 xl:leading-10 text-center md:text-left mt-4">
               <h1>DevAdora (Rai M. Reyes Jr.)</h1>

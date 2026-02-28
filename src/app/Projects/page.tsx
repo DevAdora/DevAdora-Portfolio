@@ -151,7 +151,7 @@ export default function ProjectsPage() {
   ) : (
     <>
       <Header />
-      <section className="h-full py-8 px-[5%] bg-[#0a0a09] text-[#f0ede4]">
+      <section className="h-full py-8 px-[5%] bg-[#000000] text-[#f0ede4]">
         <div className="text-center py-8">
           <h1 className="text-[4rem] sm:text-[7rem] md:text-[7rem] lg:text-[7rem] xl:text-[8rem] leading-15 sm:leading-24 md:leading-24 lg:leading-24 xl:leading-24 2xl:leading-24 text-center sm:text-center md:text-center lg:text-center">
             PROJECTS
