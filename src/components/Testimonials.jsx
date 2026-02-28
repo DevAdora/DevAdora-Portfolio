@@ -23,7 +23,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 bg-[#0a0a09] text-[#f0ede4]">
+    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6 bg-[#000000] text-[#f0ede4]">
       <div className="flex flex-col items-center justify-center py-10">
         <div className="relative flex flex-col items-center justify-center text-center">
           <h1 className="font-serif italic text-[2.5rem] sm:text-[2.5rem] md:text-[5rem] lg:text-[6rem] leading-12 md:leading-20 lg:leading-20">

@@ -29,7 +29,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0a0a09] text-[#f0ede4] py-12 px-8 md:px-16 text-sm font-light relative">
+    <footer className="bg-[#000000] text-[#f0ede4] py-12 px-8 md:px-16 text-sm font-light relative">
       <div className="grid grid-cols-3 md:grid-cols-3 gap-12 border-b border-gray-300 pb-8">
         <div>
           <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">

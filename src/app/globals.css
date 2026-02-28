@@ -10,7 +10,7 @@
   --white-dove-color: #f0ede4;
   --wrought-iron-color: #323333;
   --light-dark-color: #78726a;
-  --dark-black-color: #1a1a17;
+  --dark-black-color: #000000;
   --text-light-color: #c9c9c1;
 }
 
@@ -52,11 +52,11 @@ body {
   color: var(--light-dark-color);
 }
 .services {
-  background-color: var(--dark-black-color);
+  background-color: #000000;
   color: var(--white-dove-color);
 }
 .box {
-  background-color: var(--dark-black-color);
+  background-color: #000000;
 }
 html {
   scroll-behavior: smooth;
@@ -91,15 +91,15 @@ html {
   color: var(--white-dove-color);
 }
 .projects {
-  background: var(--dark-black-color);
+  background: #000000;
   color: var(--white-dove-color);
 }
 .about {
-  background: var(--dark-black-color);
+  background: #000000;
   color: var(--white-dove-color);
 }
 .gallery {
-  background: var(--dark-black-color);
+  background: #000000;
   color: var(--white-dove-color);
 }
 @keyframes spin {

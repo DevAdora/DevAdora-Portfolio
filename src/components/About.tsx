@@ -15,7 +15,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about bg-dark-black text-white-dove min-h-screen p-8">
+    <div className="about text-white-dove min-h-screen p-8">
       <div
         className={`w-full ${isMobileView ? "text-left mb-8" : "hidden"} px-2`}
       >

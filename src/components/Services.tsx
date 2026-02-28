@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Services() {
@@ -13,9 +13,9 @@ export default function Services() {
   const box3Y = useTransform(scrollYProgress, [0.33, 0.66], ["100%", "0%"]);
 
   return (
-    <div className="services h-full" ref={containerRef}>
+    <div className="services h-full bg-dark-black" ref={containerRef}>
       <div className="flex w-full flex-wrap justify-center items-center">
-        <div className="text-center text-2xl p-8">
+        <div className="text-center text-2xl p-8 mt-8">
           <h1 className="text-white-dove  text-[4rem] sm:text-[7rem] md:text-[7rem] lg:text-[8rem] xl:text-[8rem] sm:text-left leading-24 md:text-left">
             SERVICES I OFFER.
           </h1>
@@ -29,7 +29,7 @@ export default function Services() {
         </div>
       </div>
 
-      <motion.div className="box border-t border-white-dove sticky top-0 w-full h-screen flex flex-col bg-dark-black z-[1]">
+      <motion.div className="box border-t border-white-dove sticky top-0 w-full h-screen flex flex-col bg-[#000000] z-[1]">
         <div className="mt-4 p-8 md:p-8">
           <div className="flex md:flex-row md:justify-between items-center mb-5 p-2">
             <div className="w-[20%] sm:w-[20%] md:w-[20%]  pl-0 md:pl-8">
@@ -69,7 +69,7 @@ export default function Services() {
       </motion.div>
 
       <motion.div
-        className="box border-t border-white-dove sticky top-[15%] sm:top-[17.5%] md:top-[17.5%] lg:top-[20%] xl:top[20%] w-full h-screen flex flex-col bg-dark-black z-[2]"
+        className="box border-t border-white-dove sticky top-[15%] sm:top-[17.5%] md:top-[17.5%] lg:top-[17.5%] xl:top[20%] w-full h-screen flex flex-col z-[2]"
         style={{ y: box2Y }}
       >
         <div className="mt-4 p-8 md:p-8">
@@ -111,7 +111,7 @@ export default function Services() {
       </motion.div>
 
       <motion.div
-        className=" box border-t border-white-dove sticky top-[27.5%] w-full h-screen sm:h-screen md:h-screen lg:h-screen xl:h-screen 2xl:h-screen flex flex-col bg-dark-black z-[3]"
+        className=" box border-t border-white-dove sticky top-[27.5%] w-full h-screen sm:h-screen md:h-screen lg:h-screen xl:h-screen 2xl:h-screen flex flex-col z-[3]"
         style={{ y: box3Y }}
       >
         <div className="mt-4 p-8 md:p-8">
