@@ -1,7 +1,3 @@
-
-Readme · MD
-Copy
-
 # 👨‍💻 DevAdora — Personal Portfolio
 
 > **Software Developer · Design & Innovation · Kabankalan City, Philippines**
