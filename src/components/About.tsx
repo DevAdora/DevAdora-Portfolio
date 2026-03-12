@@ -82,9 +82,8 @@ const About = () => {
               keep pushing to build things that genuinely solve problems.
             </p>
             <p>
-              Outside of code, I recharge through design exploration and
-              creative side projects. And yes — I genuinely enjoy refactoring
-              old codebases. Some people meditate. I clean up legacy JavaScript.
+              Outside of code, I spend my time reading books, listening to music, and oh! I do develop
+              creative side projects. And yes — I genuinely enjoy nature with a cup coffee.
             </p>
           </div>
         </div>
