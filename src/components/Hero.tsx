@@ -129,7 +129,7 @@ export default function Hero() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/NKN_0852.jpg"
+            src="/public/images/NKN_0852.jpg"
             alt="DevAdora"
             fill
             priority
