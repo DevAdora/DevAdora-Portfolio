@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 
 type HeaderProps = {
   variant?: "light" | "dark";
+  /**
+   * true  → nav links stay white (home page: links sit over dark hero photo)
+   * false → nav links follow the active theme (about / projects pages)
+   */
+  overlayHero?: boolean;
 };
 
 const navItems = [
@@ -15,9 +20,10 @@ const navItems = [
   { name: "Testimonials ", path: "/" },
 ];
 
-export default function Header({ variant = "light" }: HeaderProps) {
+export default function Header({ variant = "light", overlayHero = true }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLight, setIsLight] = useState(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
@@ -47,6 +53,28 @@ export default function Header({ variant = "light" }: HeaderProps) {
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
+
+  // Track theme changes so nav color updates instantly when toggle is clicked
+  useEffect(() => {
+    const update = () =>
+      setIsLight(document.documentElement.classList.contains("light"));
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  // Nav link color + hover logic:
+  //   overlayHero=true OR dark mode  → white text, white underline on hover
+  //   overlayHero=false AND light mode → dark text, dark underline on hover
+  const navLinkColor =
+    overlayHero || !isLight ? "text-[#f0ede4]" : "text-[#0a0a09]";
+  // "default" = white hover  |  "dark" = black hover (defined in HeaderLinks.tsx)
+  const navScrambleVariant: "default" | "dark" =
+    !overlayHero && isLight ? "dark" : "default";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -92,11 +120,11 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <div className="flex flex-row justify-center items-center">
             <nav className="hidden md:block">
-              <ul className="text-[1.4rem] text-[#f0ede4] text-end flex gap-10">
+              <ul className={`text-[1.4rem] ${navLinkColor} text-end flex gap-10`}>
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
-                      <ScrambleText label={item.name} variant={"default"} />
+                      <ScrambleText label={item.name} variant={navScrambleVariant} />
                     </Link>
                   </li>
                 ))}

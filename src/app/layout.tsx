@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Karla, Rubik } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import PortfolioChatbot from "../components/PortfolioChatbot";
+import { ThemeProvider } from "../components/ThemeProvider";
+import "./globals.css";
+import FloatingControls from "../components/FloatingControls";
+
 
 export const metadata: Metadata = {
-  title: "DevAdora",
+  title: "DevAdora",  
   description: "Personal Portfolio",
 };
 
@@ -34,9 +37,16 @@ export default function RootLayout({
       </head>
       <body className={`${rubik.variable} ${karla.variable} antialiased`}>
         <div className="relative">
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+          >
+            {children}{" "}
+          </ThemeProvider>
+
           <SpeedInsights />
-          <PortfolioChatbot /> 
+          <FloatingControls />
 
           <div className="grainy-overlay pointer-events-none absolute inset-0 z-50" />
         </div>
