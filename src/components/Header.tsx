@@ -67,11 +67,14 @@ export default function Header({ variant = "light", overlayHero = true }: Header
     return () => observer.disconnect();
   }, []);
 
-  // Nav link color logic:
-  //   overlayHero=true  → always white (over dark hero photo, any theme)
-  //   overlayHero=false → white in dark mode, near-black in light mode
+  // Nav link color + hover logic:
+  //   overlayHero=true OR dark mode  → white text, white underline on hover
+  //   overlayHero=false AND light mode → dark text, dark underline on hover
   const navLinkColor =
     overlayHero || !isLight ? "text-[#f0ede4]" : "text-[#0a0a09]";
+  // "default" = white hover  |  "dark" = black hover (defined in HeaderLinks.tsx)
+  const navScrambleVariant: "default" | "dark" =
+    !overlayHero && isLight ? "dark" : "default";
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -121,7 +124,7 @@ export default function Header({ variant = "light", overlayHero = true }: Header
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
-                      <ScrambleText label={item.name} variant={"default"} />
+                      <ScrambleText label={item.name} variant={navScrambleVariant} />
                     </Link>
                   </li>
                 ))}
