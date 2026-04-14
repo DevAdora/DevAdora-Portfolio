@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ScrambleText from "./HeaderLinks";
+import ThemeToggle from "./ThemeToggle";
 import { useEffect, useState } from "react";
 
 type HeaderProps = {
@@ -106,9 +107,13 @@ export default function Header({ variant = "light" }: HeaderProps) {
         </header>
       )}
 
-      <div className="fixed top-6 right-3 flex items-center space-x-4 z-[50]">
+      {/* ── Fixed top-right controls ── */}
+      <div className="fixed top-6 right-3 flex items-center space-x-3 z-[50]">
+        {/* Theme Toggle — always visible */}
+        <ThemeToggle />
+
         <div
-          className={`flex items-center space-x-4 transition-all duration-300 justify-center ${
+          className={`flex items-center space-x-3 transition-all duration-300 justify-center ${
             isScrolled || isMobile
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-2 pointer-events-none"
@@ -116,7 +121,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         >
           <button
             onClick={openContactForm}
-            className="uppercase bg-[#f0ede4] text-[#0a0a09] border-[#0a0a09] border px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition cursor-pointer"
+            className="uppercase bg-[#f0ede4] text-[#0a0a09] border-[#0a0a09] border px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition cursor-pointer dark:bg-[#f0ede4] dark:text-[#0a0a09]"
           >
             Get in Touch →
           </button>
@@ -139,7 +144,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         ></div>
 
         <div
-          className={`fixed top-0 right-0 w-full h-full bg-[#0a0a09] z-[60] transform transition-all duration-700 ease-in-out ${
+          className={`fixed top-0 right-0 w-full h-full bg-[#0a0a09] dark-menu z-[60] transform transition-all duration-700 ease-in-out ${
             isMobileMenuOpen
               ? "translate-y-0 opacity-100"
               : "-translate-y-full opacity-0"
@@ -188,7 +193,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         ></div>
 
         <div
-          className={`fixed top-0 right-0 h-full bg-[#0a0a09]  z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
+          className={`fixed top-0 right-0 h-full bg-[#0a0a09] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
             isContactFormOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
@@ -229,93 +234,42 @@ export default function Header({ variant = "light" }: HeaderProps) {
 
             <div className="flex-1 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8">
               <div className="space-y-4 sm:space-y-6">
-                <div
-                  className={`transform transition-all duration-500 ${
-                    isContactFormOpen
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-8 opacity-0"
-                  }`}
-                  style={{ transitionDelay: "100ms" }}
-                >
-                  <label
-                    htmlFor="name"
-                    className="block text-xs sm:text-sm text-white mb-2"
+                {[
+                  { id: "name", label: "Full Name *", type: "text", placeholder: "John Doe" },
+                  { id: "email", label: "Email Address *", type: "email", placeholder: "john@example.com" },
+                  { id: "phone", label: "Phone Number", type: "tel", placeholder: "+1 (555) 000-0000" },
+                ].map(({ id, label, type, placeholder }, i) => (
+                  <div
+                    key={id}
+                    className={`transform transition-all duration-500 ${
+                      isContactFormOpen
+                        ? "translate-x-0 opacity-100"
+                        : "translate-x-8 opacity-0"
+                    }`}
+                    style={{ transitionDelay: `${(i + 1) * 100}ms` }}
                   >
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
-                    placeholder="John Doe"
-                  />
-                </div>
+                    <label htmlFor={id} className="block text-xs sm:text-sm text-white mb-2">
+                      {label}
+                    </label>
+                    <input
+                      type={type}
+                      id={id}
+                      name={id}
+                      value={formData[id as keyof typeof formData]}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white"
+                      placeholder={placeholder}
+                    />
+                  </div>
+                ))}
 
                 <div
                   className={`transform transition-all duration-500 ${
-                    isContactFormOpen
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-8 opacity-0"
-                  }`}
-                  style={{ transitionDelay: "200ms" }}
-                >
-                  <label
-                    htmlFor="email"
-                    className="block text-xs sm:text-sm text-white mb-2"
-                  >
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                <div
-                  className={`transform transition-all duration-500 ${
-                    isContactFormOpen
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-8 opacity-0"
-                  }`}
-                  style={{ transitionDelay: "300ms" }}
-                >
-                  <label
-                    htmlFor="phone"
-                    className="block text-xs sm:text-sm text-white mb-2"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-
-                <div
-                  className={`transform transition-all duration-500 ${
-                    isContactFormOpen
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-8 opacity-0"
+                    isContactFormOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
                   }`}
                   style={{ transitionDelay: "400ms" }}
                 >
-                  <label
-                    htmlFor="message"
-                    className="block text-xs sm:text-sm text-white mb-2"
-                  >
+                  <label htmlFor="message" className="block text-xs sm:text-sm text-white mb-2">
                     Message *
                   </label>
                   <textarea
@@ -324,16 +278,14 @@ export default function Header({ variant = "light" }: HeaderProps) {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={6}
-                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09]  text-white resize-none"
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
 
                 <div
                   className={`transform transition-all duration-500 ${
-                    isContactFormOpen
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-8 opacity-0"
+                    isContactFormOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
                   }`}
                   style={{ transitionDelay: "500ms" }}
                 >
@@ -348,52 +300,34 @@ export default function Header({ variant = "light" }: HeaderProps) {
 
               <div
                 className={`mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 space-y-4 sm:space-y-6 transform transition-all duration-500 ${
-                  isContactFormOpen
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-8 opacity-0"
+                  isContactFormOpen ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
                 }`}
                 style={{ transitionDelay: "600ms" }}
               >
-                <div>
-                  <h3 className="text-xs sm:text-sm text-white mb-2">EMAIL</h3>
-                  <a
-                    href="mailto:raireyesjr@gmail.com"
-                    className="text-sm sm:text-base text-white/80 hover:text-white transition-colors break-all"
-                  >
-                    raireyesjr@gmail.com
-                  </a>
-                </div>
-
-                <div>
-                  <h3 className="text-xs sm:text-sm text-white mb-2">PHONE</h3>
-                  <a
-                    href="tel:+63 9 762 583 010"
-                    className="text-sm sm:text-base text-white/80 hover:text-white transition-colors"
-                  >
-                    +63 9 762 583 010
-                  </a>
-                </div>
+                {[
+                  { label: "EMAIL", value: "raireyesjr@gmail.com", href: "mailto:raireyesjr@gmail.com" },
+                  { label: "PHONE", value: "+63 9 762 583 010", href: "tel:+639762583010" },
+                ].map(({ label, value, href }) => (
+                  <div key={label}>
+                    <h3 className="text-xs sm:text-sm text-white mb-2">{label}</h3>
+                    <a href={href} className="text-sm sm:text-base text-white/80 hover:text-white transition-colors break-all">
+                      {value}
+                    </a>
+                  </div>
+                ))}
 
                 <div>
                   <h3 className="text-xs sm:text-sm text-white mb-2">BASED</h3>
                   <p className="text-sm sm:text-base text-white/80">
-                    Negros Occidental
-                    <br />
-                    Kabankalan City, 6111
+                    Negros Occidental<br />Kabankalan City, 6111
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xs sm:text-sm text-white mb-2">
-                    SOCIALS
-                  </h3>
+                  <h3 className="text-xs sm:text-sm text-white mb-2">SOCIALS</h3>
                   <div className="flex flex-wrap gap-3 sm:gap-4">
                     {["Instagram", "LinkedIn", "Twitter"].map((social) => (
-                      <a
-                        key={social}
-                        href="#"
-                        className="text-xs sm:text-sm text-white/80 hover:text-white transition-colors"
-                      >
+                      <a key={social} href="#" className="text-xs sm:text-sm text-white/80 hover:text-white transition-colors">
                         {social}
                       </a>
                     ))}

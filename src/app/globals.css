@@ -1,121 +1,293 @@
 @import "tailwindcss";
-:root {
-  --brown-color: #725843;
-  --light-brown-color: #9f7f65;
-  --dark-gray-color: #60564d;
-  --white-brown-color: #ccb4a0;
-  --dark-brown-color: #3a2a1d;
 
+/* ── Tailwind v4: class-based dark mode ── */
+@custom-variant dark (&:is(.dark, .dark *));
+
+/* ================================================================
+   DEVADORA — DESIGN TOKENS
+   ================================================================ */
+
+:root {
+  --brown-color:           #725843;
+  --light-brown-color:     #9f7f65;
+  --dark-gray-color:       #60564d;
+  --white-brown-color:     #ccb4a0;
+  --dark-brown-color:      #3a2a1d;
   --kendal-charcoal-color: #686662;
-  --white-dove-color: #f0ede4;
-  --wrought-iron-color: #323333;
-  --light-dark-color: #78726a;
-  --dark-black-color: #000000;
-  --text-light-color: #c9c9c1;
+  --white-dove-color:      #f0ede4;
+  --wrought-iron-color:    #323333;
+  --light-dark-color:      #78726a;
+  --dark-black-color:      #000000;
+  --text-light-color:      #c9c9c1;
+
+  /* Semantic tokens — dark (default) */
+  --bg-base:       #000000;
+  --bg-elevated:   #0a0a09;
+  --fg-primary:    #f0ede4;
+  --fg-muted:      rgba(240, 237, 228, 0.55);
+  --border-subtle: rgba(240, 237, 228, 0.10);
+}
+
+html.light {
+  --bg-base:       #f2ede4;
+  --bg-elevated:   #ece6db;
+  --fg-primary:    #0a0a09;
+  --fg-muted:      rgba(10, 10, 9, 0.55);
+  --border-subtle: rgba(10, 10, 9, 0.12);
+
+  /* flip legacy vars */
+  --white-dove-color:   #0a0a09;
+  --dark-black-color:   #f2ede4;
+  --text-light-color:   #3a3530;
+  --wrought-iron-color: #1a1917;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-karla: var(--font-karla);
-  --font-rubik: var(--font-rubik);
+  --font-karla:       var(--font-karla);
+  --font-rubik:       var(--font-rubik);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brown-color: #725843;
-    --light-brown-color: #9f7f65;
-    --dark-gray-color: #60564d;
-    --white-brown-color: #ccb4a0;
-    --dark-brown-color: #3a2a1d;
+/* ================================================================
+   BASE
+   ================================================================ */
 
-    --kendal-charcoal-color: #686662;
-    --white-dove-color: #f0ede4;
-    --wrought-iron-color: #323333;
-    --light-dark-color: #78726a;
-    --dark-black-color: #0a0a09;
-  }
-}
-
-body {
-  font-family: var(--font-rubik);
-}
-/* .grainy-overlay {
-  background-image: url("/images/noisy.png");
-  background-repeat: repeat;
-  opacity: 1;
-  pointer-events: none;
-  z-index: 1000;
-  mix-blend-mode: overlay;
-} */
-.header {
-  color: var(--light-dark-color);
-}
-.services {
-  background-color: #000000;
-  color: var(--white-dove-color);
-}
-.box {
-  background-color: #000000;
-}
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
-.hero-btn {
-  background-color: var(--dark-black-color);
-  color: var(--white-dove-color);
+
+body { font-family: var(--font-rubik); }
+
+section, header, main, footer,
+.box, .services, .projects,
+.about, .gallery, .contact, .preloader {
+  transition:
+    background-color 0.4s ease,
+    color            0.4s ease,
+    border-color     0.35s ease;
 }
-.dark-btn {
-  background-color: var(--dark-black-color);
-  color: var(--white-dove-color);
+
+/* ================================================================
+   NAMED COMPONENT CLASSES
+   ================================================================ */
+
+.header        { color: var(--light-dark-color); }
+.services      { background-color: var(--bg-base); color: var(--fg-primary); }
+.box           { background-color: var(--bg-base); }
+.projects      { background: var(--bg-base); color: var(--fg-primary); }
+.about         { background: var(--bg-base); color: var(--fg-primary); }
+.gallery       { background: var(--bg-base); color: var(--fg-primary); }
+.contact       { background-color: var(--bg-base); color: var(--text-light-color); }
+.preloader     { background: var(--bg-elevated); color: var(--fg-primary); }
+.about-header span { color: var(--text-light-color); }
+.about-desc        { color: var(--light-dark-color); }
+
+.hero-btn      { background-color: var(--bg-elevated); color: var(--fg-primary); }
+.dark-btn      { background-color: var(--bg-elevated); color: var(--fg-primary); }
+.dark-btn:hover  { color: var(--bg-elevated); }
+.white-btn       { color: var(--bg-elevated); }
+.white-btn:hover { background-color: var(--bg-elevated); color: var(--fg-primary); }
+
+.projects-btn        { color: var(--fg-primary); border-color: var(--border-subtle); }
+.projects-btn:hover  { background-color: var(--fg-primary); color: var(--bg-base); }
+
+.techstack { background-color: var(--light-dark-color); color: var(--dark-black-color); }
+
+/* Tailwind utility flips */
+html.light .text-white-dove   { color: var(--fg-primary) !important; }
+html.light .bg-dark-black     { background-color: var(--bg-base) !important; }
+html.light .border-white-dove { border-color: rgba(10,10,9,0.2) !important; }
+
+/* ================================================================
+   LIGHT MODE — SERVICES sticky boxes
+   ================================================================ */
+
+html.light .services .box {
+  background-color: var(--bg-elevated) !important;
 }
-.dark-btn:hover {
-  color: var(--dark-black-color);
+
+/* ================================================================
+   LIGHT MODE — HERO
+   ================================================================ */
+
+/* Section base */
+html.light #hero-section {
+  background-color: var(--bg-base) !important;
 }
-.white-btn {
-  color: var(--dark-black-color);
+
+/* Photo: less dark, slightly warmer */
+html.light #hero-section img {
+  filter: grayscale(40%) brightness(0.88) contrast(1.05) !important;
 }
-.white-btn:hover {
-  background-color: var(--dark-black-color);
-  color: var(--white-dove-color);
+
+/* Remove harsh dark gradient overlays — replace with warm tints */
+html.light #hero-section .absolute.inset-0.bg-gradient-to-r {
+  background: linear-gradient(
+    to right,
+    rgba(242, 237, 228, 0.35) 0%,
+    rgba(242, 237, 228, 0.05) 50%,
+    rgba(242, 237, 228, 0.25) 100%
+  ) !important;
 }
-.projects-btn {
-  color: var(--white-dove-color);
+html.light #hero-section .absolute.inset-0.bg-gradient-to-t {
+  background: linear-gradient(
+    to top,
+    rgba(242, 237, 228, 0.25) 0%,
+    transparent 50%,
+    rgba(242, 237, 228, 0.1) 100%
+  ) !important;
 }
-.projects-btn:hover {
-  background-color: var(--white-dove-color);
-  color: var(--dark-black-color);
+
+/* Marquee text → dark */
+html.light #hero-section .marquee-item { color: #0a0a09 !important; }
+html.light #hero-section .marquee-sep  { color: #0a0a09 !important; }
+
+/* Side vignettes → warm */
+html.light #hero-section .vignette-left {
+  background: linear-gradient(to right, rgba(242,237,228,0.8), transparent) !important;
 }
-.preloader {
-  background: var(--dark-black-color);
-  color: var(--white-dove-color);
+html.light #hero-section .vignette-right {
+  background: linear-gradient(to left, rgba(242,237,228,0.8), transparent) !important;
 }
-.projects {
-  background: #000000;
-  color: var(--white-dove-color);
+
+/* Bottom fade → warm */
+html.light #hero-section .bottom-fade {
+  background: linear-gradient(
+    to bottom,
+    transparent              0%,
+    rgba(242,237,228,0.10)  20%,
+    rgba(242,237,228,0.48)  45%,
+    rgba(242,237,228,0.84)  68%,
+    rgba(242,237,228,0.97)  86%,
+    #f2ede4                100%
+  ) !important;
 }
-.about {
-  background: #000000;
-  color: var(--white-dove-color);
+
+/* Bottom-right "Software Developer" text */
+html.light #hero-section .absolute.bottom-8 p {
+  color: #0a0a09 !important;
 }
-.gallery {
-  background: #000000;
-  color: var(--white-dove-color);
+
+/* ================================================================
+   LIGHT MODE — HEADER
+   ================================================================ */
+
+/* Nav links (top bar, pre-scroll) */
+html.light header nav ul {
+  color: #0a0a09 !important;
 }
+html.light header nav ul li a span {
+  color: #0a0a09 !important;
+}
+
+/* ================================================================
+   LIGHT MODE — TESTIMONIALS  (#testimonials wraps the component)
+   ================================================================ */
+
+#testimonials > section {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.light #testimonials > section {
+  background-color: var(--bg-base) !important;
+  color: var(--fg-primary) !important;
+}
+
+/* The intro heading text */
+html.light #testimonials h1 { color: var(--fg-primary) !important; }
+html.light #testimonials p  { color: var(--fg-muted) !important; }
+
+/* Nav chevron buttons */
+html.light #testimonials button {
+  border-color: rgba(10,10,9,0.25) !important;
+  color: rgba(10,10,9,0.6) !important;
+}
+html.light #testimonials button:hover {
+  background-color: #0a0a09 !important;
+  color: #f0ede4 !important;
+}
+
+/* Cards stay light-on-dark (they're already bg-[#f0ede4] text-[#0a0a09]) — no change needed */
+
+/* ================================================================
+   LIGHT MODE — CONTACT  (#contact wraps the component)
+   ================================================================ */
+
+/* Outer wrapper (was bg-[#000000]) */
+#contact > div {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+html.light #contact > div {
+  background-color: var(--bg-base) !important;
+}
+
+/* Inner card (was bg-[#f0ede4] text-[#0a0a09]) — invert for light mode so it reads as accent */
+html.light #contact > div > div {
+  background-color: #0a0a09 !important;
+  color: #f0ede4 !important;
+}
+
+/* "LET'S MAKE IT HAPPEN" heading */
+html.light #contact h1 { color: #f0ede4 !important; }
+
+/* "BOOK A CALL" button */
+html.light #contact button {
+  background-color: #f0ede4 !important;
+  color: #0a0a09 !important;
+}
+
+/* Bottom bar text */
+html.light #contact .flex p,
+html.light #contact .flex a,
+html.light #contact .flex span { color: #f0ede4 !important; }
+
+html.light #contact .border {
+  border-color: rgba(240,237,228,0.3) !important;
+}
+
+/* ================================================================
+   LIGHT MODE — FOOTER
+   ================================================================ */
+
+html.light footer {
+  background-color: #1a1917 !important;
+  color: #f0ede4 !important;
+}
+
+html.light footer a,
+html.light footer p,
+html.light footer span,
+html.light footer li { color: #f0ede4 !important; }
+
+html.light footer .border-gray-300 { border-color: rgba(240,237,228,0.15) !important; }
+
+/* Scroll-to-top button */
+html.light footer button {
+  background-color: #f0ede4 !important;
+  color: #0a0a09 !important;
+}
+html.light footer button:hover {
+  background-color: #78726a !important;
+  color: #f0ede4 !important;
+}
+
+/* ================================================================
+   LOADER / SPINNER
+   ================================================================ */
+
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-.about-header span {
-  color: var(--text-light-color);
-}
-.about-desc {
-  color: var(--light-dark-color);
-}
+
 .loader {
   border: 8px solid #686662;
   border-top: 8px solid #f0ede4;
@@ -125,36 +297,10 @@ html {
   animation: spin 2s linear infinite;
 }
 
-.delay-100 {
-  animation-delay: 0.1s;
-}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
 
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-300 {
-  animation-delay: 0.3s;
-}
-
-.box-transition {
-  transition: transform 0.5s ease;
-}
-
-.karla-script {
-  font-family: var(--font-karla);
-}
-.rubik-script {
-  font-family: var(--font-rubik);
-}
-
-.contact {
-  background-color: var(--dark-black-color);
-  color: var(--text-light-color);
-}
-
-
-.techstack {
-  background-color: var(--light-dark-color);
-  color: var(--dark-black-color);
-}
+.karla-script   { font-family: var(--font-karla); }
+.rubik-script   { font-family: var(--font-rubik); }
+.box-transition { transition: transform 0.5s ease; }
