@@ -194,14 +194,14 @@ export default function AboutPage() {
               <p className="about-label text-md font-semibold mb-2">RESUME & CV</p>
               <div className="flex gap-4">
                 <a
-                  href="/Rai M. Reyes Jr - Resume.pdf"
+                  href="/Rai M. Reyes Jr. - Resume.pdf"
                   target="_blank"
                   className="about-resume-view bg-[#f0ede4] text-black px-4 py-2 rounded-md hover:opacity-80 transition-opacity"
                 >
                   View
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/Rai M. Reyes Jr. - Resume.pdf"
                   download
                   className="about-resume-dl border border-[#f0ede4]/30 px-4 py-2 rounded-md hover:bg-[#f0ede4] hover:text-black transition-colors"
                 >
