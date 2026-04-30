@@ -1,8 +1,10 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import { ALL_PROJECTS, HOMEPAGE_PREVIEW_COUNT, REMAINING_COUNT } from "@/data/projects";
 
 interface CursorPosition {
   x: number;
@@ -33,7 +35,6 @@ function CustomCursor({
   );
 }
 
-// GitHub SVG icon
 function GitHubIcon() {
   return (
     <svg
@@ -48,7 +49,6 @@ function GitHubIcon() {
   );
 }
 
-// External link / live demo icon
 function LiveIcon() {
   return (
     <svg
@@ -80,53 +80,7 @@ export default function Projects() {
     setCursorPosition({ x: e.clientX, y: e.clientY });
   };
 
-  const projects = [
-    {
-      title: "Book Platform",
-      name: "Scriptum, Mens, Lumen",
-      timeline: "2025 - Present",
-      image: "/images/sml.png",
-      tags: ["Design", "Development", "Web Application"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Data Analytics",
-      name: "Analytique",
-      timeline: "2025 - Present",
-      image: "/images/analytique.png",
-      tags: ["Design", "Development", "Web Application"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Architecture",
-      name: "ARC-TECH",
-      timeline: "2025",
-      image: "/images/arc-tech (2).png",
-      tags: ["Design", "Development", "Showcase"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Fashion",
-      name: "Passion meets Fashion",
-      timeline: "2025",
-      image: "/images/PF Background.png",
-      tags: ["E-commerce", "Web Design"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Healthcare Services",
-      name: "Transcare EMS",
-      timeline: "2025",
-      image: "/images/transcare-image.png",
-      tags: ["Development", "Mobile App"],
-      github: "#",
-      live: "#",
-    },
-  ];
+  const projects = ALL_PROJECTS.slice(0, HOMEPAGE_PREVIEW_COUNT);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -281,12 +235,14 @@ export default function Projects() {
 
       <div className="flex justify-center items-center py-16 min-h-[20vh]">
         <div className="relative">
-          <button className="projects-btn text-white-dove px-6 py-3 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-white-dove/30 transition-colors cursor-pointer relative text-sm tracking-widest uppercase">
-            More Works
-            <span className="absolute -top-2 -right-2 text-[9px] bg-white-dove text-dark-black rounded-full w-5 h-5 flex items-center justify-center leading-none font-semibold">
-              11
-            </span>
-          </button>
+          <Link href="/Projects">
+            <button className="projects-btn text-white-dove px-6 py-3 rounded-full mx-2 hover:bg-white-dove hover:text-dark-black border border-white-dove/30 transition-colors cursor-pointer relative text-sm tracking-widest uppercase">
+              More Works
+              <span className="absolute -top-2 -right-2 text-[9px] bg-white-dove text-dark-black rounded-full w-5 h-5 flex items-center justify-center leading-none font-semibold">
+                {REMAINING_COUNT}
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
