@@ -92,7 +92,7 @@ export default function Home() {
         <Preloader />
       ) : (
         <>
-          <Header />
+          <Header overlayHero={false} />
           <section id="home">
             <Hero />
           </section>

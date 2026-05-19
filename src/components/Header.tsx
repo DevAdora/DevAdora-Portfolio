@@ -116,9 +116,9 @@ export default function Header({ variant = "light", overlayHero = true }: Header
     <>
       {!isScrolled && (
         <header
-          className={`absolute top-0 left-0 w-full z-[45] px-8 py-4 ${textColorClass}`}
+          className={`absolute top-0 left-0 w-full z-[60] px-8 py-4 ${textColorClass}`}
         >
-          <div className="flex flex-row justify-center items-center">
+          <div className="flex flex-row justify-end items-center">
             <nav className="hidden md:block">
               <ul className={`text-[1.4rem] ${navLinkColor} text-end flex gap-10`}>
                 {navItems.map((item, i) => (

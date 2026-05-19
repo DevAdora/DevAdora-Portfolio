@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,185 +13,133 @@ export default function Hero() {
     message: "",
   });
 
-  const openContactForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsContactFormOpen(true);
-    setIsMobileMenuOpen(false);
-  };
-
-  const closeContactForm = () => setIsContactFormOpen(false);
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = () => {
     console.log("Form submitted:", formData);
-    closeContactForm();
+    setIsContactFormOpen(false);
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
-
-  const COPIES = 10;
 
   return (
     <>
       <style>{`
-        /* ─── Marquee ─── */
-        .marquee-outer {
-          width: 100%;
-          overflow: hidden;
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(16px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
-
-        .marquee-track {
-          display: flex;
-          width: max-content;
-          animation: marquee-infinite 60s linear infinite;
-          will-change: transform;
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
         }
-
-        /* Shift exactly 50% → last frame === first frame → seamless */
-        @keyframes marquee-infinite {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .marquee-track { animation-play-state: paused; }
-        }
-
-        .marquee-item {
-          display: inline-flex;
-          align-items: center;
-          white-space: nowrap;
-          /*
-            Fluid font size:
-              - Mobile  (≥320px) : ~80px
-              - Tablet  (≥768px) : ~22vw ≈ 170px
-              - Desktop (≥1440px): capped at 280px
-          */
-          font-size: clamp(80px, 22vw, 280px);
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-weight: regular;
-          line-height: 1;
-          letter-spacing: -0.03em;
-          color: #ffffff;
-          user-select: none;
-        }
-
-        .marquee-sep {
-          display: inline-block;
-          font-size: 0.28em;
-          margin: 0 0.3em;
-          vertical-align: middle;
-          color: #ffffff;
-        }
-
-        /* ─── Side vignettes so text bleeds off cleanly ─── */
-        .vignette-left,
-        .vignette-right {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 7%;
-          pointer-events: none;
-          z-index: 16;
-        }
-        .vignette-left  { left: 0;  background: linear-gradient(to right, rgba(0,0,0,0.75), transparent); }
-        .vignette-right { right: 0; background: linear-gradient(to left,  rgba(0,0,0,0.75), transparent); }
-
-        /* ─── Bottom fade → smooth into next section ─── */
-        .bottom-fade {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 50%;
-          background: linear-gradient(
-            to bottom,
-            transparent       0%,
-            rgba(0,0,0,0.10) 20%,
-            rgba(0,0,0,0.45) 45%,
-            rgba(0,0,0,0.82) 68%,
-            rgba(0,0,0,0.97) 86%,
-            #000000          100%
-          );
-          pointer-events: none;
-          z-index: 15;
-        }
+        .h-fadein { animation: fadeIn  0.9s ease both; }
+        .h-fadeup { animation: fadeUp  0.75s ease both; }
+        .h-d1 { animation-delay: 0.10s; }
+        .h-d2 { animation-delay: 0.25s; }
+        .h-d3 { animation-delay: 0.38s; }
+        .h-d4 { animation-delay: 0.52s; }
+        .h-d5 { animation-delay: 0.66s; }
+        .h-d6 { animation-delay: 0.80s; }
       `}</style>
 
+      {/* ── Hero shell ── */}
       <section
         id="hero-section"
-        className="relative w-full h-screen min-h-[600px] overflow-hidden bg-black"
+        className="relative w-full min-h-screen overflow-hidden grid grid-cols-1 md:grid-cols-2"
+        style={{
+          backgroundColor: "var(--bg-base)",
+          color: "var(--fg-primary)",
+        }}
       >
-        <div className="absolute inset-0 z-0">
+        {/* ════════ LEFT — photo ════════ */}
+        <div className="relative min-h-[55vw] md:min-h-full h-full overflow-hidden h-fadein h-d1">
           <Image
             src="/images/NKN_0852.JPG"
-            alt="DevAdora"
+            alt="Rai M. Reyes Jr. — DevAdora"
             fill
             priority
             className="object-cover object-center"
             style={{
-              filter: "grayscale(100%) brightness(0.55) contrast(1.1)",
+              filter: "grayscale(85%) brightness(0.80) contrast(1.12)",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
         </div>
 
-        <div
-          className="marquee-outer absolute z-10"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
-          aria-hidden="true"
-        >
-          <div className="marquee-track">
-            {Array.from({ length: COPIES }, (_, i) => (
-              <span key={i} className="marquee-item">
-                DevAdora
-                <span className="marquee-sep p-10">⬤</span>
-              </span>
-            ))}
+        <div className="flex flex-col justify-between px-8 md:px-12 lg:px-16 py-10 md:py-14">
+          <div className="flex flex-col gap-6 my-auto py-12">
+            <p className="h-fadeup h-d2 text-[11px] tracking-[0.3em] uppercase opacity-40">
+              Software Developer · Philippines
+            </p>
+
+            <h1
+              className="h-fadeup h-d3 font-black leading-[0.90] tracking-tighter"
+              style={{ fontSize: "clamp(3rem, 6.5vw, 6.5rem)" }}
+            >
+              Rai M.
+              <br />
+              Reyes Jr.
+            </h1>
+
+            <p className="h-fadeup h-d4 text-[0.9rem] leading-relaxed opacity-55 max-w-sm">
+              Turning complex challenges into elegant, scalable solutions —
+              built to perform, designed to endure.
+            </p>
+
+            {/* CTAs */}
+            <div className="h-fadeup h-d5 flex flex-wrap gap-3 mt-1">
+              <Link
+                href="/pages/projects"
+                className="px-6 py-3 rounded-full text-[11px] tracking-[0.2em] uppercase font-semibold transition-all duration-300 border"
+                style={{
+                  backgroundColor: "var(--fg-primary)",
+                  color: "var(--bg-base)",
+                  borderColor: "var(--fg-primary)",
+                }}
+              >
+                View Works →
+              </Link>
+              <button
+                onClick={() => setIsContactFormOpen(true)}
+                className="px-6 py-3 rounded-full text-[11px] tracking-[0.2em] uppercase font-semibold transition-all duration-200 border opacity-55 hover:opacity-100"
+                style={{
+                  borderColor: "var(--border-subtle)",
+                  color: "var(--fg-primary)",
+                }}
+              >
+                Get in Touch
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div className="vignette-left" />
-        <div className="vignette-right" />
-
-        <div className="absolute bottom-8 right-6 md:right-12 z-20 text-right">
-          <p
-            className="text-white leading-tight"
-            style={{
-              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-              fontWeight: 600,
-              fontSize: "clamp(1.1rem, 2.5vw, 1.75rem)",
-            }}
-          >
-            Software Developer
-            <br />
-            <span className="font-normal opacity-80">
+          {/* Bottom meta */}
+          <div className="h-fadeup h-d6 flex flex-col gap-1 opacity-30">
+            <span className="text-[10px] tracking-[0.25em] uppercase">
               Design &amp; Innovation
             </span>
-          </p>
+            <span className="text-[10px] tracking-[0.25em] uppercase">
+              Kabankalan City, PH
+            </span>
+          </div>
         </div>
-
-        {/* Smooth bottom section transition */}
-        <div className="bottom-fade" />
       </section>
 
-      {/* ─── CONTACT FORM SLIDE-IN ─── */}
+      {/* ════════════════════════════════════════
+          CONTACT FORM SLIDE-IN
+      ════════════════════════════════════════ */}
       <div
-        className={`fixed top-0 right-0 h-full w-full sm:w-[420px] bg-[#0a0a09] z-50 flex flex-col shadow-2xl transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-full sm:w-[420px] z-[70] flex flex-col shadow-2xl transition-transform duration-500 ease-in-out ${
           isContactFormOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ backgroundColor: "#0a0a09" }}
       >
         <div className="flex items-center justify-between px-8 py-6 border-b border-white/10">
           <h2 className="text-white text-sm font-semibold tracking-[0.2em] uppercase">
             Get In Touch
           </h2>
           <button
-            onClick={closeContactForm}
+            onClick={() => setIsContactFormOpen(false)}
             className="text-white/60 hover:text-white transition-colors"
             aria-label="Close"
           >
@@ -333,13 +280,25 @@ export default function Hero() {
                 SOCIALS
               </p>
               <div className="flex gap-5">
-                {["Instagram", "LinkedIn", "Twitter"].map((s) => (
+                {[
+                  {
+                    label: "Instagram",
+                    href: "https://www.instagram.com/soullessr4i/",
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/in/rai-reyes-jr-6bb906272/",
+                  },
+                  { label: "GitHub", href: "https://github.com/DevAdora" },
+                ].map(({ label, href }) => (
                   <a
-                    key={s}
-                    href="#"
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs text-white/60 hover:text-white transition-colors tracking-wide"
                   >
-                    {s}
+                    {label}
                   </a>
                 ))}
               </div>
@@ -350,8 +309,8 @@ export default function Hero() {
 
       {isContactFormOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
-          onClick={closeContactForm}
+          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsContactFormOpen(false)}
         />
       )}
     </>
