@@ -4,6 +4,48 @@ import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import Link from "next/link";
 
+// Menu items — anchor links stay on the home page,
+// About and Works navigate to their own pages under (pages)/
+const menuItems = [
+  { label: "Home",         href: "/" },
+  { label: "Services",     href: "/#services" },
+  { label: "Works",        href: "/pages/projects" },
+  { label: "About",        href: "/pages/about" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Contact",      href: "/#contact" },
+];
+
+// Reusable underline link — colour follows the theme via CSS var
+function FooterLink({
+  href,
+  children,
+  external,
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+}) {
+  const cls =
+    "relative inline-block " +
+    "after:content-[''] after:absolute after:left-0 after:bottom-0 " +
+    "after:h-[1.5px] after:w-0 after:bg-[var(--fg-primary)] " +
+    "after:transition-all after:duration-300 hover:after:w-full " +
+    "transition-opacity duration-200 hover:opacity-100 opacity-80";
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={cls}>
+      {children}
+    </Link>
+  );
+}
+
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");
 
@@ -18,143 +60,97 @@ export default function Footer() {
       });
       setLocalTime(time);
     };
-
     updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  const colHeadingCls =
+    "font-semibold mb-4 border-b border-[var(--border-subtle)] pb-2 " +
+    "text-[0.8rem] sm:text-[1rem] md:text-[1.2rem]";
+
+  const colListCls =
+    "space-y-2 text-[0.8rem] sm:text-[1rem] md:text-[1.2rem]";
 
   return (
-    <footer className="bg-[#000000] text-[#f0ede4] py-12 px-8 md:px-16 text-sm font-light relative">
-      <div className="grid grid-cols-3 md:grid-cols-3 gap-12 border-b border-gray-300 pb-8">
+    <footer className="py-12 px-8 md:px-16 text-sm font-light relative">
+      {/* ── Three-column grid ── */}
+      <div className="grid grid-cols-3 gap-8 md:gap-12 border-b border-[var(--border-subtle)] pb-8">
+
+        {/* Menu */}
         <div>
-          <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            Menu
-          </h3>
-          <ul className="space-y-2 text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            {[
-              "Home",
-              "Services",
-              "Works",
-              "About",
-              "Testimonials",
-              "Contact",
-            ].map((item) => (
-              <li key={item}>
-                <Link
-                  href={`/#${item.toLowerCase()}`}
-                  className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  {item}
-                </Link>
+          <h3 className={colHeadingCls}>Menu</h3>
+          <ul className={colListCls}>
+            {menuItems.map(({ label, href }) => (
+              <li key={label}>
+                <FooterLink href={href}>{label}</FooterLink>
               </li>
             ))}
           </ul>
         </div>
 
+        {/* Socials */}
         <div>
-          <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            Socials
-          </h3>
-          <ul className="space-y-2  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            <li>
-              <a
-                href="https://www.linkedin.com/in/rai-reyes-jr-6bb906272/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/soullessr4i/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://bento.me/devadora"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                Bento
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/DevAdora"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                GitHub
-              </a>
-            </li>
+          <h3 className={colHeadingCls}>Socials</h3>
+          <ul className={colListCls}>
+            {[
+              { label: "LinkedIn",  href: "https://www.linkedin.com/in/rai-reyes-jr-6bb906272/" },
+              { label: "Instagram", href: "https://www.instagram.com/soullessr4i/" },
+              { label: "Bento",     href: "https://bento.me/devadora" },
+              { label: "GitHub",    href: "https://github.com/DevAdora" },
+            ].map(({ label, href }) => (
+              <li key={label}>
+                <FooterLink href={href} external>{label}</FooterLink>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Contacts */}
         <div>
-          <h3 className="font-semibold mb-4  border-b border-gray-300  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            Contacts
-          </h3>
-          <ul className="space-y-2  text-[0.8rem] sm:text-[1rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.2rem] 2xl:text-[1.2rem]">
-            <li>
-              <a
-                href="mailto:raireyesjr@gmail.com?subject=Hello&body=I want to contact you"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                Gmail
-              </a>
-            </li>
-            <li>
-              <a
-                href="viber://chat?number=%2B639171234567"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                Viber
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://t.me/yourusername"
-                className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#f0ede4] after:transition-all after:duration-300 hover:after:w-full"
-              >
-                Telegram
-              </a>
-            </li>
+          <h3 className={colHeadingCls}>Contacts</h3>
+          <ul className={colListCls}>
+            {[
+              { label: "Gmail",    href: "mailto:raireyesjr@gmail.com?subject=Hello&body=I want to contact you" },
+              { label: "Viber",    href: "viber://chat?number=%2B639762583010" },
+              { label: "Telegram", href: "https://t.me/yourusername" },
+            ].map(({ label, href }) => (
+              <li key={label}>
+                <FooterLink href={href} external>{label}</FooterLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
-      <div className="flex flex-row sm:flex-row md:flex-row justify-between items-center mt-8 relative">
-        <div className="text-xl md:text-2xl xl:text-[3rem] font-bold w-[40%] flex-wrap">
-          © 2026 DevAdora <br className="md:hidden" />
-          <span className="font-semibold block md:inline">
+      {/* ── Bottom bar ── */}
+      <div className="flex flex-row justify-between items-center mt-8 relative">
+        <div className="text-xl md:text-2xl xl:text-[3rem] font-bold w-[40%]">
+          © 2026 ByRai
+          <span className="font-semibold block md:inline md:ml-2">
             All rights reserved.
           </span>
         </div>
 
         <div className="mt-4 md:mt-0 text-right text-xs">
-          <p className="font-semibold">LOCAL TIME</p>
-          <p>
-            {localTime} <span className="text-[10px]">, PHI</span>
+          <p className="font-semibold tracking-widest uppercase text-[10px] opacity-50 mb-1">
+            Local Time
+          </p>
+          <p className="opacity-80">
+            {localTime}{" "}
+            <span className="text-[10px] opacity-60">, PHI</span>
           </p>
         </div>
 
         <button
           onClick={scrollToTop}
-          className="absolute bottom-0 right-0 bg-[#f0ede4] rounded-full p-2 md:p-3 text-[#0a0a09] hover:bg-black transition cursor-pointer"
+          className="absolute bottom-0 right-0 rounded-full p-2 md:p-3 transition-all duration-200 cursor-pointer hover:opacity-70"
+          style={{
+            backgroundColor: "var(--fg-primary)",
+            color: "var(--bg-base)",
+          }}
           aria-label="Scroll to top"
         >
           <FaArrowUp />

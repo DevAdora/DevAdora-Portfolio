@@ -15,8 +15,8 @@ type HeaderProps = {
 
 const navItems = [
   { name: "Services", path: "/" },
-  { name: "About ", path: "/About" },
-  { name: "Works ", path: "/Projects" },
+  { name: "About ", path: "pages/about" },
+  { name: "Works ", path: "pages/projects" },
   { name: "Testimonials ", path: "/" },
 ];
 
