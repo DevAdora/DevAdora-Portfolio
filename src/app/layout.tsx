@@ -42,7 +42,7 @@ export default function RootLayout({
           {children}
           <SpeedInsights />
           <FloatingControls />
-          <div className="grainy-overlay pointer-events-none absolute inset-0 z-50" />
+          <div className="pointer-events-none absolute inset-0 z-50" />
         </div>
 
         <Script

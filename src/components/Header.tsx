@@ -6,10 +6,6 @@ import { useEffect, useState } from "react";
 
 type HeaderProps = {
   variant?: "light" | "dark";
-  /**
-   * true  → nav links stay white (home page: links sit over dark hero photo)
-   * false → nav links follow the active theme (about / projects pages)
-   */
   overlayHero?: boolean;
 };
 
@@ -20,7 +16,10 @@ const navItems = [
   { name: "Testimonials ", path: "/" },
 ];
 
-export default function Header({ variant = "light", overlayHero = true }: HeaderProps) {
+export default function Header({
+  variant = "light",
+  overlayHero = true,
+}: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLight, setIsLight] = useState(false);
@@ -54,7 +53,6 @@ export default function Header({ variant = "light", overlayHero = true }: Header
     };
   }, []);
 
-  // Track theme changes so nav color updates instantly when toggle is clicked
   useEffect(() => {
     const update = () =>
       setIsLight(document.documentElement.classList.contains("light"));
@@ -67,12 +65,8 @@ export default function Header({ variant = "light", overlayHero = true }: Header
     return () => observer.disconnect();
   }, []);
 
-  // Nav link color + hover logic:
-  //   overlayHero=true OR dark mode  → white text, white underline on hover
-  //   overlayHero=false AND light mode → dark text, dark underline on hover
   const navLinkColor =
     overlayHero || !isLight ? "text-[#f0ede4]" : "text-[#0a0a09]";
-  // "default" = white hover  |  "dark" = black hover (defined in HeaderLinks.tsx)
   const navScrambleVariant: "default" | "dark" =
     !overlayHero && isLight ? "dark" : "default";
 
@@ -120,11 +114,16 @@ export default function Header({ variant = "light", overlayHero = true }: Header
         >
           <div className="flex flex-row justify-end items-center">
             <nav className="hidden md:block">
-              <ul className={`text-[1.4rem] ${navLinkColor} text-end flex gap-10`}>
+              <ul
+                className={`text-[1.4rem] ${navLinkColor} text-end flex gap-10`}
+              >
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link href={item.path}>
-                      <ScrambleText label={item.name} variant={navScrambleVariant} />
+                      <ScrambleText
+                        label={item.name}
+                        variant={navScrambleVariant}
+                      />
                     </Link>
                   </li>
                 ))}
@@ -209,7 +208,7 @@ export default function Header({ variant = "light", overlayHero = true }: Header
 
       <>
         <div
-          className={`fixed inset-0 bg-[#0a0a09] backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
+          className={`fixed inset-0 bg-black/30 backdrop-blur-md z-[60] transition-all duration-500 ease-out ${
             isContactFormOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={closeContactForm}
