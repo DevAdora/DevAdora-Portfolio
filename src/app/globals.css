@@ -10,50 +10,47 @@
    ================================================================ */
 
 :root {
-  --brown-color:           #725843;
-  --light-brown-color:     #9f7f65;
-  --dark-gray-color:       #60564d;
-  --white-brown-color:     #ccb4a0;
-  --dark-brown-color:      #3a2a1d;
+  --brown-color: #725843;
+  --light-brown-color: #9f7f65;
+  --dark-gray-color: #60564d;
+  --white-brown-color: #ccb4a0;
+  --dark-brown-color: #3a2a1d;
   --kendal-charcoal-color: #686662;
-  --white-dove-color:      #f0ede4;
-  --wrought-iron-color:    #323333;
-  --light-dark-color:      #78726a;
-  --dark-black-color:      #000000;
-  --text-light-color:      #c9c9c1;
+  --white-dove-color: #f0ede4;
+  --wrought-iron-color: #323333;
+  --light-dark-color: #78726a;
+  --dark-black-color: #000000;
+  --text-light-color: #c9c9c1;
 
   /* Semantic tokens — DARK (default) */
-  --bg-base:       #000000;
-  --bg-elevated:   #0a0a09;
-  --fg-primary:    #f0ede4;
-  --fg-muted:      rgba(240, 237, 228, 0.55);
-  --border-subtle: rgba(240, 237, 228, 0.10);
+  --bg-base: #000000;
+  --bg-elevated: #0a0a09;
+  --fg-primary: #f0ede4;
+  --fg-muted: rgba(240, 237, 228, 0.55);
+  --border-subtle: rgba(240, 237, 228, 0.1);
 }
 
 html.light {
-  --bg-base:       #f0ede4;
-  --bg-elevated:   #e8e2d9;
-  --fg-primary:    #0a0a09;
-  --fg-muted:      rgba(10, 10, 9, 0.52);
-  --border-subtle: rgba(10, 10, 9, 0.10);
+  --bg-base: #f0ede4;
+  --bg-elevated: #e8e2d9;
+  --fg-primary: #0a0a09;
+  --fg-muted: rgba(10, 10, 9, 0.52);
+  --border-subtle: rgba(10, 10, 9, 0.1);
 
   /* Flip legacy vars */
-  --white-dove-color:   #0a0a09;
-  --dark-black-color:   #f0ede4;
-  --text-light-color:   #3a3530;
+  --white-dove-color: #0a0a09;
+  --dark-black-color: #f0ede4;
+  --text-light-color: #3a3530;
   --wrought-iron-color: #2a2825;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-karla:       var(--font-karla);
-  --font-rubik:       var(--font-rubik);
-
-
+  --font-karla: var(--font-karla);
+  --font-rubik: var(--font-rubik);
 }
 
- 
 /* ================================================================
    BASE
    ================================================================ */
@@ -62,53 +59,125 @@ html {
   scroll-behavior: smooth;
   background-color: var(--bg-base);
   color: var(--fg-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
-body { font-family: var(--font-rubik); }
-
-section, header, main, footer,
-.box, .services, .projects,
-.about, .gallery, .contact, .preloader {
   transition:
     background-color 0.4s ease,
-    color            0.4s ease,
-    border-color     0.35s ease;
+    color 0.4s ease;
+}
+
+body {
+  font-family: var(--font-rubik);
+}
+
+section,
+header,
+main,
+footer,
+.box,
+.services,
+.projects,
+.about,
+.gallery,
+.contact,
+.preloader {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.35s ease;
 }
 
 /* ================================================================
    COMPONENT CLASSES — all share --bg-base so zero seams between sections
    ================================================================ */
 
-.header               { color: var(--light-dark-color); }
-.services             { background-color: var(--bg-base); color: var(--fg-primary); }
-.box                  { background-color: var(--bg-base); }
-.projects             { background-color: var(--bg-base); color: var(--fg-primary); }
-.about                { background-color: var(--bg-base); color: var(--fg-primary); }
-.gallery              { background-color: var(--bg-base); color: var(--fg-primary); }
-.contact              { background-color: var(--bg-base); color: var(--text-light-color); }
-.preloader            { background-color: var(--bg-elevated); color: var(--fg-primary); }
-.projects-page-section { background-color: var(--bg-base); color: var(--fg-primary); }
-.about-page-section   { background-color: var(--bg-base); color: var(--fg-primary); }
+.header {
+  color: var(--light-dark-color);
+}
+.services {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+}
+.box {
+  background-color: var(--bg-base);
+}
+.projects {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+}
+.about {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+}
+.gallery {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+}
+.contact {
+  background-color: var(--bg-base);
+  color: var(--text-light-color);
+}
+.preloader {
+  background-color: var(--bg-elevated);
+  color: var(--fg-primary);
+}
+.projects-page-section {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+}
+.about-page-section {
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
+}
 
-.about-header span { color: var(--text-light-color); }
-.about-desc        { color: var(--light-dark-color); }
+.about-header span {
+  color: var(--text-light-color);
+}
+.about-desc {
+  color: var(--light-dark-color);
+}
 
-.hero-btn        { background-color: var(--bg-elevated); color: var(--fg-primary); }
-.dark-btn        { background-color: var(--bg-elevated); color: var(--fg-primary); }
-.dark-btn:hover  { color: var(--bg-elevated); }
-.white-btn       { color: var(--bg-elevated); }
-.white-btn:hover { background-color: var(--bg-elevated); color: var(--fg-primary); }
+.hero-btn {
+  background-color: var(--bg-elevated);
+  color: var(--fg-primary);
+}
+.dark-btn {
+  background-color: var(--bg-elevated);
+  color: var(--fg-primary);
+}
+.dark-btn:hover {
+  color: var(--bg-elevated);
+}
+.white-btn {
+  color: var(--bg-elevated);
+}
+.white-btn:hover {
+  background-color: var(--bg-elevated);
+  color: var(--fg-primary);
+}
 
-.projects-btn       { color: var(--fg-primary); border-color: var(--border-subtle); }
-.projects-btn:hover { background-color: var(--fg-primary); color: var(--bg-base); }
+.projects-btn {
+  color: var(--fg-primary);
+  border-color: var(--border-subtle);
+}
+.projects-btn:hover {
+  background-color: var(--fg-primary);
+  color: var(--bg-base);
+}
 
-.techstack { background-color: var(--light-dark-color); color: var(--dark-black-color); }
+.techstack {
+  background-color: var(--light-dark-color);
+  color: var(--dark-black-color);
+}
 
 /* Tailwind utility class flips */
-html.light .text-white-dove   { color: var(--fg-primary) !important; }
-html.light .bg-dark-black     { background-color: var(--bg-base) !important; }
-html.light .border-white-dove { border-color: rgba(10,10,9,0.18) !important; }
+html.light .text-white-dove {
+  color: var(--fg-primary) !important;
+}
+html.light .bg-dark-black {
+  background-color: var(--bg-base) !important;
+}
+html.light .border-white-dove {
+  border-color: rgba(10, 10, 9, 0.18) !important;
+}
 
 /* ================================================================
    LIGHT MODE — SERVICES + PROJECTS seam fix
@@ -131,7 +200,7 @@ html.light .projects-page-section {
 /* Tag + tech pills */
 html.light .projects-page-section .border-white-dove,
 html.light .projects .border-white-dove {
-  border-color: rgba(10,10,9,0.20) !important;
+  border-color: rgba(10, 10, 9, 0.2) !important;
   color: var(--fg-primary) !important;
 }
 
@@ -157,31 +226,44 @@ html.light .about-section-heading {
 /* Card container */
 html.light .about-card {
   background-color: var(--bg-elevated) !important;
-  border-color: rgba(10,10,9,0.12) !important;
+  border-color: rgba(10, 10, 9, 0.12) !important;
 }
 html.light .about-card:hover {
-  border-color: rgba(10,10,9,0.25) !important;
+  border-color: rgba(10, 10, 9, 0.25) !important;
 }
 
 /* Card text layers */
-html.light .about-card-title { color: var(--fg-primary)         !important; }
-html.light .about-card-sub   { color: rgba(10,10,9,0.55)        !important; }
-html.light .about-card-muted { color: rgba(10,10,9,0.38)        !important; }
-html.light .about-card-body  { color: rgba(10,10,9,0.60)        !important; }
+html.light .about-card-title {
+  color: var(--fg-primary) !important;
+}
+html.light .about-card-sub {
+  color: rgba(10, 10, 9, 0.55) !important;
+}
+html.light .about-card-muted {
+  color: rgba(10, 10, 9, 0.38) !important;
+}
+html.light .about-card-body {
+  color: rgba(10, 10, 9, 0.6) !important;
+}
 
 /* "View N more" button */
 html.light .about-view-all {
-  border-color: rgba(10,10,9,0.15) !important;
-  color: rgba(10,10,9,0.50) !important;
+  border-color: rgba(10, 10, 9, 0.15) !important;
+  color: rgba(10, 10, 9, 0.5) !important;
 }
 html.light .about-view-all:hover {
-  border-color: rgba(10,10,9,0.40) !important;
+  border-color: rgba(10, 10, 9, 0.4) !important;
   color: var(--fg-primary) !important;
 }
 
 /* Education timeline */
-html.light .about-timeline       { border-color: rgba(10,10,9,0.25) !important; }
-html.light .about-timeline-dot   { background-color: var(--fg-primary) !important; border-color: rgba(10,10,9,0.30) !important; }
+html.light .about-timeline {
+  border-color: rgba(10, 10, 9, 0.25) !important;
+}
+html.light .about-timeline-dot {
+  background-color: var(--fg-primary) !important;
+  border-color: rgba(10, 10, 9, 0.3) !important;
+}
 
 /* Resume buttons */
 html.light .about-resume-view {
@@ -189,7 +271,7 @@ html.light .about-resume-view {
   color: #f0ede4 !important;
 }
 html.light .about-resume-dl {
-  border-color: rgba(10,10,9,0.30) !important;
+  border-color: rgba(10, 10, 9, 0.3) !important;
   color: var(--fg-primary) !important;
 }
 html.light .about-resume-dl:hover {
@@ -200,37 +282,81 @@ html.light .about-resume-dl:hover {
 /* Modal */
 html.light .about-modal {
   background-color: var(--bg-elevated) !important;
-  border-color: rgba(10,10,9,0.12) !important;
+  border-color: rgba(10, 10, 9, 0.12) !important;
 }
 html.light .about-modal-header {
-  border-color: rgba(10,10,9,0.10) !important;
+  border-color: rgba(10, 10, 9, 0.1) !important;
 }
-html.light .about-modal-title  { color: var(--fg-primary) !important; }
-html.light .about-modal-close  { color: rgba(10,10,9,0.45) !important; }
-html.light .about-modal-close:hover { color: var(--fg-primary) !important; }
+html.light .about-modal-title {
+  color: var(--fg-primary) !important;
+}
+html.light .about-modal-close {
+  color: rgba(10, 10, 9, 0.45) !important;
+}
+html.light .about-modal-close:hover {
+  color: var(--fg-primary) !important;
+}
 
 /* ================================================================
    LIGHT MODE — HERO
    ================================================================ */
 
-html.light #hero-section { background-color: #f0ede4 !important; }
+html.light #hero-section {
+  background-color: #f0ede4 !important;
+}
 html.light #hero-section img {
   filter: grayscale(20%) brightness(0.92) contrast(1.08) !important;
 }
 html.light #hero-section .absolute.inset-0.bg-gradient-to-r {
-  background: linear-gradient(to right, rgba(240,237,228,0.55) 0%, rgba(240,237,228,0.05) 40%, rgba(240,237,228,0.30) 100%) !important;
+  background: linear-gradient(
+    to right,
+    rgba(240, 237, 228, 0.55) 0%,
+    rgba(240, 237, 228, 0.05) 40%,
+    rgba(240, 237, 228, 0.3) 100%
+  ) !important;
 }
 html.light #hero-section .absolute.inset-0.bg-gradient-to-t {
-  background: linear-gradient(to top, rgba(240,237,228,0.20) 0%, transparent 50%, rgba(240,237,228,0.08) 100%) !important;
+  background: linear-gradient(
+    to top,
+    rgba(240, 237, 228, 0.2) 0%,
+    transparent 50%,
+    rgba(240, 237, 228, 0.08) 100%
+  ) !important;
 }
-html.light #hero-section .marquee-item { color: rgba(10,10,9,0.82) !important; }
-html.light #hero-section .marquee-sep  { color: rgba(10,10,9,0.82) !important; }
-html.light #hero-section .vignette-left  { background: linear-gradient(to right, rgba(240,237,228,0.70), transparent) !important; }
-html.light #hero-section .vignette-right { background: linear-gradient(to left,  rgba(240,237,228,0.70), transparent) !important; }
+html.light #hero-section .marquee-item {
+  color: rgba(10, 10, 9, 0.82) !important;
+}
+html.light #hero-section .marquee-sep {
+  color: rgba(10, 10, 9, 0.82) !important;
+}
+html.light #hero-section .vignette-left {
+  background: linear-gradient(
+    to right,
+    rgba(240, 237, 228, 0.7),
+    transparent
+  ) !important;
+}
+html.light #hero-section .vignette-right {
+  background: linear-gradient(
+    to left,
+    rgba(240, 237, 228, 0.7),
+    transparent
+  ) !important;
+}
 html.light #hero-section .bottom-fade {
-  background: linear-gradient(to bottom, transparent 0%, rgba(240,237,228,0.00) 30%, rgba(240,237,228,0.25) 55%, rgba(240,237,228,0.72) 75%, rgba(240,237,228,0.95) 90%, #f0ede4 100%) !important;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(240, 237, 228, 0) 30%,
+    rgba(240, 237, 228, 0.25) 55%,
+    rgba(240, 237, 228, 0.72) 75%,
+    rgba(240, 237, 228, 0.95) 90%,
+    #f0ede4 100%
+  ) !important;
 }
-html.light #hero-section .absolute.bottom-8 p { color: #0a0a09 !important; }
+html.light #hero-section .absolute.bottom-8 p {
+  color: #0a0a09 !important;
+}
 
 /* ================================================================
    LIGHT MODE — HEADER
@@ -241,41 +367,100 @@ html.light #hero-section .absolute.bottom-8 p { color: #0a0a09 !important; }
 
 /* ================================================================
    LIGHT MODE — TESTIMONIALS
+   Section bg handled by .testimonial-section class (in component).
+   Card colors handled by .testimonial-card CSS class below.
    ================================================================ */
 
 #testimonials > section {
   background-color: var(--bg-base);
   color: var(--fg-primary);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 html.light #testimonials > section {
   background-color: var(--bg-base) !important;
   color: var(--fg-primary) !important;
 }
-html.light #testimonials h1 { color: var(--fg-primary) !important; }
-html.light #testimonials p  { color: var(--fg-muted)   !important; }
+
+/* Navigation chevron buttons */
 html.light #testimonials button {
-  border-color: rgba(10,10,9,0.22) !important;
-  color: rgba(10,10,9,0.55) !important;
+  border-color: rgba(10, 10, 9, 0.22) !important;
+  color: rgba(10, 10, 9, 0.55) !important;
 }
 html.light #testimonials button:hover {
   background-color: #0a0a09 !important;
   color: #f0ede4 !important;
 }
 
+/* ── Testimonial cards — CSS-driven theming, no JS needed ── */
+
+/* Dark mode (default): light card */
+.testimonial-card {
+  background-color: #f0ede4;
+  color: #0a0a09;
+}
+.testimonial-feedback {
+  color: rgba(10, 10, 9, 0.72);
+}
+.testimonial-name {
+  color: rgba(10, 10, 9, 1);
+}
+.testimonial-role {
+  color: rgba(10, 10, 9, 0.55);
+}
+.testimonial-skill {
+  color: rgba(10, 10, 9, 0.4);
+}
+
+/* Light mode: dark card */
+html.light .testimonial-card {
+  background-color: #0a0a09;
+  color: #f0ede4;
+}
+html.light .testimonial-feedback {
+  color: rgba(240, 237, 228, 0.78) !important;
+}
+html.light .testimonial-name {
+  color: rgba(240, 237, 228, 1) !important;
+}
+html.light .testimonial-role {
+  color: rgba(240, 237, 228, 0.55) !important;
+}
+html.light .testimonial-skill {
+  color: rgba(240, 237, 228, 0.4) !important;
+}
+
 /* ================================================================
    LIGHT MODE — CONTACT
    ================================================================ */
 
-#contact > div { background-color: var(--bg-base); transition: background-color 0.4s ease; }
-html.light #contact > div { background-color: var(--bg-base) !important; }
-html.light #contact > div > div { background-color: #0a0a09 !important; color: #f0ede4 !important; }
-html.light #contact h1    { color: #f0ede4 !important; }
-html.light #contact button { background-color: #f0ede4 !important; color: #0a0a09 !important; }
+#contact > div {
+  background-color: var(--bg-base);
+  transition: background-color 0.4s ease;
+}
+html.light #contact > div {
+  background-color: var(--bg-base) !important;
+}
+html.light #contact > div > div {
+  background-color: #0a0a09 !important;
+  color: #f0ede4 !important;
+}
+html.light #contact h1 {
+  color: #f0ede4 !important;
+}
+html.light #contact button {
+  background-color: #f0ede4 !important;
+  color: #0a0a09 !important;
+}
 html.light #contact .flex p,
 html.light #contact .flex a,
-html.light #contact .flex span { color: #f0ede4 !important; }
-html.light #contact .border    { border-color: rgba(240,237,228,0.25) !important; }
+html.light #contact .flex span {
+  color: #f0ede4 !important;
+}
+html.light #contact .border {
+  border-color: rgba(240, 237, 228, 0.25) !important;
+}
 
 /* ================================================================
    FOOTER — fully theme-aware
@@ -289,8 +474,8 @@ footer {
   border-top: 1px solid var(--border-subtle);
   transition:
     background-color 0.4s ease,
-    color            0.4s ease,
-    border-color     0.35s ease !important;
+    color 0.4s ease,
+    border-color 0.35s ease !important;
 }
 
 footer h3,
@@ -309,7 +494,9 @@ footer .border-gray-300 {
 footer button {
   background-color: var(--fg-primary) !important;
   color: var(--bg-base) !important;
-  transition: background-color 0.3s ease, color 0.3s ease !important;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease !important;
 }
 footer button:hover {
   background-color: var(--light-dark-color) !important;
@@ -321,8 +508,12 @@ footer button:hover {
    ================================================================ */
 
 @keyframes spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .loader {
   border: 8px solid #686662;
@@ -333,10 +524,22 @@ footer button:hover {
   animation: spin 2s linear infinite;
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
 
-.karla-script   { font-family: var(--font-karla); }
-.rubik-script   { font-family: var(--font-rubik); }
-.box-transition { transition: transform 0.5s ease; }
+.karla-script {
+  font-family: var(--font-karla);
+}
+.rubik-script {
+  font-family: var(--font-rubik);
+}
+.box-transition {
+  transition: transform 0.5s ease;
+}
