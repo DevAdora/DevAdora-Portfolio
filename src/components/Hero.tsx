@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,6 +22,8 @@ export default function Hero() {
     setIsContactFormOpen(false);
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
+
+  const closeContactForm = () => setIsContactFormOpen(false);
 
   return (
     <>
@@ -127,192 +129,216 @@ export default function Hero() {
 
       {/* ════════════════════════════════════════
           CONTACT FORM SLIDE-IN
+          — backdrop + panel now match Header.tsx exactly —
       ════════════════════════════════════════ */}
       <div
-        className={`fixed top-0 right-0 h-full w-full sm:w-[420px] z-[70] flex flex-col shadow-2xl transition-transform duration-500 ease-in-out ${
-          isContactFormOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-0 bg-black/30 backdrop-blur-md z-[60] transition-all duration-500 ease-out ${
+          isContactFormOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
-        style={{ backgroundColor: "#0a0a09" }}
+        onClick={closeContactForm}
+      />
+
+      <div
+        className={`fixed top-0 right-0 h-full bg-[#0a0a09] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto w-full sm:w-[85%] md:w-[65%] lg:w-[50%] xl:w-[40%] ${
+          isContactFormOpen
+            ? "translate-x-0 opacity-100"
+            : "translate-x-full opacity-0"
+        }`}
       >
-        <div className="flex items-center justify-between px-8 py-6 border-b border-white/10">
-          <h2 className="text-white text-sm font-semibold tracking-[0.2em] uppercase">
-            Get In Touch
-          </h2>
-          <button
-            onClick={() => setIsContactFormOpen(false)}
-            className="text-white/60 hover:text-white transition-colors"
-            aria-label="Close"
-          >
-            <svg
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div className="flex-1 overflow-y-auto px-8 py-8 space-y-6">
-          {[
-            {
-              label: "Full Name *",
-              id: "name",
-              type: "text",
-              placeholder: "John Doe",
-            },
-            {
-              label: "Email Address *",
-              id: "email",
-              type: "email",
-              placeholder: "john@example.com",
-            },
-            {
-              label: "Phone Number",
-              id: "phone",
-              type: "tel",
-              placeholder: "+63 9XX XXX XXXX",
-            },
-          ].map(({ label, id, type, placeholder }, i) => (
-            <div
-              key={id}
-              className={`transition-all duration-500 ${isContactFormOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
-              style={{ transitionDelay: `${100 + i * 100}ms` }}
-            >
-              <label
-                htmlFor={id}
-                className="block text-xs text-white/60 mb-2 tracking-widest uppercase"
-              >
-                {label}
-              </label>
-              <input
-                type={type}
-                id={id}
-                name={id}
-                value={formData[id as keyof typeof formData]}
-                onChange={handleInputChange}
-                placeholder={placeholder}
-                className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-white text-sm placeholder-white/30 focus:outline-none focus:border-white/60 transition-colors"
-              />
-            </div>
-          ))}
-
-          <div
-            className={`transition-all duration-500 ${isContactFormOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
-            style={{ transitionDelay: "400ms" }}
-          >
-            <label
-              htmlFor="message"
-              className="block text-xs text-white/60 mb-2 tracking-widest uppercase"
-            >
-              Message *
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              rows={5}
-              placeholder="Tell me about your project..."
-              className="w-full px-4 py-3 bg-transparent border border-white/20 rounded-lg text-white text-sm placeholder-white/30 focus:outline-none focus:border-white/60 transition-colors resize-none"
-            />
-          </div>
-
-          <div
-            className={`transition-all duration-500 ${isContactFormOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
-            style={{ transitionDelay: "500ms" }}
-          >
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-white text-black py-4 rounded-lg text-sm font-semibold tracking-widest uppercase hover:bg-white/90 transition-colors"
-            >
-              Send Message →
-            </button>
-          </div>
-
-          <div
-            className={`pt-8 border-t border-white/10 space-y-5 transition-all duration-500 ${isContactFormOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
-            style={{ transitionDelay: "600ms" }}
-          >
-            {[
-              {
-                label: "EMAIL",
-                value: "raireyesjr@gmail.com",
-                href: "mailto:raireyesjr@gmail.com",
-              },
-              {
-                label: "PHONE",
-                value: "+63 9 762 583 010",
-                href: "tel:+639762583010",
-              },
-            ].map(({ label, value, href }) => (
-              <div key={label}>
-                <p className="text-[10px] text-white/40 tracking-widest mb-1">
-                  {label}
+        <div className="flex flex-col h-full">
+          <div className="sticky top-0 bg-[#0a0a09] border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 z-10">
+            <div className="flex justify-between items-center">
+              <div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-[-1px] text-white">
+                  Get In Touch
+                </h2>
+                <p className="text-xs sm:text-sm text-white/60 mt-1">
+                  Let's talk about your project
                 </p>
-                <a
-                  href={href}
-                  className="text-sm text-white/80 hover:text-white transition-colors"
-                >
-                  {value}
-                </a>
               </div>
-            ))}
-            <div>
-              <p className="text-[10px] text-white/40 tracking-widest mb-1">
-                BASED
-              </p>
-              <p className="text-sm text-white/80">
-                Kabankalan City, 6111
-                <br />
-                Negros Occidental, PH
-              </p>
+              <button
+                onClick={closeContactForm}
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors group"
+                aria-label="Close contact form"
+              >
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-white transition-all"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
             </div>
-            <div>
-              <p className="text-[10px] text-white/40 tracking-widest mb-3">
-                SOCIALS
-              </p>
-              <div className="flex gap-5">
-                {[
-                  {
-                    label: "Instagram",
-                    href: "https://www.instagram.com/soullessr4i/",
-                  },
-                  {
-                    label: "LinkedIn",
-                    href: "https://www.linkedin.com/in/rai-reyes-jr-6bb906272/",
-                  },
-                  { label: "GitHub", href: "https://github.com/DevAdora" },
-                ].map(({ label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-white/60 hover:text-white transition-colors tracking-wide"
+          </div>
+
+          <div className="flex-1 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8">
+            <div className="space-y-4 sm:space-y-6">
+              {[
+                {
+                  label: "Full Name *",
+                  id: "name",
+                  type: "text",
+                  placeholder: "John Doe",
+                  delay: "100ms",
+                },
+                {
+                  label: "Email Address *",
+                  id: "email",
+                  type: "email",
+                  placeholder: "john@example.com",
+                  delay: "200ms",
+                },
+                {
+                  label: "Phone Number",
+                  id: "phone",
+                  type: "tel",
+                  placeholder: "+63 9XX XXX XXXX",
+                  delay: "300ms",
+                },
+              ].map(({ label, id, type, placeholder, delay }) => (
+                <div
+                  key={id}
+                  className={`transform transition-all duration-500 ${
+                    isContactFormOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: delay }}
+                >
+                  <label
+                    htmlFor={id}
+                    className="block text-xs sm:text-sm text-white mb-2"
                   >
                     {label}
-                  </a>
-                ))}
+                  </label>
+                  <input
+                    type={type}
+                    id={id}
+                    name={id}
+                    value={formData[id as keyof typeof formData]}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white/30 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white placeholder-white/30"
+                    placeholder={placeholder}
+                  />
+                </div>
+              ))}
+
+              <div
+                className={`transform transition-all duration-500 ${
+                  isContactFormOpen
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-8 opacity-0"
+                }`}
+                style={{ transitionDelay: "400ms" }}
+              >
+                <label
+                  htmlFor="message"
+                  className="block text-xs sm:text-sm text-white mb-2"
+                >
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={6}
+                  className="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base border border-white/30 rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all bg-[#0a0a09] text-white placeholder-white/30 resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              <div
+                className={`transform transition-all duration-500 ${
+                  isContactFormOpen
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-8 opacity-0"
+                }`}
+                style={{ transitionDelay: "500ms" }}
+              >
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-white text-[#080807] py-3 sm:py-4 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:shadow-lg hover:bg-gray-100"
+                >
+                  Send Message →
+                </button>
+              </div>
+            </div>
+
+            <div
+              className={`mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10 space-y-4 sm:space-y-6 transform transition-all duration-500 ${
+                isContactFormOpen
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-8 opacity-0"
+              }`}
+              style={{ transitionDelay: "600ms" }}
+            >
+              <div>
+                <h3 className="text-xs sm:text-sm text-white mb-2">EMAIL</h3>
+                <a
+                  href="mailto:raireyesjr@gmail.com"
+                  className="text-sm sm:text-base text-white/80 hover:text-white transition-colors break-all"
+                >
+                  raireyesjr@gmail.com
+                </a>
+              </div>
+
+              <div>
+                <h3 className="text-xs sm:text-sm text-white mb-2">PHONE</h3>
+                <a
+                  href="tel:+639762583010"
+                  className="text-sm sm:text-base text-white/80 hover:text-white transition-colors"
+                >
+                  +63 9 762 583 010
+                </a>
+              </div>
+
+              <div>
+                <h3 className="text-xs sm:text-sm text-white mb-2">BASED</h3>
+                <p className="text-sm sm:text-base text-white/80">
+                  Kabankalan City, 6111
+                  <br />
+                  Negros Occidental, PH
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xs sm:text-sm text-white mb-2">SOCIALS</h3>
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  {[
+                    {
+                      label: "Instagram",
+                      href: "https://www.instagram.com/soullessr4i/",
+                    },
+                    {
+                      label: "LinkedIn",
+                      href: "https://www.linkedin.com/in/rai-reyes-jr-6bb906272/",
+                    },
+                    { label: "GitHub", href: "https://github.com/DevAdora" },
+                  ].map(({ label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm sm:text-base text-white/80 hover:text-white transition-colors"
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {isContactFormOpen && (
-        <div
-          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
-          onClick={() => setIsContactFormOpen(false)}
-        />
-      )}
     </>
   );
 }
