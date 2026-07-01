@@ -301,7 +301,7 @@ export default function AboutPage() {
           position: "Software Developer",
           start: "Oct 2025",
           description:
-            "Software developer and IT generalist across application development, infrastructure, and network operations. Built an internal web app for operational management, a QR Code Generator for sales, and currently building a Network Monitoring System using Grafana & Prometheus.",
+            "Software developer and IT generalist across application development, infrastructure, and network operations. Built all the internal web app and system for operational management.",
           skills: [
             "Network Administration",
             "Proxmox",
