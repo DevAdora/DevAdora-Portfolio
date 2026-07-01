@@ -80,15 +80,15 @@ export default function Testimonials() {
       {/* Heading */}
       <div className="flex flex-col items-center justify-center pb-10 text-center max-w-5xl">
         <h1 className="font-serif italic leading-snug" style={{ fontSize: "clamp(1.8rem, 5vw, 5.5rem)" }}>
-          "Here are <span className="font-semibold">some</span>
+          Here are <span className="font-semibold">some</span>
           <InlineImage src="/images/Goranow Designs.svg" alt="Goranow Designs" />
           &nbsp;statements from clients, or <span className="font-semibold">other</span>
           <InlineImage src="/images/Siren.png" alt="Siren" />
           &nbsp;individuals that describe their good experiences with <span className="font-semibold">me</span>
-          <InlineImage src="/images/hr-image.png" alt="HR" />"
+          <InlineImage src="/images/hr-image.png" alt="HR" />
         </h1>
         <p className="mt-5 italic text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
-          Insights and reflections from those who've experienced our work.
+          Insights and reflections from those who have experienced our work.
         </p>
       </div>
 
