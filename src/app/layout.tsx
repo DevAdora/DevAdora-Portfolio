@@ -6,7 +6,7 @@ import FloatingControls from "../components/FloatingControls";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DevAdora",
+  title: "Rai M. Reyes Jr. —  Software Developer",
   description: "Personal Portfolio",
 };
 
